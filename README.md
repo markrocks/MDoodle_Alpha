@@ -1,4 +1,6 @@
 MDoodle_Alpha
 =============
 
-Monster Doodle Alpha COde
+Monster Doodle Alpha Code
+
+This uses CocosStoryboard

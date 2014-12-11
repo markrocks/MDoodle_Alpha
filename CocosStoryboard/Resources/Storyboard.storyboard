@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="now-D9-RBs">
+    <dependencies>
+        <deployment version="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="8Ag-4D-gWT">
+            <objects>
+                <viewController id="now-D9-RBs" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qph-h0-OhO"/>
+                        <viewControllerLayoutGuide type="bottom" id="jkY-X2-cqF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hge-3X-HZT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comboSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZT-t0-pd2">
+                                <rect key="frame" x="7" y="40" width="604" height="438"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
+                                <rect key="frame" x="316" y="378" width="240" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Pph-ff-XZc" secondAttribute="height" multiplier="240:187" id="BsO-qh-q6k"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVa-VM-FIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="95.070422535211264"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="comboSplash.png" width="680" height="506"/>
+        <image name="miniMonsrter.png" width="340" height="257"/>
+    </resources>
+</document>
