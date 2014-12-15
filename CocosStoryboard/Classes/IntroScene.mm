@@ -11,6 +11,7 @@
 #import "IntroScene.h"
 #import "HelloWorldScene.h"
 
+
 // -----------------------------------------------------------------------
 #pragma mark - IntroScene
 // -----------------------------------------------------------------------
@@ -33,7 +34,7 @@
     // Apple recommend assigning self with supers return value
     self = [super init];
     if (!self) return(nil);
-    
+    /*
     // Create a colored background (Dark Grey)
     CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
     [self addChild:background];
@@ -51,9 +52,56 @@
     helloWorldButton.position = ccp(0.5f, 0.35f);
     [helloWorldButton setTarget:self selector:@selector(onSpinningClicked:)];
     [self addChild:helloWorldButton];
+    */
+    //
+    //
+    //
+    //
+    // Create a colored background (Dark Grey)
+    //FIXME TODO -- adding the following 2 lines causes the drawing to invert on the vertical axis W T F???!!!
+    //CCNodeColor *background2 = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:1.0f]];
+    //[self addChild:background2];
+    
+    // TODO confirm -- added code based on http://forum.cocos2d-swift.org/t/cocos2d-swift-v3-can-not-set-glview-transparent/14968
+        //self.colorRGBA = [self.color colorWithAlphaComponent:0.0];
+    //
+    //self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Monster_p08.png"]];
+    //CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:1.0f]];
+        //CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.0f]];
+        //[self addChild:background];
+    
+    CCNode* lineDrawer = [[LineDrawer alloc] init];
+    lineDrawer.contentSize = [CCDirector sharedDirector].viewSize;
+    lineDrawer.position = CGPointZero;
+    lineDrawer.anchorPoint = CGPointZero;
+    //lineDrawer
+    [self addChild:lineDrawer];
+    
+   
+    /*
+    self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Monster_p08.png"]];
+    //
+    self.cocosView = [CCDirector sharedDirector].view;
+    [self.cocosView setOpaque:NO];
+    [self.cocosView.superview addSubview:self.background];
+    [self.cocosView.superview sendSubviewToBack:self.background];
+    
+    lineDrawer.colorRGBA = [CCColor colorWithWhite:0 alpha:0];
+     */
+    //
+    //
+    //
+    //
 
     // done
 	return self;
+}
+
+- (void)onEnterTransitionDidFinish
+{
+    [super onEnterTransitionDidFinish];
+    // TODO confirm -- added code based on http://forum.cocos2d-swift.org/t/cocos2d-swift-v3-can-not-set-glview-transparent/14968
+    self.colorRGBA = [self.color colorWithAlphaComponent:0.0];
 }
 
 // -----------------------------------------------------------------------

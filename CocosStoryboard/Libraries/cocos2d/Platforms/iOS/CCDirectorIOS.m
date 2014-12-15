@@ -126,6 +126,8 @@
 	[_renderer enqueueClear:(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) color:_runningScene.colorRGBA.glkVector4 depth:1.0f stencil:0 globalSortOrder:NSIntegerMin];
 	
 	// Render
+    //TO -- ADDED by Mark Martin based on http://forum.cocos2d-swift.org/t/cocos2d-swift-v3-can-not-set-glview-transparent/14968/8
+    [_preRenderNode visit:_renderer parentTransform:&projection];
 	[_runningScene visit:_renderer parentTransform:&projection];
 	[_notificationNode visit:_renderer parentTransform:&projection];
 	if( _displayStats ) [self showStats];

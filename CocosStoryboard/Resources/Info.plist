@@ -27,7 +27,7 @@
 		<string>Icon-Spotlight-iOS7@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.dimix.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.markrocks.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -42,8 +42,6 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>Storyboard</string>
-	<key>UIMainStoryboardFile~ipad</key>
-	<string>Storyboard-iPad</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -59,11 +57,13 @@
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>

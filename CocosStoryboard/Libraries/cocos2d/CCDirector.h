@@ -113,6 +113,9 @@ and when to execute the Scenes.
 
 	/* This object will be visited after the scene. Useful to hook a notification node */
 	id _notificationNode;
+    
+    /* This object will be visited Before the scene. Useful to hook a notification node Added by Mark Martin based on http://forum.cocos2d-swift.org/t/cocos2d-swift-v3-can-not-set-glview-transparent/14968/8*/
+    id _preRenderNode;
 
 	/* will be the next 'runningScene' in the next frame
 	 nextScene is a weak reference. */

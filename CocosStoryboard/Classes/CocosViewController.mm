@@ -48,6 +48,7 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 	return _renderer;
 }
 
+
 @end
 
 #pragma mark - CocosViewController
@@ -74,7 +75,11 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 {
 	[super viewDidLayoutSubviews];
 	
-	[self startDirector];
+	
+}
+
+-(void) viewDidLoad {
+    [self startDirector];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -180,10 +185,12 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 		
 		CCDirector* director = [CCDirector sharedDirector];
 		
-		if (director.runningScene)
+        if (director.runningScene)
 		{
 			[director replaceScene:[self.delegate cocosViewControllerSceneToRun:self]];
 		}
+        
+        
 	}
 }
 
@@ -244,6 +251,9 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 						multiSampling:[config[CCSetupMultiSampling] boolValue]
 						numberOfSamples:[config[CCSetupNumberOfSamples] unsignedIntValue]
 						];
+    glView.backgroundColor = [UIColor clearColor];
+    
+    
 	
 	CCDirectorIOS* director = (CCDirectorIOS*) [CCDirector sharedDirector];
 	
@@ -253,7 +263,7 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 	if ([director isViewLoaded])
 	{
 		return;
-	}
+    }
 	
 	director.wantsFullScreenLayout = self.wantsFullScreenLayout;
 	
@@ -284,6 +294,9 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 	// attach the openglView to the director
 	
 	[director setView:glView];
+    
+    // TODO confirm -- added code based on http://forum.cocos2d-swift.org/t/cocos2d-swift-v3-can-not-set-glview-transparent/14968
+    [CCDirector sharedDirector].view.opaque = NO;
 	
 	if ([config[CCSetupScreenMode] isEqual:CCScreenModeFixed])
 	{

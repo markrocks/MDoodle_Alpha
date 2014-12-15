@@ -16,6 +16,6 @@ enum SceneType
 
 @interface SceneViewController : CocosViewController
 
-@property (nonatomic, readwrite) SceneType										sceneType;
+@property (nonatomic, readwrite) enum SceneType	sceneType;
 
 @end
