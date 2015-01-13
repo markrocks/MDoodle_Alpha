@@ -207,6 +207,9 @@
 		47D487DA19870F85006D83D7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D487D819870F85006D83D7 /* Storyboard.storyboard */; };
 		47D487DC19870F8B006D83D7 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = 47D487DB19870F8B006D83D7 /* Published-iOS */; };
 		47D487DF19870FC5006D83D7 /* CocosViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47D487DE19870FC5006D83D7 /* CocosViewController.mm */; };
+		8D02A9AA1A6380B1004CEBB9 /* Side_bannerAw.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9A91A6380B1004CEBB9 /* Side_bannerAw.png */; };
+		8D02A9AF1A64E56E004CEBB9 /* ImageSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */; };
+		8D02A9B01A64E56E004CEBB9 /* ImageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */; };
 		8D9229461A34254200189D86 /* Aqua_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229341A34254200189D86 /* Aqua_icon.png */; };
 		8D9229471A34254200189D86 /* Black_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229351A34254200189D86 /* Black_icon.png */; };
 		8D9229481A34254200189D86 /* Erase_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229361A34254200189D86 /* Erase_icon.png */; };
@@ -686,6 +689,10 @@
 		47D487DB19870F8B006D83D7 /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Published-iOS"; path = "Resources/Published-iOS"; sourceTree = "<group>"; };
 		47D487DD19870FC5006D83D7 /* CocosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocosViewController.h; path = Classes/CocosViewController.h; sourceTree = "<group>"; };
 		47D487DE19870FC5006D83D7 /* CocosViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CocosViewController.mm; path = Classes/CocosViewController.mm; sourceTree = "<group>"; };
+		8D02A9A91A6380B1004CEBB9 /* Side_bannerAw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Side_bannerAw.png; path = "Round 2/Side_bannerAw.png"; sourceTree = "<group>"; };
+		8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSelectionViewController.h; sourceTree = "<group>"; };
+		8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSelectionViewController.m; sourceTree = "<group>"; };
+		8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectionViewController.xib; sourceTree = "<group>"; };
 		8D9229341A34254200189D86 /* Aqua_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Aqua_icon.png; path = "Round 2/Aqua_icon.png"; sourceTree = "<group>"; };
 		8D9229351A34254200189D86 /* Black_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_icon.png; path = "Round 2/Black_icon.png"; sourceTree = "<group>"; };
 		8D9229361A34254200189D86 /* Erase_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Erase_icon.png; path = "Round 2/Erase_icon.png"; sourceTree = "<group>"; };
@@ -1603,6 +1610,7 @@
 				8D9229411A34254200189D86 /* Save_icon.png */,
 				8D9229421A34254200189D86 /* Side_banner.png */,
 				8DA49C761A36C5CB00F60091 /* Side_bannerA.png */,
+				8D02A9A91A6380B1004CEBB9 /* Side_bannerAw.png */,
 				8D9229431A34254200189D86 /* undo_icon.png */,
 				8D9229441A34254200189D86 /* White_behind_colors.png */,
 				8D9229451A34254200189D86 /* Yellow_icon.jpg */,
@@ -1649,6 +1657,9 @@
 				8DB4549A1A29A3DC004037B1 /* SelectionScreenViewController.h */,
 				8DB4549B1A29A3DC004037B1 /* SelectionScreenViewController.m */,
 				8DB4549C1A29A3DC004037B1 /* SelectionScreenViewController.xib */,
+				8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */,
+				8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */,
+				8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */,
 				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
 				8DB4549E1A29A3DC004037B1 /* DrawingScreenViewController.m */,
 				8DB4549F1A29A3DC004037B1 /* DrawingScreenViewController.xib */,
@@ -1777,6 +1788,7 @@
 				8DE0A2B31A31860900AA9587 /* Brush2.png in Resources */,
 				47D4856319870F50006D83D7 /* Default2.png in Resources */,
 				47D4856C19870F50006D83D7 /* Icon.png in Resources */,
+				8D02A9B01A64E56E004CEBB9 /* ImageSelectionViewController.xib in Resources */,
 				47D4857A19870F50006D83D7 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				8DE0A2AC1A317C2E00AA9587 /* colorButton8.png in Resources */,
 				8DB454A51A29A3DC004037B1 /* SelectionScreenViewController.xib in Resources */,
@@ -1799,6 +1811,7 @@
 				8DB454CA1A29A5EB004037B1 /* monsterTexr.png in Resources */,
 				8D9229491A34254200189D86 /* Green_dark_icon.png in Resources */,
 				8D9229511A34254200189D86 /* Purple_icon.png in Resources */,
+				8D02A9AA1A6380B1004CEBB9 /* Side_bannerAw.png in Resources */,
 				8D92294B1A34254200189D86 /* Grey_icon.png in Resources */,
 				8DE0A2AA1A317C2E00AA9587 /* colorButton6.png in Resources */,
 				8DE0A2B11A3181F300AA9587 /* newMonster.png in Resources */,
@@ -1847,6 +1860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D02A9AF1A64E56E004CEBB9 /* ImageSelectionViewController.m in Sources */,
 				47D4872719870F52006D83D7 /* CCScrollView.m in Sources */,
 				47D486C219870F51006D83D7 /* OALAction.m in Sources */,
 				47D4865E19870F51006D83D7 /* CCTexturePVR.m in Sources */,

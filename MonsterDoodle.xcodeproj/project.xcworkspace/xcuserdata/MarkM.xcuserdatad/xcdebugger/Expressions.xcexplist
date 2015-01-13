@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CocosViewController addDirector]:CocosViewController.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CocosViewController startDirector]:CocosViewController.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.directorIsInitialized">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CCGLView layoutSubviews]:CCGLView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_renderer.backingSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CCES2Renderer initWithDepthFormat:withPixelFormat:withSharegroup:withMultiSampling:withNumberOfSamples:]:CCES2Renderer.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CocosViewController tryToSetupCocos2dWithOptions:]:CocosViewController.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "self.wantsFullScreenLayout">
+            </PersistentString>
+            <PersistentString
+               value = "director.wantsFullScreenLayout">
+            </PersistentString>
+            <PersistentString
+               value = "director.isViewLoaded">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
