@@ -16,17 +16,33 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster">
-                    <rect key="frame" x="165" y="25" width="270" height="268"/>
-                    <state key="normal" title=" " backgroundImage="newMonster.png">
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster">
+                    <rect key="frame" x="20" y="51" width="270" height="268"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="135:134" id="JaR-1O-pRY"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="newMonster.png">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-fQ-dnk" userLabel="Photo Monster">
+                    <rect key="frame" x="322" y="29" width="270" height="268"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kdL-fQ-dnk" secondAttribute="height" multiplier="135:134" id="M8Y-F7-kxh"/>
+                    </constraints>
+                    <state key="normal" title=" " backgroundImage="newMonster.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="ffE-uq-58F"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">
-                    <rect key="frame" x="176" y="360" width="276" height="204"/>
+                    <rect key="frame" x="176" y="246" width="276" height="204"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="xY0-gA-jRk" secondAttribute="height" multiplier="23:17" id="B5V-Fb-8gk"/>
                     </constraints>
@@ -37,13 +53,28 @@
                         <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
+                    <rect key="frame" x="52" y="327" width="164" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Load Saved Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
+                    <rect key="frame" x="218" y="559" width="164" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Monster to Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-CI-pwP">
+                    <rect key="frame" x="388" y="313" width="166" height="47"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="69" id="GWb-aD-LVo"/>
-                <constraint firstAttribute="centerX" secondItem="ph0-Sf-Tdc" secondAttribute="centerX" id="UiI-tO-Tp0"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="top" secondItem="ph0-Sf-Tdc" secondAttribute="bottom" constant="100" id="hI1-ad-ECv"/>
-                <constraint firstAttribute="bottom" secondItem="xY0-gA-jRk" secondAttribute="bottom" constant="36" id="hxR-FQ-jW9"/>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="centerX" secondItem="xY0-gA-jRk" secondAttribute="centerX" constant="-14" id="Smb-2F-JyZ"/>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="top" secondItem="xY0-gA-jRk" secondAttribute="bottom" constant="15" id="XRF-A9-8pc"/>
+                <constraint firstAttribute="bottom" secondItem="xY0-gA-jRk" secondAttribute="bottom" constant="150" id="hxR-FQ-jW9"/>
                 <constraint firstAttribute="centerX" secondItem="xY0-gA-jRk" secondAttribute="centerX" constant="-14" id="zf0-f9-uRf"/>
             </constraints>
         </view>

@@ -270,6 +270,14 @@
 		8DE0A2B31A31860900AA9587 /* Brush2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A2B21A31860900AA9587 /* Brush2.png */; };
 		8DE0A2B51A31861300AA9587 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A2B41A31861300AA9587 /* plus.png */; };
 		8DE0A2B71A31861900AA9587 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A2B61A31861900AA9587 /* minus.png */; };
+		8DE0F9AC1A6E198D0005D482 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE0F9AB1A6E198D0005D482 /* iCarousel.m */; };
+		8DE0F9B21A6E19BD0005D482 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE0F9AF1A6E19BD0005D482 /* FXImageView.m */; };
+		8DE0F9B31A6E19BD0005D482 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE0F9B11A6E19BD0005D482 /* UIImage+FX.m */; };
+		8DE0F9B61A6E1A1B0005D482 /* Bundled Assets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0F9B51A6E1A1B0005D482 /* Bundled Assets */; };
+		8DE0F9BA1A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE0F9B81A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m */; };
+		8DE0F9BB1A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0F9B91A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib */; };
+		8DE0F9BD1A6E1CD00005D482 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0F9BC1A6E1CD00005D482 /* background.png */; };
+		8DE0F9BF1A6E1F570005D482 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0F9BE1A6E1F570005D482 /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -759,6 +767,18 @@
 		8DE0A2B21A31860900AA9587 /* Brush2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brush2.png; sourceTree = "<group>"; };
 		8DE0A2B41A31861300AA9587 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		8DE0A2B61A31861900AA9587 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		8DE0F9AA1A6E198D0005D482 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		8DE0F9AB1A6E198D0005D482 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		8DE0F9AE1A6E19BD0005D482 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
+		8DE0F9AF1A6E19BD0005D482 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
+		8DE0F9B01A6E19BD0005D482 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
+		8DE0F9B11A6E19BD0005D482 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		8DE0F9B51A6E1A1B0005D482 /* Bundled Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Assets"; sourceTree = "<group>"; };
+		8DE0F9B71A6E1C6B0005D482 /* ImageLoaderCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoaderCarouselViewController.h; sourceTree = "<group>"; };
+		8DE0F9B81A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderCarouselViewController.m; sourceTree = "<group>"; };
+		8DE0F9B91A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoaderCarouselViewController.xib; sourceTree = "<group>"; };
+		8DE0F9BC1A6E1CD00005D482 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		8DE0F9BE1A6E1F570005D482 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -821,6 +841,9 @@
 		47D4856019870F50006D83D7 /* CocosStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				8DE0F9BC1A6E1CD00005D482 /* background.png */,
+				8DE0F9BE1A6E1F570005D482 /* placeholder.png */,
+				8DE0F9B51A6E1A1B0005D482 /* Bundled Assets */,
 				47D4856119870F50006D83D7 /* Resources */,
 				47D4858A19870F50006D83D7 /* Libraries */,
 				47D487BF19870F52006D83D7 /* Classes */,
@@ -1571,6 +1594,8 @@
 		47D487BF19870F52006D83D7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DE0F9B41A6E19C60005D482 /* FXImageView */,
+				8DE0F9AD1A6E19950005D482 /* iCarousel */,
 				8DB454AA1A29A5D0004037B1 /* Images */,
 				8DB454971A29A3C7004037B1 /* MM Classes */,
 				8DB454941A29A10E004037B1 /* LineDrawer.h */,
@@ -1666,6 +1691,9 @@
 				8DB454A01A29A3DC004037B1 /* DrawingControlsViewController.h */,
 				8DB454A11A29A3DC004037B1 /* DrawingControlsViewController.m */,
 				8DB454A21A29A3DC004037B1 /* DrawingControlsViewController.xib */,
+				8DE0F9B71A6E1C6B0005D482 /* ImageLoaderCarouselViewController.h */,
+				8DE0F9B81A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m */,
+				8DE0F9B91A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib */,
 			);
 			name = "MM Classes";
 			sourceTree = "<group>";
@@ -1695,6 +1723,26 @@
 				8DE0A2A31A317C2E00AA9587 /* colorButton9.png */,
 			);
 			path = colorButtons;
+			sourceTree = "<group>";
+		};
+		8DE0F9AD1A6E19950005D482 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				8DE0F9AA1A6E198D0005D482 /* iCarousel.h */,
+				8DE0F9AB1A6E198D0005D482 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		8DE0F9B41A6E19C60005D482 /* FXImageView */ = {
+			isa = PBXGroup;
+			children = (
+				8DE0F9AE1A6E19BD0005D482 /* FXImageView.h */,
+				8DE0F9AF1A6E19BD0005D482 /* FXImageView.m */,
+				8DE0F9B01A6E19BD0005D482 /* UIImage+FX.h */,
+				8DE0F9B11A6E19BD0005D482 /* UIImage+FX.m */,
+			);
+			name = FXImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1775,6 +1823,7 @@
 				8DB454C01A29A5EB004037B1 /* Grey side bar.png in Resources */,
 				8D9229521A34254200189D86 /* Red_icon.png in Resources */,
 				8DB454C81A29A5EB004037B1 /* siasStudioText.png in Resources */,
+				8DE0F9BB1A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib in Resources */,
 				47D4857819870F50006D83D7 /* Icon-120.png in Resources */,
 				47D4856E19870F50006D83D7 /* Icon@2x.png in Resources */,
 				47D4858019870F50006D83D7 /* Icon-Small@2x.png in Resources */,
@@ -1783,6 +1832,7 @@
 				47D4857219870F50006D83D7 /* Icon-72@2x.png in Resources */,
 				8DB454BC1A29A5EB004037B1 /* Monster_p08.png in Resources */,
 				8DE0A2A41A317C2E00AA9587 /* colorButton10.png in Resources */,
+				8DE0F9BD1A6E1CD00005D482 /* background.png in Resources */,
 				47D487DA19870F85006D83D7 /* Storyboard.storyboard in Resources */,
 				8DA49C751A35757500F60091 /* ColorSwatchView.xib in Resources */,
 				8DE0A2B31A31860900AA9587 /* Brush2.png in Resources */,
@@ -1793,6 +1843,7 @@
 				8DE0A2AC1A317C2E00AA9587 /* colorButton8.png in Resources */,
 				8DB454A51A29A3DC004037B1 /* SelectionScreenViewController.xib in Resources */,
 				47D4856919870F50006D83D7 /* Default-Landscape2~ipad.png in Resources */,
+				8DE0F9BF1A6E1F570005D482 /* placeholder.png in Resources */,
 				8DB454BF1A29A5EB004037B1 /* Erase.png in Resources */,
 				8DB454BD1A29A5EB004037B1 /* Brush.png in Resources */,
 				8D92294D1A34254200189D86 /* MonsterDoole_layout_final.jpg in Resources */,
@@ -1834,6 +1885,7 @@
 				47D4856719870F50006D83D7 /* Default-568h2@2x.png in Resources */,
 				8DE0A2AD1A317C2E00AA9587 /* colorButton9.png in Resources */,
 				47D4858719870F50006D83D7 /* iTunesArtwork in Resources */,
+				8DE0F9B61A6E1A1B0005D482 /* Bundled Assets in Resources */,
 				47D4858219870F50006D83D7 /* Icon-Spotlight-iOS7.png in Resources */,
 				47D4857619870F50006D83D7 /* Icon-76@2x.png in Resources */,
 				8DB454C11A29A5EB004037B1 /* Home_button.png in Resources */,
@@ -1877,6 +1929,7 @@
 				47D486BA19870F51006D83D7 /* ZipUtils.m in Sources */,
 				47D485BA19870F50006D83D7 /* CCCache.m in Sources */,
 				47D4871319870F52006D83D7 /* OALAudioFile.m in Sources */,
+				8DE0F9B31A6E19BD0005D482 /* UIImage+FX.m in Sources */,
 				47D485EA19870F50006D83D7 /* CCDrawNode.m in Sources */,
 				47D486D519870F51006D83D7 /* OALAudioTracks.m in Sources */,
 				47D485A119870F50006D83D7 /* CCEffectColor.m in Sources */,
@@ -1888,6 +1941,7 @@
 				47D4869519870F51006D83D7 /* base64.c in Sources */,
 				47D4861E19870F51006D83D7 /* CCParticleSystemBase.m in Sources */,
 				47D4868319870F51006D83D7 /* UITouch+CC.m in Sources */,
+				8DE0F9B21A6E19BD0005D482 /* FXImageView.m in Sources */,
 				47D4871D19870F52006D83D7 /* CCButton.m in Sources */,
 				47D4860F19870F51006D83D7 /* CCParallaxNode.m in Sources */,
 				47D486A219870F51006D83D7 /* ccUtils.c in Sources */,
@@ -1921,6 +1975,7 @@
 				47D485B219870F50006D83D7 /* CCRenderer.m in Sources */,
 				47D4864719870F51006D83D7 /* CCSprite.m in Sources */,
 				47D486CF19870F51006D83D7 /* OALAudioTrack.m in Sources */,
+				8DE0F9AC1A6E198D0005D482 /* iCarousel.m in Sources */,
 				47D4871019870F52006D83D7 /* NSMutableDictionary+WeakReferences.m in Sources */,
 				47D485CE19870F50006D83D7 /* CCActionManager.m in Sources */,
 				47D4863019870F51006D83D7 /* CCProgressNode.m in Sources */,
@@ -1929,6 +1984,7 @@
 				47D4866E19870F51006D83D7 /* CCTransition.m in Sources */,
 				47D487D619870F75006D83D7 /* SceneViewController.mm in Sources */,
 				47D486C519870F51006D83D7 /* OALActionManager.m in Sources */,
+				8DE0F9BA1A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m in Sources */,
 				47D4862919870F51006D83D7 /* CCPhysicsNode.m in Sources */,
 				47D486CB19870F51006D83D7 /* OALUtilityActions.m in Sources */,
 				47D4860319870F51006D83D7 /* CCMotionStreak.m in Sources */,
