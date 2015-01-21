@@ -38,6 +38,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
+                        <action selector="addMonsteroPhotoAction:" destination="-1" eventType="touchUpInside" id="Z1x-7S-RyK"/>
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="ffE-uq-58F"/>
                     </connections>
                 </button>

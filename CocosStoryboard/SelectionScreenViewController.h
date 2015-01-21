@@ -11,5 +11,6 @@
 @interface SelectionScreenViewController : UIViewController
 - (IBAction)findNewMonsterBtnAction:(id)sender;
 - (IBAction)saveMonstereButtonAction:(id)sender;
+- (IBAction)addMonsteroPhotoAction:(id)sender;
 
 @end

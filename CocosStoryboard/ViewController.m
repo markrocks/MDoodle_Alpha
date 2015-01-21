@@ -14,6 +14,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UIViewController *activeController;
+
 @end
 
 @implementation ViewController
@@ -21,7 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self loadSelectionView];
+    //[self loadSelectionView];
+    [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
+    //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
 }
 
@@ -30,22 +34,46 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) loadSelectionView {
-    self.selectionScreenViewController = [[SelectionScreenViewController alloc]initWithNibName:@"SelectionScreenViewController" bundle:nil];
-    self.selectionScreenViewController.view.alpha = 0;
-    self.selectionScreenViewController.view.frame = self.view.frame;
+/**
+ This method loads a passed in ViewController, instantiates it and displays it
+ **/
+-(void) loadViewWithViewController:(NSString *)controllerPropertyName usingViewClass:(Class )viewClass {
     
-    [[self view] addSubview:self.selectionScreenViewController.view];
-    [self.selectionScreenViewController didMoveToParentViewController:self];
-    [[self view] bringSubviewToFront:self.selectionScreenViewController.view];
+    //Manage memory by having only one ViewController at a time
+    //If a current 1 exists -- we remove it
+    if ( self.activeController != nil)
+    {
+        [self.activeController removeFromParentViewController];
+        [self.activeController willMoveToParentViewController:nil];
+        [self.activeController.view removeFromSuperview];
+        [self.activeController removeFromParentViewController];
+        self.activeController = nil;
+    }
+    //First we create the new controller using the controller class argument that was passed in
+    id viewController = [(UIViewController *)[[viewClass class] alloc ] initWithNibName:controllerPropertyName bundle:nil];
+    
+    //Now create a working refernce theat is a UIViewController so that we can perform some standard set up routines
+    UIViewController *setupController = (UIViewController *) viewController;
+    setupController.view.alpha = 0;
+    setupController.view.frame = self.view.frame;
+    
+    [[self view] addSubview:setupController.view];
+    [setupController didMoveToParentViewController:self];
+    [[self view] bringSubviewToFront:setupController.view];
     
     // now animate selection screen into view
     [UIView animateWithDuration:SCREEN_FADE_RATE delay:SPLASH_DELAY options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
-        self.selectionScreenViewController.view.alpha = 1;
-    } completion:nil];
+        setupController.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        // Now keep a reference to the controller so we can remove it if we add another one
+        self.activeController = setupController;
+    }];
     
 }
 
+/**
+ This method loads the Selection screen
+ **/
 -(void) loadDrawingView {
     
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
@@ -65,10 +93,8 @@
     [[self view] addSubview:self.drawingPlaneController.view];
     [self.drawingPlaneController didMoveToParentViewController:self];
     [[self view] bringSubviewToFront:self.drawingPlaneController.view];
-
     
-    // Now thee control overlay
-    
+    // Now the control overlay
     self.drawingControlsViewController = [[DrawingControlsViewController alloc]initWithNibName:@"DrawingControlsViewController" bundle:nil];
     self.drawingControlsViewController.view.alpha = 1;
     self.drawingControlsViewController.view.frame = self.drawingControlsViewController.uiBackground.frame;//CGRectMake(50, 50,300 ,300);
@@ -77,10 +103,6 @@
     [self.drawingControlsViewController didMoveToParentViewController:self];
     [[self view] bringSubviewToFront:self.drawingControlsViewController.view];
 
-    
-    
-    
-    
     // now animate selection screen into view
     [UIView animateWithDuration:SCREEN_FADE_RATE delay:0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
      self.drawingScreenViewController.view.alpha = 1;

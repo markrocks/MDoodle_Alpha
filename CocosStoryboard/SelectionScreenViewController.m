@@ -41,4 +41,8 @@
 - (IBAction)saveMonstereButtonAction:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self];
 }
+
+- (IBAction)addMonsteroPhotoAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"addMonsterToPhoto" object:self];
+}
 @end

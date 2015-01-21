@@ -11,6 +11,7 @@
 #import "DrawingScreenViewController.h"
 #import "DrawingControlsViewController.h"
 #import "SceneViewController.h"
+#import "ImageLoaderCarouselViewController.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong) SelectionScreenViewController *selectionScreenViewController;
