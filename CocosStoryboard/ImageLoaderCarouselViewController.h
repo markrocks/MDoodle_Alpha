@@ -10,7 +10,7 @@
 #import "FXImageView.h"
 #import "iCarousel.h"
 
-@interface ImageLoaderCarouselViewController : UIViewController
+@interface ImageLoaderCarouselViewController : UIViewController <iCarouselDataSource>
 
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
 

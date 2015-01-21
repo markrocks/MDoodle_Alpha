@@ -29,7 +29,8 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         //get image paths
-        NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:@"Bundled Assets"];
+        //NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:@"Bundled Assets"];
+        NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:nil inDirectory:@"Bundled Assets"];
         
         //preload images (although FXImageView can actually do this for us on the fly)
         _images = [[NSMutableArray alloc] init];

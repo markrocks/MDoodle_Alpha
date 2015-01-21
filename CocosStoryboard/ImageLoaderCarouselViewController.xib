@@ -19,9 +19,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Home_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="RCU-3z-pDS">
                     <rect key="frame" x="-22" y="-15" width="622" height="615"/>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-27-56e" customClass="iCarousel">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-27-56e" userLabel="iCarousel Object" customClass="iCarousel">
                     <rect key="frame" x="0.0" y="61" width="600" height="493"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Jcj-XV-yWe"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
