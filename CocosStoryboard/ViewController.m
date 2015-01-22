@@ -74,14 +74,16 @@
 /**
  This method loads the Selection screen
  **/
--(void) loadDrawingView {
+-(void) loadDrawingView:(UIImage *) image {
     
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
     self.drawingScreenViewController.view.alpha = 0;
     self.drawingScreenViewController.view.frame = self.view.frame;
+    [self.drawingScreenViewController.monsterImage setImage:image];
     
     [[self view] addSubview:self.drawingScreenViewController.view];
     [self.drawingScreenViewController didMoveToParentViewController:self];
+    
     [[self view] bringSubviewToFront:self.drawingScreenViewController.view];
     
     //Now the Cocos2d drawing plane
@@ -141,6 +143,8 @@
 
 -(void)parseNotification:(NSNotification *) notification
 {
+    NSDictionary *dict = [notification userInfo];
+    
     if ([[notification name] isEqualToString:@"colorPurple"]) {
         NSLog(@"purple clicked");
     }
@@ -155,7 +159,7 @@
     }
     if ([[notification name] isEqualToString:@"getOldMonster"]) {
         NSLog(@"get Old");
-        [self loadDrawingView];
+        [self loadDrawingView:dict[@"image"]];
     }
 }
 

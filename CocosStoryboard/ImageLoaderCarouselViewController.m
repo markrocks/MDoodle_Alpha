@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     
     //configure carousel
-    _carousel.type = iCarouselTypeCoverFlow2;
+    _carousel.type = iCarouselTypeRotary;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -79,6 +79,16 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark iCarousel taps
+
+- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    UIImage *image = (UIImage *)(_images)[(NSUInteger)index];
+    NSLog(@"Tappedimage: %@", image);
+    NSDictionary * imgDict = [NSDictionary dictionaryWithObject:image
+                                                         forKey:@"image"];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self userInfo:imgDict];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

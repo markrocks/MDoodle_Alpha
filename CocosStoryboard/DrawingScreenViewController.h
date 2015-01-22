@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DrawingScreenViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *monsterImage;
 
 @end

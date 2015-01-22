@@ -1674,6 +1674,7 @@
 		8DB454971A29A3C7004037B1 /* MM Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8DECDD911A70CAC100EB7F38 /* Unused */,
 				8DB454981A29A3DC004037B1 /* ViewController.h */,
 				8DB454991A29A3DC004037B1 /* ViewController.m */,
 				8DA49C711A35673A00F60091 /* ColorSwatchView.h */,
@@ -1682,9 +1683,6 @@
 				8DB4549A1A29A3DC004037B1 /* SelectionScreenViewController.h */,
 				8DB4549B1A29A3DC004037B1 /* SelectionScreenViewController.m */,
 				8DB4549C1A29A3DC004037B1 /* SelectionScreenViewController.xib */,
-				8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */,
-				8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */,
-				8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */,
 				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
 				8DB4549E1A29A3DC004037B1 /* DrawingScreenViewController.m */,
 				8DB4549F1A29A3DC004037B1 /* DrawingScreenViewController.xib */,
@@ -1743,6 +1741,16 @@
 				8DE0F9B11A6E19BD0005D482 /* UIImage+FX.m */,
 			);
 			name = FXImageView;
+			sourceTree = "<group>";
+		};
+		8DECDD911A70CAC100EB7F38 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */,
+				8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */,
+				8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */,
+			);
+			name = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
