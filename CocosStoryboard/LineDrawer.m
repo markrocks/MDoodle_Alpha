@@ -71,7 +71,7 @@ typedef struct _LineVertex {
   float overdraw;
   ccColor4F penColor;
 
-  CCRenderTexture *renderTexture;
+  
   BOOL finishingLine;
 }
 
@@ -87,7 +87,7 @@ typedef struct _LineVertex {
     overdraw = 3.0f;
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
-    renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
+    self.renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
       /*// ADDED CODE==================>
       //TODO-- INVESTIGATE BLEND MODES
        --Blend modes can acheve different effect -- including color within an area
@@ -109,12 +109,12 @@ typedef struct _LineVertex {
       //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_SRC_COLOR}];
 
       // END ADDED CODE==================>*/
-      renderTexture.positionType = CCPositionTypeNormalized;
-      renderTexture.anchorPoint = ccp(0, 0);
-      renderTexture.position = ccp(0.5f, 0.5f);
+      self.renderTexture.positionType = CCPositionTypeNormalized;
+      self.renderTexture.anchorPoint = ccp(0, 0);
+      self.renderTexture.position = ccp(0.5f, 0.5f);
 
     
-      [renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+      [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
       
       // the following renders a green line with no background image (original from line drawer )
       //[renderTexture clear:1.0f g:1.0f b:1.0f a:0.0f];
@@ -142,7 +142,7 @@ typedef struct _LineVertex {
       //0,0,0,0==red
 
       
-    [self addChild:renderTexture];
+    [self addChild:self.renderTexture];
 
 		[[[CCDirector sharedDirector] view] setUserInteractionEnabled:YES];
 
@@ -173,6 +173,7 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color8" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color9" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color10" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"clearSlate" object:nil];
 }
 
 -(void)parseNotification:(NSNotification *) notification
@@ -230,6 +231,10 @@ typedef struct _LineVertex {
     if ([[notification name] isEqualToString:@"color10"]) {
         NSLog(@"red clicked");
         penColor = ccc4f(0.0, 0.0, 0.0, 0.8);
+    }
+    if ([[notification name] isEqualToString:@"clearSlate"]) {
+        NSLog(@"CLEAR SLATE CALLED");
+        [self clearSlate];
     }
 
 }
@@ -519,13 +524,13 @@ typedef struct _LineVertex {
     //ccColor4F color = {0.7, 0.3, 0.7, 0.2};// -- highlighter marker
     //ccColor4F color = {0.7, 0.0, 0.7, 0.5};// -- glow marker
    // ccColor4F color = {1, 0, 0, 1}; //red color solid
-  [renderTexture begin];
+  [self.renderTexture begin];
 
   NSMutableArray *smoothedPoints = [self calculateSmoothLinePoints];
   if (smoothedPoints) {
     [self drawLines:smoothedPoints withColor:penColor];
   }
-  [renderTexture end];
+  [self.renderTexture end];
 }
 
 #pragma mark - Math
@@ -586,5 +591,31 @@ typedef struct _LineVertex {
 {
   ////[renderTexture beginWithClear:1.0 g:1.0 b:1.0 a:0];
   //[renderTexture end];
+}
+
+-(void) clearSlate {
+   // [renderTexture beginWithClear:1.0 g:1.0 b:1.0 a:0];
+   // [renderTexture end];
+    //
+    //
+    
+    /*
+    CGSize s = [[CCDirector sharedDirector] viewSize];
+    renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
+    renderTexture.positionType = CCPositionTypeNormalized;
+    renderTexture.anchorPoint = ccp(0, 0);
+    renderTexture.position = ccp(0.5f, 0.5f);
+     */
+    
+    
+    [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+}
+
+/**
+ Used by save  --- get the iamge that we drew and return it
+ **/
+-(UIImage *) getSlateContents {
+    
+    return [self.renderTexture getUIImage];
 }
 @end

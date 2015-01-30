@@ -15,18 +15,20 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIViewController *activeController;
-
+@property (nonatomic) double timeVal ;
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.timeVal =  SPLASH_DELAY;
     // Do any additional setup after loading the view, typically from a nib.
-    //[self loadSelectionView];
-    //[self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
-    [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
+    [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
+    //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,15 +42,9 @@
 -(void) loadViewWithViewController:(NSString *)controllerPropertyName usingViewClass:(Class )viewClass {
     
     //Manage memory by having only one ViewController at a time
-    //If a current 1 exists -- we remove it
-    if ( self.activeController != nil)
-    {
-        [self.activeController removeFromParentViewController];
-        [self.activeController willMoveToParentViewController:nil];
-        [self.activeController.view removeFromSuperview];
-        [self.activeController removeFromParentViewController];
-        self.activeController = nil;
-    }
+    
+   // NSTimeInterval *time =
+    
     //First we create the new controller using the controller class argument that was passed in
     id viewController = [(UIViewController *)[[viewClass class] alloc ] initWithNibName:controllerPropertyName bundle:nil];
     
@@ -62,17 +58,56 @@
     [[self view] bringSubviewToFront:setupController.view];
     
     // now animate selection screen into view
-    [UIView animateWithDuration:SCREEN_FADE_RATE delay:SPLASH_DELAY options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+    [UIView animateWithDuration:SCREEN_FADE_RATE delay:self.timeVal options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
         setupController.view.alpha = 1;
     } completion:^(BOOL finished) {
+        //If a current 1 exists -- we remove it
+        [self clearActiveView];
         // Now keep a reference to the controller so we can remove it if we add another one
         self.activeController = setupController;
     }];
-    
+    self.timeVal = 0;
+}
+
+-(void) clearActiveView {
+    if ( self.activeController != nil)
+    {
+        [self.activeController removeFromParentViewController];
+        [self.activeController willMoveToParentViewController:nil];
+        [self.activeController.view removeFromSuperview];
+        [self.activeController removeFromParentViewController];
+        self.activeController = nil;
+    }
+    if ( self.drawingScreenViewController != nil)
+    {
+        [self.drawingScreenViewController removeFromParentViewController];
+        [self.drawingScreenViewController willMoveToParentViewController:nil];
+        [self.drawingScreenViewController.view removeFromSuperview];
+        [self.drawingScreenViewController removeFromParentViewController];
+        self.drawingScreenViewController = nil;
+    }
+    if ( self.drawingPlaneController != nil)
+    {
+        [self.drawingPlaneController.view setHidden:YES];
+        /*
+        [self.drawingPlaneController willMoveToParentViewController:nil];
+        [self.drawingPlaneController.view removeFromSuperview];
+        [self.drawingPlaneController removeFromParentViewController];
+        self.drawingPlaneController = nil;
+         */			
+    }
+    if ( self.drawingControlsViewController != nil)
+    {
+        [self.drawingControlsViewController removeFromParentViewController];
+        [self.drawingControlsViewController willMoveToParentViewController:nil];
+        [self.drawingControlsViewController.view removeFromSuperview];
+        [self.drawingControlsViewController removeFromParentViewController];
+        self.drawingControlsViewController = nil;
+    }
 }
 
 /**
- This method loads the Selection screen
+ This method loads the Drawing screen
  **/
 -(void) loadDrawingView:(UIImage *) image {
     
@@ -87,14 +122,23 @@
     [[self view] bringSubviewToFront:self.drawingScreenViewController.view];
     
     //Now the Cocos2d drawing plane
-    self.drawingPlaneController = [[SceneViewController alloc]initWithCoder:nil];
-    self.drawingPlaneController.view.opaque= YES;
-    self.drawingPlaneController.view.alpha = 0;
-    self.drawingPlaneController.view.frame = self.view.frame;
+    if ( self.drawingPlaneController == nil)
+    {
+        self.drawingPlaneController = [[SceneViewController alloc]initWithCoder:nil];
+        self.drawingPlaneController.view.opaque= YES;
+        self.drawingPlaneController.view.alpha = 0;
+        self.drawingPlaneController.view.frame = self.view.frame;
     
-    [[self view] addSubview:self.drawingPlaneController.view];
-    [self.drawingPlaneController didMoveToParentViewController:self];
-    [[self view] bringSubviewToFront:self.drawingPlaneController.view];
+        [[self view] addSubview:self.drawingPlaneController.view];
+        [self.drawingPlaneController didMoveToParentViewController:self];
+        [[self view] bringSubviewToFront:self.drawingPlaneController.view];
+    }
+    else{
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"clearSlate" object:self];
+        [self.drawingPlaneController.view setHidden:NO];
+        [[self view] bringSubviewToFront:self.drawingPlaneController.view];
+        //TODO  Add Code to clear the drawing pane!
+    }
     
     // Now the control overlay
     self.drawingControlsViewController = [[DrawingControlsViewController alloc]initWithNibName:@"DrawingControlsViewController" bundle:nil];
@@ -133,12 +177,62 @@
     //];
 }
 
+/**
+ Save the drawing layer ontop of the background iamge layer to 1 composite image. Files are saved in the Documents directory
+ **/
+-(void) saveDrawing {
+    
+    UIImage *bottomImage = self.drawingScreenViewController.monsterImage.image; //background image ////1st image
+    UIImage *image       = [self.drawingPlaneController.introScene.lineDrawer.renderTexture  getUIImage]  ; //foreground image///2nd image
+    
+    CGSize newSize = CGSizeMake(1024, 768); // set your image rect
+    UIGraphicsBeginImageContext( newSize );
+    
+    // Use existing opacity as is
+    [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];///1st image set frame
+    
+    // Apply supplied opacity if applicable
+    
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1]; //2nd image set frame on bottom image with alpha value
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *imgName = [self createSavedImageName];
+    NSLog(@"imgName");
+    NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:imgName];
+    NSData *imageData = UIImagePNGRepresentation(newImage);
+    [imageData writeToFile:savedImagePath atomically:NO];
+}
+
+- (NSString *) createSavedImageName {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy_MM_dd_hhmm"];
+    
+    //Optionally for time zone conversions
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
+    
+    NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+    stringFromDate = [stringFromDate stringByAppendingString:@".png"];
+    return stringFromDate;
+}
+
 -(void) registerEventListeners {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorPurple" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorBlue" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorRed" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"findNewMonster" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"getOldMonster" object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadMenuScreen" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithImage" object:nil];
+
 }
 
 -(void)parseNotification:(NSNotification *) notification
@@ -156,9 +250,32 @@
     }
     if ([[notification name] isEqualToString:@"findNewMonster"]) {
         NSLog(@"Find New");
+        [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
     }
     if ([[notification name] isEqualToString:@"getOldMonster"]) {
         NSLog(@"get Old");
+        [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[UserCarouselViewController class]];
+    }
+    if ([[notification name] isEqualToString:@"loadMenuScreen"]) {
+        NSLog(@"loading selection screen");
+        [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
+    }
+    if ([[notification name] isEqualToString:@"markerPlusButton"]) {
+        NSLog(@"markerPlusButton clicked");
+    }
+    if ([[notification name] isEqualToString:@"markerMinusButton"]) {
+        NSLog(@"markerMinusButton clicked");
+    }
+    if ([[notification name] isEqualToString:@"eraserButton"]) {
+        NSLog(@"eraserButton clicked");
+    }
+    if ([[notification name] isEqualToString:@"undoButton"]) {
+        NSLog(@"undoButton clicked");
+        [self saveDrawing];
+    }
+    
+    if ([[notification name] isEqualToString:@"loadDrawPaneWithImage"]) {
+        NSLog(@"loadDrawPaneWithImage clicked");
         [self loadDrawingView:dict[@"image"]];
     }
 }
@@ -166,3 +283,6 @@
 
 
 @end
+
+
+

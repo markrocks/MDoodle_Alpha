@@ -3,10 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[CocosViewController addDirector]:CocosViewController.mm">
+         contextName = "-[CCES2Renderer initWithDepthFormat:withPixelFormat:withSharegroup:withMultiSampling:withNumberOfSamples:]:CCES2Renderer.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UserCarouselViewController getImagePaths]:UserCarouselViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CCGLView layoutSubviews]:CCGLView.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.view ">
+               value = "_renderer.backingSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageLoaderCarouselViewController initWithNibName:bundle:]:ImageLoaderCarouselViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_images">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,21 +33,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CCGLView layoutSubviews]:CCGLView.m">
+         contextName = "-[CocosViewController addDirector]:CocosViewController.mm">
          <PersistentStrings>
             <PersistentString
-               value = "_renderer.backingSize">
+               value = "self.view ">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[CCES2Renderer initWithDepthFormat:withPixelFormat:withSharegroup:withMultiSampling:withNumberOfSamples:]:CCES2Renderer.m">
       </ContextState>
       <ContextState
          contextName = "-[CocosViewController tryToSetupCocos2dWithOptions:]:CocosViewController.mm">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.bounds">
+               value = "director.isViewLoaded">
             </PersistentString>
             <PersistentString
                value = "self.wantsFullScreenLayout">
@@ -42,9 +53,12 @@
                value = "director.wantsFullScreenLayout">
             </PersistentString>
             <PersistentString
-               value = "director.isViewLoaded">
+               value = "self.view.bounds">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController saveDrawing]:ViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

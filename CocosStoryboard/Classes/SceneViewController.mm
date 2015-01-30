@@ -43,8 +43,8 @@
 	{
 		return [CCBReader loadAsScene:@"MainScenePhone"];
 	}
-	
-	return [IntroScene scene];
+    self.introScene =[IntroScene scene];
+	return self.introScene; //director . runningScene.Introscene.lineDrawer.rendertexture
 }
 
 @end

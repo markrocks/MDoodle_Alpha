@@ -45,6 +45,22 @@
 - (IBAction)blueButtonAction:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"colorBlue" object:self];
 }
+- (IBAction)homeButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadMenuScreen" object:self];
+}
+- (IBAction)markerPlusButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"markerPlusButton" object:self];
+}
+- (IBAction)markerMinusButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"markerMinusButton" object:self];
+}
+- (IBAction)eraserButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"eraserButton" object:self];
+}
+- (IBAction)undoButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"undoButton" object:self];
+}
+
 //
 //
 //

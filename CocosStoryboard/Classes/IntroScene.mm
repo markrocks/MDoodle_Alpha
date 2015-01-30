@@ -70,12 +70,12 @@
         //CCNodeColor *background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.0f]];
         //[self addChild:background];
     
-    CCNode* lineDrawer = [[LineDrawer alloc] init];
-    lineDrawer.contentSize = [CCDirector sharedDirector].viewSize;
-    lineDrawer.position = CGPointZero;
-    lineDrawer.anchorPoint = CGPointZero;
+    self.lineDrawer = [[LineDrawer alloc] init];
+    self.lineDrawer.contentSize = [CCDirector sharedDirector].viewSize;
+    self.lineDrawer.position = CGPointZero;
+    self.lineDrawer.anchorPoint = CGPointZero;
     //lineDrawer
-    [self addChild:lineDrawer];
+    [self addChild:self.lineDrawer];
     
    
     /*
@@ -90,7 +90,7 @@
      */
     //
     //
-    //
+    // 
     //
 
     // done

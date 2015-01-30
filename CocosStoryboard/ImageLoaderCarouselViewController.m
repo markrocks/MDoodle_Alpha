@@ -29,17 +29,34 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         //get image paths
-        //NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:@"Bundled Assets"];
-        NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:nil inDirectory:@"Bundled Assets"];
+        NSArray *imagePaths = [self getImagePaths];
         
         //preload images (although FXImageView can actually do this for us on the fly)
         _images = [[NSMutableArray alloc] init];
-        for (NSString *path in imagePaths)
+        for (NSObject *path in imagePaths)
         {
-            [_images addObject:[UIImage imageWithContentsOfFile:path]];
+            if([path isKindOfClass:[NSString class]])
+            {
+                [_images addObject:[UIImage imageWithContentsOfFile:(NSString *)path]];
+            }
+            
+            if([path isKindOfClass:[NSURL class]])
+            {
+                NSString *pathString = [(NSURL *) path path];
+                [_images addObject:[UIImage imageWithContentsOfFile:pathString]];
+            }
+            
         }
     }
     return self;
+}
+
+/**
+ This method calculated the location of the images for the carousel. This method is meant to be overriden by sub classes --
+ **/
+
+-(NSArray *) getImagePaths {
+    return [[NSArray alloc]init];
 }
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
@@ -52,7 +69,7 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 500.0f, 500.0f)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
         imageView.reflectionScale = 0.5f;
@@ -87,7 +104,7 @@
     NSLog(@"Tappedimage: %@", image);
     NSDictionary * imgDict = [NSDictionary dictionaryWithObject:image
                                                          forKey:@"image"];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self userInfo:imgDict];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadDrawPaneWithImage" object:self userInfo:imgDict]; 
 }
 
 - (void)didReceiveMemoryWarning {

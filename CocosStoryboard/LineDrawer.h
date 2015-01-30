@@ -27,4 +27,5 @@
 #import "cocos2d.h"
 
 @interface LineDrawer : CCNode
+@property ( nonatomic, strong) CCRenderTexture *renderTexture;
 @end

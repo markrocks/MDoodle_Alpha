@@ -133,6 +133,9 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
                             <rect key="frame" x="8" y="8" width="72" height="67"/>
                             <state key="normal" image="Home_icon.png"/>
+                            <connections>
+                                <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
                             <rect key="frame" x="74" y="525" width="25" height="22"/>
@@ -142,6 +145,9 @@
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="74" y="509" width="25" height="22"/>
                             </variation>
+                            <connections>
+                                <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
                             <rect key="frame" x="0.0" y="539" width="124" height="68"/>
@@ -160,6 +166,9 @@
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="75" y="574" width="30" height="20"/>
                             </variation>
+                            <connections>
+                                <action selector="markerMinusButtonAction:" destination="-1" eventType="touchUpInside" id="4Us-l8-MA2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAs-yr-nId" userLabel="Eraser-71:34">
                             <rect key="frame" x="0.0" y="630" width="102" height="38"/>
@@ -172,6 +181,9 @@
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="608" width="103" height="50"/>
                             </variation>
+                            <connections>
+                                <action selector="eraserButtonAction:" destination="-1" eventType="touchUpInside" id="Lhb-e3-yi7"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-yx-KWM" userLabel="Undo-67:65">
                             <rect key="frame" x="0.0" y="672" width="98" height="95"/>
@@ -184,6 +196,9 @@
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="669" width="98" height="95"/>
                             </variation>
+                            <connections>
+                                <action selector="undoButtonAction:" destination="-1" eventType="touchUpInside" id="reD-7C-xQH"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

@@ -7,6 +7,7 @@
 //
 
 #import "CocosViewController.h"
+#import "IntroScene.h"
 
 enum SceneType
 {
@@ -17,5 +18,6 @@ enum SceneType
 @interface SceneViewController : CocosViewController
 
 @property (nonatomic, readwrite) enum SceneType	sceneType;
+@property (nonatomic, strong) IntroScene *introScene;
 
 @end
