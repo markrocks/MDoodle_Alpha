@@ -14,6 +14,7 @@
 #import "ImageLoaderCarouselViewController.h"
 #import "BundledCarouselViewController.h"
 #import "UserCarouselViewController.h"
+#import "EmailViewController.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong) SelectionScreenViewController *selectionScreenViewController;

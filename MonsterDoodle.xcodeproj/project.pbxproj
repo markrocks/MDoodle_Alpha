@@ -210,6 +210,9 @@
 		8D02A9AA1A6380B1004CEBB9 /* Side_bannerAw.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9A91A6380B1004CEBB9 /* Side_bannerAw.png */; };
 		8D02A9AF1A64E56E004CEBB9 /* ImageSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */; };
 		8D02A9B01A64E56E004CEBB9 /* ImageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */; };
+		8D0FD0E41A81E7CE000BD428 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FD0E21A81E7CE000BD428 /* EmailViewController.m */; };
+		8D0FD0E51A81E7CE000BD428 /* EmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0FD0E31A81E7CE000BD428 /* EmailViewController.xib */; };
+		8D0FD0E71A81FA5C000BD428 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0FD0E61A81FA5C000BD428 /* MessageUI.framework */; };
 		8D9229461A34254200189D86 /* Aqua_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229341A34254200189D86 /* Aqua_icon.png */; };
 		8D9229471A34254200189D86 /* Black_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229351A34254200189D86 /* Black_icon.png */; };
 		8D9229481A34254200189D86 /* Erase_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D9229361A34254200189D86 /* Erase_icon.png */; };
@@ -704,6 +707,10 @@
 		8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSelectionViewController.h; sourceTree = "<group>"; };
 		8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSelectionViewController.m; sourceTree = "<group>"; };
 		8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectionViewController.xib; sourceTree = "<group>"; };
+		8D0FD0E11A81E7CE000BD428 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
+		8D0FD0E21A81E7CE000BD428 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailViewController.m; sourceTree = "<group>"; };
+		8D0FD0E31A81E7CE000BD428 /* EmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailViewController.xib; sourceTree = "<group>"; };
+		8D0FD0E61A81FA5C000BD428 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8D9229341A34254200189D86 /* Aqua_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Aqua_icon.png; path = "Round 2/Aqua_icon.png"; sourceTree = "<group>"; };
 		8D9229351A34254200189D86 /* Black_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Black_icon.png; path = "Round 2/Black_icon.png"; sourceTree = "<group>"; };
 		8D9229361A34254200189D86 /* Erase_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Erase_icon.png; path = "Round 2/Erase_icon.png"; sourceTree = "<group>"; };
@@ -794,6 +801,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0FD0E71A81FA5C000BD428 /* MessageUI.framework in Frameworks */,
 				47D4854B19870F50006D83D7 /* OpenAL.framework in Frameworks */,
 				47D4855119870F50006D83D7 /* UIKit.framework in Frameworks */,
 				47D4854719870F50006D83D7 /* QuartzCore.framework in Frameworks */,
@@ -832,6 +840,7 @@
 		47D4854519870F50006D83D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D0FD0E61A81FA5C000BD428 /* MessageUI.framework */,
 				47D4854619870F50006D83D7 /* QuartzCore.framework */,
 				47D4854819870F50006D83D7 /* OpenGLES.framework */,
 				47D4854A19870F50006D83D7 /* OpenAL.framework */,
@@ -1690,6 +1699,9 @@
 				8DA49C721A35673A00F60091 /* ColorSwatchView.m */,
 				8DA49C741A35757500F60091 /* ColorSwatchView.xib */,
 				8DB4549A1A29A3DC004037B1 /* SelectionScreenViewController.h */,
+				8D0FD0E11A81E7CE000BD428 /* EmailViewController.h */,
+				8D0FD0E21A81E7CE000BD428 /* EmailViewController.m */,
+				8D0FD0E31A81E7CE000BD428 /* EmailViewController.xib */,
 				8DB4549B1A29A3DC004037B1 /* SelectionScreenViewController.m */,
 				8DB4549C1A29A3DC004037B1 /* SelectionScreenViewController.xib */,
 				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
@@ -1922,6 +1934,7 @@
 				47D4857419870F50006D83D7 /* Icon-76~.png in Resources */,
 				8DB454C41A29A5EB004037B1 /* undo.png in Resources */,
 				8DB454C61A29A5EB004037B1 /* selectionScreen.png in Resources */,
+				8D0FD0E51A81E7CE000BD428 /* EmailViewController.xib in Resources */,
 				47D4858919870F50006D83D7 /* iTunesArtwork@2x in Resources */,
 				8DB454A91A29A3DC004037B1 /* DrawingControlsViewController.xib in Resources */,
 			);
@@ -2039,6 +2052,7 @@
 				47D486E719870F51006D83D7 /* ALContext.m in Sources */,
 				47D485C119870F50006D83D7 /* CCActionCatmullRom.m in Sources */,
 				47D4865319870F51006D83D7 /* CCSpriteFrameCache.m in Sources */,
+				8D0FD0E41A81E7CE000BD428 /* EmailViewController.m in Sources */,
 				47D485DE19870F50006D83D7 /* CCClippingNode.m in Sources */,
 				47D4870919870F52006D83D7 /* mach_timing.c in Sources */,
 				47D4864319870F51006D83D7 /* CCScheduler.m in Sources */,

@@ -232,6 +232,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithImage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"emailMonster" object:nil];
 
 }
 
@@ -251,6 +252,10 @@
     if ([[notification name] isEqualToString:@"findNewMonster"]) {
         NSLog(@"Find New");
         [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+    }
+    if ([[notification name] isEqualToString:@"emailMonster"]) {
+        NSLog(@"Email Monster");
+        [self loadViewWithViewController:@"EmailViewController" usingViewClass:[EmailViewController class]];
     }
     if ([[notification name] isEqualToString:@"getOldMonster"]) {
         NSLog(@"get Old");

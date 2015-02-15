@@ -39,7 +39,6 @@
                     </state>
                     <connections>
                         <action selector="addMonsteroPhotoAction:" destination="-1" eventType="touchUpInside" id="Z1x-7S-RyK"/>
-                        <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="ffE-uq-58F"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">

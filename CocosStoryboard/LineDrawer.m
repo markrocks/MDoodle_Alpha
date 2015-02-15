@@ -88,12 +88,12 @@ typedef struct _LineVertex {
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
     self.renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
-      /*// ADDED CODE==================>
+      // ADDED CODE==================>
       //TODO-- INVESTIGATE BLEND MODES
-       --Blend modes can acheve different effect -- including color within an area
-       --we need to investigat these to see if we can use some of them to create different drawing styles
+      // --Blend modes can achieve different effects -- including color within an area
+      // --we need to investigat these to see if we can use some of them to create different drawing styles
       
-    //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_ALPHA}];
+      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_ALPHA}];
       //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_SRC_ALPHA}];
       
       
@@ -104,11 +104,11 @@ typedef struct _LineVertex {
      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
       
       //First working one
-       //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_ZERO}];
+       //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_ZERO}];
       //Second Working One
-      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_SRC_COLOR}];
+      //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_SRC_COLOR}];
 
-      // END ADDED CODE==================>*/
+      // END ADDED CODE==================>
       self.renderTexture.positionType = CCPositionTypeNormalized;
       self.renderTexture.anchorPoint = ccp(0, 0);
       self.renderTexture.position = ccp(0.5f, 0.5f);

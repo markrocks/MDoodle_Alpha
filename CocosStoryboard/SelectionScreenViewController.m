@@ -43,6 +43,6 @@
 }
 
 - (IBAction)addMonsteroPhotoAction:(id)sender {
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"addMonsterToPhoto" object:self];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"emailMonster" object:self];
 }
 @end
