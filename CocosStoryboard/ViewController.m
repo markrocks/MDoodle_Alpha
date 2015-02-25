@@ -28,6 +28,7 @@
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
     //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
+    self.view.frame = CGRectMake(0, 0, 1024, 768);
     
 }
 

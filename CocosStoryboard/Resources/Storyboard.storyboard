@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="now-D9-RBs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="now-D9-RBs">
     <dependencies>
         <deployment version="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comboSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZT-t0-pd2">
-                                <rect key="frame" x="7" y="40" width="604" height="438"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LOAD SCREEN_Feb22.png" translatesAutoresizingMaskIntoConstraints="NO" id="z9p-HF-cWB">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
-                                <rect key="frame" x="316" y="378" width="240" height="187"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
+                                <rect key="frame" x="373" y="0.0" width="240" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pph-ff-XZc" secondAttribute="height" multiplier="240:187" id="BsO-qh-q6k"/>
                                 </constraints>
@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="comboSplash.png" width="680" height="506"/>
+        <image name="LOAD SCREEN_Feb22.png" width="1024" height="768"/>
         <image name="miniMonsrter.png" width="340" height="257"/>
     </resources>
 </document>

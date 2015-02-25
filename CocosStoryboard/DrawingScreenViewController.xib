@@ -16,20 +16,26 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arms_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="WpQ-xH-lza" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Monster_p08.png" translatesAutoresizingMaskIntoConstraints="NO" id="IL8-xQ-l3P" userLabel="monsterImage">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="IL8-xQ-l3P" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CbV-U3-j02"/>
-                <constraint firstAttribute="bottom" secondItem="IL8-xQ-l3P" secondAttribute="bottom" id="aVe-Ma-ndR"/>
-                <constraint firstItem="IL8-xQ-l3P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eoJ-XQ-TzV"/>
-                <constraint firstAttribute="trailing" secondItem="IL8-xQ-l3P" secondAttribute="trailing" id="wU8-v0-hMm"/>
+                <constraint firstAttribute="trailing" secondItem="IL8-xQ-l3P" secondAttribute="trailing" id="2xW-xe-csG"/>
+                <constraint firstItem="IL8-xQ-l3P" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AG8-9V-OhA"/>
+                <constraint firstAttribute="centerX" secondItem="IL8-xQ-l3P" secondAttribute="centerX" id="K58-VE-Gl0"/>
+                <constraint firstAttribute="bottom" secondItem="IL8-xQ-l3P" secondAttribute="bottom" id="PvN-SM-SSb"/>
+                <constraint firstItem="IL8-xQ-l3P" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ewm-Yc-Hcy"/>
+                <constraint firstAttribute="centerY" secondItem="IL8-xQ-l3P" secondAttribute="centerY" id="gqP-mQ-ZUE"/>
             </constraints>
         </view>
     </objects>
     <resources>
+        <image name="Arms_background.png" width="1024" height="768"/>
         <image name="Monster_p08.png" width="2400" height="3000"/>
     </resources>
 </document>

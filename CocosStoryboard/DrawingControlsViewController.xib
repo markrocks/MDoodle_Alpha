@@ -16,15 +16,15 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Side_bannerAw.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
-                    <rect key="frame" x="0.0" y="0.0" width="165" height="769"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideBannertrim.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
+                    <rect key="frame" x="0.0" y="0.0" width="147" height="767"/>
                     <rect key="contentStretch" x="0.0" y="0.10000000000000001" width="1" height="1"/>
                     <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                         <rect key="frame" x="0.0" y="0.0" width="165" height="772"/>
                     </variation>
                 </imageView>
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9Q-6w-neV" userLabel="UI Controls">
-                    <rect key="frame" x="0.0" y="0.0" width="165" height="768"/>
+                    <rect key="frame" x="0.0" y="0.0" width="124" height="768"/>
                     <subviews>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-9U-iPa" userLabel="Color Controls-85:289">
                             <rect key="frame" x="0.0" y="85" width="124" height="417"/>
@@ -237,7 +237,7 @@
         <image name="Purple_icon.png" width="80" height="27"/>
         <image name="Red_icon.png" width="78" height="28"/>
         <image name="Save_button.png" width="249" height="145"/>
-        <image name="Side_bannerAw.png" width="166" height="769"/>
+        <image name="SideBannertrim.png" width="147" height="767"/>
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="Yellow_icon.jpg" width="79" height="28"/>
         <image name="minus.png" width="71" height="36"/>

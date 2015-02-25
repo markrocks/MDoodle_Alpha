@@ -16,12 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster">
-                    <rect key="frame" x="20" y="51" width="270" height="268"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="135:134" id="JaR-1O-pRY"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="newMonster.png">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SGm-Hn-Em6" userLabel="BACKGROUND">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster">
+                    <rect key="frame" x="-2" y="51" width="484" height="564"/>
+                    <state key="normal" backgroundImage="choose_new_off.png">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -29,8 +29,8 @@
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-fQ-dnk" userLabel="Photo Monster">
-                    <rect key="frame" x="322" y="29" width="270" height="268"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-fQ-dnk" userLabel="Photo Monster">
+                    <rect key="frame" x="525" y="51" width="270" height="268"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="kdL-fQ-dnk" secondAttribute="height" multiplier="135:134" id="M8Y-F7-kxh"/>
                     </constraints>
@@ -41,46 +41,38 @@
                         <action selector="addMonsteroPhotoAction:" destination="-1" eventType="touchUpInside" id="Z1x-7S-RyK"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">
-                    <rect key="frame" x="176" y="246" width="276" height="204"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="xY0-gA-jRk" secondAttribute="height" multiplier="23:17" id="B5V-Fb-8gk"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="cageMonster.png">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">
+                    <rect key="frame" x="525" y="51" width="376" height="536"/>
+                    <state key="normal" title="Button" image="choose_saved_off.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
                     <rect key="frame" x="52" y="327" width="164" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Load Saved Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
-                    <rect key="frame" x="218" y="559" width="164" height="33"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Monster to Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-CI-pwP">
+                    <rect key="frame" x="388" y="313" width="166" height="47"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Monster to Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-CI-pwP">
-                    <rect key="frame" x="388" y="313" width="166" height="47"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load Saved Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
+                    <rect key="frame" x="348" y="510" width="164" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="69" id="GWb-aD-LVo"/>
-                <constraint firstItem="IbW-sh-fXG" firstAttribute="centerX" secondItem="xY0-gA-jRk" secondAttribute="centerX" constant="-14" id="Smb-2F-JyZ"/>
-                <constraint firstItem="IbW-sh-fXG" firstAttribute="top" secondItem="xY0-gA-jRk" secondAttribute="bottom" constant="15" id="XRF-A9-8pc"/>
-                <constraint firstAttribute="bottom" secondItem="xY0-gA-jRk" secondAttribute="bottom" constant="150" id="hxR-FQ-jW9"/>
-                <constraint firstAttribute="centerX" secondItem="xY0-gA-jRk" secondAttribute="centerX" constant="-14" id="zf0-f9-uRf"/>
-            </constraints>
         </view>
     </objects>
     <resources>
-        <image name="cageMonster.png" width="221" height="204"/>
+        <image name="Choose_background.png" width="1024" height="768"/>
+        <image name="choose_new_off.png" width="484" height="564"/>
+        <image name="choose_saved_off.png" width="376" height="536"/>
         <image name="newMonster.png" width="270" height="268"/>
     </resources>
 </document>

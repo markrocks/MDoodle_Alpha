@@ -241,9 +241,13 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 	
 	
 	//	I need to create a glView befoare call +sharedDirector to avoid a crash on 64bit devices
+    
+    //CGRect r1 = CGRectMake(0,0,768, 1024);
+    //TODO -- OTE THIS -- For some reason the transform is off -- so I need to swap width and height -- need to investigae further but I am pretty sure its a Cocos2d issue
+    CGRect r2= CGRectMake(0,0, 1024,768);//self.view.bounds
 	
 	CCGLView *glView = [CCGLView
-						viewWithFrame:self.view.bounds
+						viewWithFrame:r2
 						pixelFormat:config[CCSetupPixelFormat] ?: kEAGLColorFormatRGBA8
 						depthFormat:[config[CCSetupDepthFormat] unsignedIntValue]
 						preserveBackbuffer:[config[CCSetupPreserveBackbuffer] boolValue]
@@ -252,7 +256,7 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
 						numberOfSamples:[config[CCSetupNumberOfSamples] unsignedIntValue]
 						];
     glView.backgroundColor = [UIColor clearColor];
-    
+    //glView.backgroundColor = [UIColor blueColor];
     
 	
 	CCDirectorIOS* director = (CCDirectorIOS*) [CCDirector sharedDirector];

@@ -73,6 +73,7 @@ typedef struct _LineVertex {
 
   
   BOOL finishingLine;
+  float penSize;
 }
 
 - (id)init
@@ -85,8 +86,11 @@ typedef struct _LineVertex {
     circlesPoints = [NSMutableArray array];
       
     overdraw = 3.0f;
+      penSize = 1.0f;
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
+    //TODO -- SEE IF THIS FIX BELOW IS FOR BOTH Landscape and Portrait
+      CGSize s2 = CGSizeMake (384 ,  612);
     self.renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
       // ADDED CODE==================>
       //TODO-- INVESTIGATE BLEND MODES
@@ -174,6 +178,9 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color9" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color10" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"clearSlate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
 }
 
 -(void)parseNotification:(NSNotification *) notification
@@ -193,50 +200,61 @@ typedef struct _LineVertex {
     //
     //
     if ([[notification name] isEqualToString:@"color1"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color1 clicked");
         penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
     }
     if ([[notification name] isEqualToString:@"color2"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color\2 clicked");
         penColor = ccc4f(1.0, 0.0, 0.8, 0.8);
     }
     if ([[notification name] isEqualToString:@"color3"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color3 clicked");
         penColor = ccc4f(0.5, 0.0, 1.0, 0.8);
     }
     if ([[notification name] isEqualToString:@"color4"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color4 clicked");
         penColor = ccc4f(0.16, 0.75, 0.75, 0.8);
     }
     if ([[notification name] isEqualToString:@"color5"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color5 clicked");
         penColor = ccc4f(0.1, 0.5, 0.2, 0.8);
     }
     if ([[notification name] isEqualToString:@"color6"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color6 clicked");
         penColor = ccc4f(0.45, 0.95, 0.5, 0.8);
     }
     if ([[notification name] isEqualToString:@"color7"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color7 clicked");
         penColor = ccc4f(0.95, 0.95, 0.2, 0.8);
     }
     if ([[notification name] isEqualToString:@"color8"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color8 clicked");
         penColor = ccc4f(0.95, 0.7, 0.2, 0.8);
     }
     if ([[notification name] isEqualToString:@"color9"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color9 clicked");
         penColor = ccc4f(0.5, 0.5, 0.5, 0.8);
     }
     if ([[notification name] isEqualToString:@"color10"]) {
-        NSLog(@"red clicked");
+        NSLog(@"color10 clicked");
         penColor = ccc4f(0.0, 0.0, 0.0, 0.8);
+    }
+    if ([[notification name] isEqualToString:@"eraserButton"]) {
+        NSLog(@"eraserButton clicked");
+        penColor = ccc4f(1.0, 1.0, 1.0, 0.5);
     }
     if ([[notification name] isEqualToString:@"clearSlate"]) {
         NSLog(@"CLEAR SLATE CALLED");
         [self clearSlate];
     }
-
+    if ([[notification name] isEqualToString:@"markerPlusButton"]) {
+        NSLog(@"markerPlusButton CALLED");
+        [self increasePenSize];
+    }
+    if ([[notification name] isEqualToString:@"markerMinusButton"]) {
+        NSLog(@"markerMinusButton CALLED");
+        [self reducePenSize];
+    }
 }
 
 #pragma mark - Handling points
@@ -539,6 +557,7 @@ typedef struct _LineVertex {
 
 - (float)extractSize:(UIPanGestureRecognizer *)panGestureRecognizer
 {
+    return penSize;// TODO --cleanup
   //! result of trial & error
   float vel = ccpLength([panGestureRecognizer velocityInView:panGestureRecognizer.view]);
   float size = vel / 166.0f;
@@ -611,6 +630,36 @@ typedef struct _LineVertex {
     [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
 }
 
+-(void) increasePenSize {
+    NSLog(@"pensize is %f", penSize);
+    if ( penSize < 80)
+    {
+        if(penSize > 20 )
+            penSize += 2;
+        else if(penSize >10)
+            penSize+=1;
+        else if(penSize >5)
+            penSize += .25;
+        else if (penSize >0)
+            penSize +=.1;
+    }
+    
+}
+
+
+-(void) reducePenSize {
+    if ( penSize > 0)
+    {
+        if(penSize > 20 )
+            penSize -= 2;
+        else if(penSize >10)
+            penSize-=1;
+        else if(penSize >5)
+            penSize -= .25;
+        else if (penSize >0.1)
+            penSize -=.1;
+    }
+}
 /**
  Used by save  --- get the iamge that we drew and return it
  **/
