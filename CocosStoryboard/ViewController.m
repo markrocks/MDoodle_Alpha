@@ -114,7 +114,7 @@
     
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
     self.drawingScreenViewController.view.alpha = 0;
-    self.drawingScreenViewController.view.frame = self.view.frame;
+    //self.drawingScreenViewController.view.frame = self.view.frame;
     [self.drawingScreenViewController.monsterImage setImage:image];
     
     [[self view] addSubview:self.drawingScreenViewController.view];
