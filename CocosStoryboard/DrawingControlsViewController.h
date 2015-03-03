@@ -33,5 +33,6 @@
 - (IBAction)color9Action:(id)sender;
 - (IBAction)color10Action:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIImageView *penImage;
 
 @end

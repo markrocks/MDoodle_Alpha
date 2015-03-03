@@ -21,7 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LOAD SCREEN_Feb22.png" translatesAutoresizingMaskIntoConstraints="NO" id="z9p-HF-cWB">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
                                 <rect key="frame" x="373" y="0.0" width="240" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pph-ff-XZc" secondAttribute="height" multiplier="240:187" id="BsO-qh-q6k"/>

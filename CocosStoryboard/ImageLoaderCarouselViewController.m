@@ -33,17 +33,27 @@
         
         //preload images (although FXImageView can actually do this for us on the fly)
         _images = [[NSMutableArray alloc] init];
+        UIImage *monsterImage;
         for (NSObject *path in imagePaths)
         {
             if([path isKindOfClass:[NSString class]])
             {
-                [_images addObject:[UIImage imageWithContentsOfFile:(NSString *)path]];
+                monsterImage = [UIImage imageWithContentsOfFile:(NSString *)path];
+                if((monsterImage == nil)==NO)
+                {
+                    [_images addObject:monsterImage];
+                }
             }
             
             if([path isKindOfClass:[NSURL class]])
             {
                 NSString *pathString = [(NSURL *) path path];
-                [_images addObject:[UIImage imageWithContentsOfFile:pathString]];
+                monsterImage = [UIImage imageWithContentsOfFile:pathString];
+                if((monsterImage == nil)==NO)
+                {
+                    [_images addObject:monsterImage];
+                    
+                }
             }
             
         }
@@ -122,4 +132,7 @@
 }
 */
 
+- (IBAction)homeButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadMenuScreen" object:self];
+}
 @end

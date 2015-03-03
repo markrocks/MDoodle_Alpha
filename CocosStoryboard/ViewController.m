@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) UIViewController *activeController;
 @property (nonatomic) double timeVal ;
+@property (nonatomic) SystemSoundID pewPewSound;
 @end
 
 @implementation ViewController
@@ -253,6 +254,8 @@
     if ([[notification name] isEqualToString:@"findNewMonster"]) {
         NSLog(@"Find New");
         [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+        //[self loadViewWithViewController:@"TrickCollectionViewController" usingViewClass:[TrickCollectionViewController class]];
+        [self buttonPressedWithSound];
     }
     if ([[notification name] isEqualToString:@"emailMonster"]) {
         NSLog(@"Email Monster");
@@ -261,6 +264,7 @@
     if ([[notification name] isEqualToString:@"getOldMonster"]) {
         NSLog(@"get Old");
         [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[UserCarouselViewController class]];
+        [self buttonPressedWithSound];
     }
     if ([[notification name] isEqualToString:@"loadMenuScreen"]) {
         NSLog(@"loading selection screen");
@@ -285,6 +289,44 @@
         [self loadDrawingView:dict[@"image"]];
     }
 }
+
+-(void)buttonPressedWithSound {
+    
+    int randomSoundNumber = arc4random() % 4; //random number from 0 to 3
+    
+    NSLog(@"random sound number = %i", randomSoundNumber);
+    
+    NSString *monsterSoundFile;
+    
+    switch (randomSoundNumber) {
+        case 0:
+            monsterSoundFile = @"buttonBeep.mp3";
+            break;
+        case 1:
+            monsterSoundFile = @"buttonBeep.mp3";
+            break;
+        case 2:
+            monsterSoundFile = @"buttonBeep.mp3";
+            break;
+        case 3:
+            monsterSoundFile = @"buttonBeep.mp3";
+            break;
+            
+        default:
+            break;
+    }
+    
+    SystemSoundID soundID;
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:monsterSoundFile ofType:nil inDirectory:@"Bundled Assets"];
+    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+    
+    AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(soundUrl), &soundID);
+    AudioServicesPlaySystemSound(soundID);
+
+
+}
+
 
 
 

@@ -15,12 +15,16 @@
 #import "BundledCarouselViewController.h"
 #import "UserCarouselViewController.h"
 #import "EmailViewController.h"
+#import "ImageLoaderCollectionViewController.h"
+#import "TrickCollectionViewController.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong) SelectionScreenViewController *selectionScreenViewController;
 @property (nonatomic,strong) DrawingScreenViewController *drawingScreenViewController;
 @property (nonatomic,strong) DrawingControlsViewController *drawingControlsViewController;
 @property (nonatomic,strong) SceneViewController *drawingPlaneController;
+
+-(void)buttonPressedWithSound;
 
 @end
 

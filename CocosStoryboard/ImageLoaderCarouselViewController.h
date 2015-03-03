@@ -13,5 +13,6 @@
 @interface ImageLoaderCarouselViewController : UIViewController <iCarouselDataSource>
 
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
+- (IBAction)homeButtonAction:(id)sender;
 
 @end

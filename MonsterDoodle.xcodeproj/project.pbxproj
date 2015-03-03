@@ -301,6 +301,12 @@
 		8DB454C81A29A5EB004037B1 /* siasStudioText.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB454B81A29A5EB004037B1 /* siasStudioText.png */; };
 		8DB454C91A29A5EB004037B1 /* workbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB454B91A29A5EB004037B1 /* workbar.png */; };
 		8DB454CA1A29A5EB004037B1 /* monsterTexr.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DB454BA1A29A5EB004037B1 /* monsterTexr.png */; };
+		8DBD601C1AA03D19006F96BF /* ImageLoaderCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD601A1AA03D19006F96BF /* ImageLoaderCollectionViewController.m */; };
+		8DBD601D1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD601B1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib */; };
+		8DBD60231AA04257006F96BF /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD60211AA04257006F96BF /* CollectionViewCell.m */; };
+		8DBD60241AA04257006F96BF /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD60221AA04257006F96BF /* CollectionViewCell.xib */; };
+		8DBD60281AA04C04006F96BF /* TrickCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD60261AA04C04006F96BF /* TrickCollectionViewController.m */; };
+		8DBD60291AA04C04006F96BF /* TrickCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD60271AA04C04006F96BF /* TrickCollectionViewController.xib */; };
 		8DE0A2A41A317C2E00AA9587 /* colorButton10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A29A1A317C2E00AA9587 /* colorButton10.png */; };
 		8DE0A2A51A317C2E00AA9587 /* colorButton11.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A29B1A317C2E00AA9587 /* colorButton11.png */; };
 		8DE0A2A61A317C2E00AA9587 /* colorButton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DE0A29C1A317C2E00AA9587 /* colorButton2.png */; };
@@ -847,6 +853,15 @@
 		8DB454B81A29A5EB004037B1 /* siasStudioText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siasStudioText.png; sourceTree = "<group>"; };
 		8DB454B91A29A5EB004037B1 /* workbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workbar.png; sourceTree = "<group>"; };
 		8DB454BA1A29A5EB004037B1 /* monsterTexr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monsterTexr.png; sourceTree = "<group>"; };
+		8DBD60191AA03D19006F96BF /* ImageLoaderCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoaderCollectionViewController.h; sourceTree = "<group>"; };
+		8DBD601A1AA03D19006F96BF /* ImageLoaderCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderCollectionViewController.m; sourceTree = "<group>"; };
+		8DBD601B1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoaderCollectionViewController.xib; sourceTree = "<group>"; };
+		8DBD60201AA04257006F96BF /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		8DBD60211AA04257006F96BF /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		8DBD60221AA04257006F96BF /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		8DBD60251AA04C04006F96BF /* TrickCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrickCollectionViewController.h; sourceTree = "<group>"; };
+		8DBD60261AA04C04006F96BF /* TrickCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrickCollectionViewController.m; sourceTree = "<group>"; };
+		8DBD60271AA04C04006F96BF /* TrickCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrickCollectionViewController.xib; sourceTree = "<group>"; };
 		8DE0A29A1A317C2E00AA9587 /* colorButton10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorButton10.png; sourceTree = "<group>"; };
 		8DE0A29B1A317C2E00AA9587 /* colorButton11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorButton11.png; sourceTree = "<group>"; };
 		8DE0A29C1A317C2E00AA9587 /* colorButton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorButton2.png; sourceTree = "<group>"; };
@@ -902,6 +917,9 @@
 		47D4853A19870F50006D83D7 = {
 			isa = PBXGroup;
 			children = (
+				8DBD60201AA04257006F96BF /* CollectionViewCell.h */,
+				8DBD60211AA04257006F96BF /* CollectionViewCell.m */,
+				8DBD60221AA04257006F96BF /* CollectionViewCell.xib */,
 				47D4856019870F50006D83D7 /* CocosStoryboard */,
 				47D4854519870F50006D83D7 /* Frameworks */,
 				47D4854419870F50006D83D7 /* Products */,
@@ -1862,6 +1880,12 @@
 				8DAEEB381A7B214D00328C8A /* BundledCarouselViewController.m */,
 				8DAEEB3A1A7B216F00328C8A /* UserCarouselViewController.h */,
 				8DAEEB3B1A7B216F00328C8A /* UserCarouselViewController.m */,
+				8DBD60191AA03D19006F96BF /* ImageLoaderCollectionViewController.h */,
+				8DBD601A1AA03D19006F96BF /* ImageLoaderCollectionViewController.m */,
+				8DBD601B1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib */,
+				8DBD60251AA04C04006F96BF /* TrickCollectionViewController.h */,
+				8DBD60261AA04C04006F96BF /* TrickCollectionViewController.m */,
+				8DBD60271AA04C04006F96BF /* TrickCollectionViewController.xib */,
 			);
 			name = "MM Classes";
 			sourceTree = "<group>";
@@ -2050,6 +2074,7 @@
 				8DB454BD1A29A5EB004037B1 /* Brush.png in Resources */,
 				8D92294D1A34254200189D86 /* MonsterDoole_layout_final.jpg in Resources */,
 				8D92294F1A34254200189D86 /* Pen_icon.png in Resources */,
+				8DBD60241AA04257006F96BF /* CollectionViewCell.xib in Resources */,
 				47D4857E19870F50006D83D7 /* Icon-Small.png in Resources */,
 				8D9769561A9AFC1B00EFAD18 /* Arms_background.png in Resources */,
 				8D9229551A34254200189D86 /* undo_icon.png in Resources */,
@@ -2099,6 +2124,7 @@
 				47D4856719870F50006D83D7 /* Default-568h2@2x.png in Resources */,
 				8DE0A2AD1A317C2E00AA9587 /* colorButton9.png in Resources */,
 				8D97698B1A9C29A100EFAD18 /* Choose_new_on_referance@2x.png in Resources */,
+				8DBD601D1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib in Resources */,
 				47D4858719870F50006D83D7 /* iTunesArtwork in Resources */,
 				8DE0F9B61A6E1A1B0005D482 /* Bundled Assets in Resources */,
 				47D4858219870F50006D83D7 /* Icon-Spotlight-iOS7.png in Resources */,
@@ -2121,6 +2147,7 @@
 				8D92294E1A34254200189D86 /* Orange_icon.png in Resources */,
 				47D4857419870F50006D83D7 /* Icon-76~.png in Resources */,
 				8DB454C41A29A5EB004037B1 /* undo.png in Resources */,
+				8DBD60291AA04C04006F96BF /* TrickCollectionViewController.xib in Resources */,
 				8D9769851A9C29A100EFAD18 /* choose_saved_off.png in Resources */,
 				8D9769631A9AFC1B00EFAD18 /* launch1.png in Resources */,
 				8D97695A1A9AFC1B00EFAD18 /* Arms_text.png in Resources */,
@@ -2166,6 +2193,7 @@
 				47D486A719870F51006D83D7 /* CCVertex.m in Sources */,
 				47D487C519870F52006D83D7 /* HelloWorldScene.mm in Sources */,
 				47D485DB19870F50006D83D7 /* CCAnimationCache.m in Sources */,
+				8DBD60231AA04257006F96BF /* CollectionViewCell.m in Sources */,
 				47D4869519870F51006D83D7 /* base64.c in Sources */,
 				47D4861E19870F51006D83D7 /* CCParticleSystemBase.m in Sources */,
 				47D4868319870F51006D83D7 /* UITouch+CC.m in Sources */,
@@ -2209,6 +2237,7 @@
 				47D4863019870F51006D83D7 /* CCProgressNode.m in Sources */,
 				47D4863C19870F51006D83D7 /* CCResponderManager.m in Sources */,
 				8DB454A31A29A3DC004037B1 /* ViewController.m in Sources */,
+				8DBD60281AA04C04006F96BF /* TrickCollectionViewController.m in Sources */,
 				8DAEEB391A7B214E00328C8A /* BundledCarouselViewController.m in Sources */,
 				47D4866E19870F51006D83D7 /* CCTransition.m in Sources */,
 				47D487D619870F75006D83D7 /* SceneViewController.mm in Sources */,
@@ -2223,6 +2252,7 @@
 				47D486A019870F51006D83D7 /* CCProfiling.m in Sources */,
 				47D4870219870F52006D83D7 /* OALSuspendHandler.m in Sources */,
 				47D4873019870F52006D83D7 /* CCTextField.m in Sources */,
+				8DBD601C1AA03D19006F96BF /* ImageLoaderCollectionViewController.m in Sources */,
 				47D4860819870F51006D83D7 /* CCNode.m in Sources */,
 				47D4874819870F52006D83D7 /* CCBLocalizationManager.m in Sources */,
 				47D4862619870F51006D83D7 /* CCPhysicsJoint.m in Sources */,

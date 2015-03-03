@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingControlsViewController">
             <connections>
+                <outlet property="penImage" destination="Ero-dR-VTz" id="BsW-ts-yEr"/>
                 <outlet property="uiBackground" destination="Khk-zc-7HN" id="fN3-Q3-JV1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -149,6 +150,15 @@
                                 <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
+                            <rect key="frame" x="0.0" y="539" width="124" height="68"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="1" y="449" width="181" height="99"/>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="-25" y="502" width="181" height="99"/>
+                            </variation>
+                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
                             <rect key="frame" x="0.0" y="539" width="124" height="68"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -207,7 +217,7 @@
                     </constraints>
                 </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-y9-S7R" userLabel="Save Button">
-                    <rect key="frame" x="480" y="32" width="70" height="51"/>
+                    <rect key="frame" x="265" y="275" width="70" height="51"/>
                     <state key="normal" image="Save_button.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
