@@ -85,7 +85,15 @@ typedef struct _LineVertex {
     velocities = [NSMutableArray array];
     circlesPoints = [NSMutableArray array];
       
-    overdraw = 3.0f;
+      /* ===========TEST SETTINGS============
+       overdraw 0.3 == fine tip marker
+       overdraw 3.0 == fat tip marker on backlight board
+       overdraw 10+ == add with higher alpha to create airbrush effect
+       */
+      
+   // overdraw = 3.0f;// how much the line fades at the edges
+      overdraw = 0.3f;
+      //overdraw = 10.3f;
       penSize = 1.0f;
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
@@ -201,7 +209,7 @@ typedef struct _LineVertex {
     //
     if ([[notification name] isEqualToString:@"color1"]) {
         NSLog(@"color1 clicked");
-        penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
+        penColor = ccc4f(0.8, 0.0, 0.0, 1);
     }
     if ([[notification name] isEqualToString:@"color2"]) {
         NSLog(@"color\2 clicked");
@@ -237,7 +245,7 @@ typedef struct _LineVertex {
     }
     if ([[notification name] isEqualToString:@"color10"]) {
         NSLog(@"color10 clicked");
-        penColor = ccc4f(0.0, 0.0, 0.0, 0.8);
+        penColor = ccc4f(0.0, 0.0, 0.0, 1);
     }
     if ([[notification name] isEqualToString:@"eraserButton"]) {
         NSLog(@"eraserButton clicked");
@@ -446,6 +454,8 @@ typedef struct _LineVertex {
   for (int i = 0; i < count / 18; ++i) {
     for (int j = 0; j < 6; ++j) {
       vertices[i * 18 + j].color = fullColor;
+        
+        //TODO section below all 9s were 18
     }
 
     //! FAG
@@ -466,7 +476,7 @@ typedef struct _LineVertex {
     //! HCI
     vertices[i * 18 + 15].color = fadeOutColor;
     vertices[i * 18 + 16].color = fullColor;
-    vertices[i * 18 + 17].color = fadeOutColor;
+    vertices[i * 18+ 17].color = fadeOutColor;
   }
 
   CCRenderer *renderer = [CCRenderer currentRenderer];
@@ -632,17 +642,29 @@ typedef struct _LineVertex {
 
 -(void) increasePenSize {
     NSLog(@"pensize is %f", penSize);
-    if ( penSize < 80)
+    if ( penSize < 140)
     {
-        if(penSize > 20 )
-            penSize += 2;
+        if(penSize > 40 )
+            penSize += 6;
         else if(penSize >10)
-            penSize+=1;
+            penSize+=3;
         else if(penSize >5)
-            penSize += .25;
+            penSize += 2;
         else if (penSize >0)
-            penSize +=.1;
+            penSize += 1;
     }
+    /* 
+     if ( penSize < 80)
+     {
+     if(penSize > 20 )
+     penSize += 2;
+     else if(penSize >10)
+     penSize+=1;
+     else if(penSize >5)
+     penSize += .25;
+     else if (penSize >0)
+     penSize +=.1;
+     }*/
     
 }
 
@@ -650,15 +672,27 @@ typedef struct _LineVertex {
 -(void) reducePenSize {
     if ( penSize > 0)
     {
-        if(penSize > 20 )
-            penSize -= 2;
+        if(penSize > 40 )
+            penSize -= 6;
         else if(penSize >10)
-            penSize-=1;
+            penSize-=3;
         else if(penSize >5)
-            penSize -= .25;
+            penSize -= 2;
         else if (penSize >0.1)
-            penSize -=.1;
+            penSize -=1;
     }
+    /* if ( penSize > 0)
+     {
+     if(penSize > 20 )
+     penSize -= 2;
+     else if(penSize >10)
+     penSize-=1;
+     else if(penSize >5)
+     penSize -= .25;
+     else if (penSize >0.1)
+     penSize -=.1;
+     }
+     */
 }
 /**
  Used by save  --- get the iamge that we drew and return it

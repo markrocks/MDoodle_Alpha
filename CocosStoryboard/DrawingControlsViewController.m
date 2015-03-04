@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.penImage.image = [self.penImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.penImage.tintColor = [UIColor colorWithRed:.8 green:0 blue:0 alpha:.5];
     
 }
 

@@ -300,16 +300,16 @@
     
     switch (randomSoundNumber) {
         case 0:
-            monsterSoundFile = @"buttonBeep.mp3";
+            monsterSoundFile = @"MONSTERBite1.mp3";
             break;
         case 1:
-            monsterSoundFile = @"buttonBeep.mp3";
+            monsterSoundFile = @"MONSTERBite2.mp3";
             break;
         case 2:
-            monsterSoundFile = @"buttonBeep.mp3";
+            monsterSoundFile = @"MONSTERBite3.mp3";
             break;
         case 3:
-            monsterSoundFile = @"buttonBeep.mp3";
+            monsterSoundFile = @"MONSTERBite4.mp3";
             break;
             
         default:
