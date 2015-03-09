@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingControlsViewController">
             <connections>
                 <outlet property="penImage" destination="Ero-dR-VTz" id="BsW-ts-yEr"/>
+                <outlet property="penNibImage" destination="LwD-TW-9xi" id="x0n-pK-5Z9"/>
                 <outlet property="uiBackground" destination="Khk-zc-7HN" id="fN3-Q3-JV1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -139,7 +140,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
-                            <rect key="frame" x="74" y="525" width="25" height="22"/>
+                            <rect key="frame" x="74" y="503" width="25" height="22"/>
                             <state key="normal" image="plus.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -150,8 +151,8 @@
                                 <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
-                            <rect key="frame" x="0.0" y="539" width="124" height="68"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
+                            <rect key="frame" x="0.0" y="539" width="124" height="72"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="1" y="449" width="181" height="99"/>
                             </variation>
@@ -159,8 +160,8 @@
                                 <rect key="frame" x="-25" y="502" width="181" height="99"/>
                             </variation>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
-                            <rect key="frame" x="0.0" y="539" width="124" height="68"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
+                            <rect key="frame" x="0.0" y="539" width="124" height="72"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="1" y="449" width="181" height="99"/>
                             </variation>
@@ -169,7 +170,7 @@
                             </variation>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
-                            <rect key="frame" x="75" y="590" width="30" height="20"/>
+                            <rect key="frame" x="75" y="607" width="30" height="20"/>
                             <state key="normal" title="Button" image="minus.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -222,9 +223,13 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
+                    <rect key="frame" x="78" y="571" width="4" height="8"/>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQk-ZQ-5gI"/>
+                <constraint firstItem="Khk-zc-7HN" firstAttribute="centerY" secondItem="LwD-TW-9xi" secondAttribute="centerY" constant="-194" id="VWZ-tM-U6K"/>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gyj-L4-giY"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAp-kU-S4k"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="pmx-zu-Baw"/>
@@ -242,7 +247,7 @@
         <image name="Grey_icon.png" width="79" height="28"/>
         <image name="Home_icon.png" width="70" height="66"/>
         <image name="Orange_icon.png" width="78" height="26"/>
-        <image name="Pen_icon.png" width="326" height="231"/>
+        <image name="Pen_icon_no_nib.png" width="326" height="231"/>
         <image name="Pink_icon.png" width="80" height="28"/>
         <image name="Purple_icon.png" width="80" height="27"/>
         <image name="Red_icon.png" width="78" height="28"/>
@@ -251,6 +256,7 @@
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="Yellow_icon.jpg" width="79" height="28"/>
         <image name="minus.png" width="71" height="36"/>
+        <image name="nib.png" width="24" height="48"/>
         <image name="plus.png" width="51" height="55"/>
         <image name="undo_icon.png" width="67" height="65"/>
     </resources>

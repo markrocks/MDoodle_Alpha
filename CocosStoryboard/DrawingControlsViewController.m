@@ -19,6 +19,17 @@
     // Do any additional setup after loading the view from its nib.
     self.penImage.image = [self.penImage.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.penImage.tintColor = [UIColor colorWithRed:.8 green:0 blue:0 alpha:.5];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(markerSizeAdjust:) name:@"markerSizeChanged" object:nil];
+    //
+    
+    NSNumber *penSize = [NSNumber numberWithFloat:3.0];//3.0;
+    CGRect rect = self.penImage.frame;
+    
+    CGSize size = CGSizeMake(9, [penSize doubleValue]/48 * 138);
+    rect.size = size;
+    [self.penNibImage setFrame:rect];
+    self.penNibImage.image = [self imageWithImage:[UIImage imageNamed:@"nib.png"] scaledToSize:size];
+     
     
 }
 
@@ -121,9 +132,45 @@
     self.penImage.tintColor = [UIColor colorWithRed:.0 green:0.0 blue:0.0 alpha:.5]; //(0.0, 0.0, 0.0, 0.8)
 }
 
+- (void) markerSizeAdjust :(NSNotification *) notification
+{
+    NSNumber *penSize = [notification.userInfo objectForKey:@"penSize"] ;
+    //326 × 231 // 231 - 48 = 183 //.2622 - nib ratio ( actual dimentions 237x138
+    CGSize size = CGSizeMake(9, [penSize doubleValue]/48 * 138);
+    
+    CGRect rect = self.penImage.frame;
+    rect.size = size;
+    [self.penNibImage setFrame:rect];
+    self.penNibImage.image = [self imageWithImage:[UIImage imageNamed:@"nib.png"] scaledToSize:size];
+   /* [self.penImage setFrame:rect];
+    self.penImage.image = [self imageWithImage:[UIImage imageNamed:@"Pen_icon.png"] scaledToSize:size];
+    [self.penImageBase setFrame:rect];
+    self.penImageBase.image = [self imageWithImage:[UIImage imageNamed:@"Pen_icon.png"] scaledToSize:size];
+    */
+    
+    
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+
+//[[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
+
+
+
 //
 //
 //
+/*
 #pragma mark - Color message listeners
 -(void) registerEventListeners {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorPurple" object:nil];
@@ -145,7 +192,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
 }
-/*
+
 -(void)parseNotification:(NSNotification *) notification
 {
     if ([[notification name] isEqualToString:@"colorPurple"]) {

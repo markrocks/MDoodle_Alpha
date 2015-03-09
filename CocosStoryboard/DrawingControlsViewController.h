@@ -19,6 +19,7 @@
 - (IBAction)markerMinusButtonAction:(id)sender;
 - (IBAction)eraserButtonAction:(id)sender;
 - (IBAction)undoButtonAction:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *penNibImage;
 
 
 
@@ -34,5 +35,6 @@
 - (IBAction)color10Action:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIImageView *penImage;
+@property (strong, nonatomic) IBOutlet UIImageView *penImageBase;
 
 @end

@@ -94,7 +94,7 @@ typedef struct _LineVertex {
    // overdraw = 3.0f;// how much the line fades at the edges
       overdraw = 0.3f;
       //overdraw = 10.3f;
-      penSize = 1.0f;
+      penSize = 3.0f;
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
     //TODO -- SEE IF THIS FIX BELOW IS FOR BOTH Landscape and Portrait
@@ -258,10 +258,14 @@ typedef struct _LineVertex {
     if ([[notification name] isEqualToString:@"markerPlusButton"]) {
         NSLog(@"markerPlusButton CALLED");
         [self increasePenSize];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                             [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
     }
     if ([[notification name] isEqualToString:@"markerMinusButton"]) {
         NSLog(@"markerMinusButton CALLED");
         [self reducePenSize];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                            [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
     }
 }
 
@@ -645,13 +649,13 @@ typedef struct _LineVertex {
     if ( penSize < 140)
     {
         if(penSize > 40 )
-            penSize += 6;
+            penSize += 4;
         else if(penSize >10)
-            penSize+=3;
+            penSize+=2;
         else if(penSize >5)
-            penSize += 2;
-        else if (penSize >0)
             penSize += 1;
+        else if (penSize >0)
+            penSize += 0.4;
     }
     /* 
      if ( penSize < 80)
@@ -673,13 +677,13 @@ typedef struct _LineVertex {
     if ( penSize > 0)
     {
         if(penSize > 40 )
-            penSize -= 6;
+            penSize -= 4;
         else if(penSize >10)
-            penSize-=3;
+            penSize-=2;
         else if(penSize >5)
-            penSize -= 2;
+            penSize -= 1;
         else if (penSize >0.1)
-            penSize -=1;
+            penSize -=0.4;
     }
     /* if ( penSize > 0)
      {
