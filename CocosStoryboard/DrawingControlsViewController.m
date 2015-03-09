@@ -29,7 +29,7 @@
     rect.size = size;
     [self.penNibImage setFrame:rect];
     self.penNibImage.image = [self imageWithImage:[UIImage imageNamed:@"nib.png"] scaledToSize:size];
-     
+    
     
 }
 
