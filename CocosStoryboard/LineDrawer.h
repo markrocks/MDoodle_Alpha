@@ -28,4 +28,5 @@
 
 @interface LineDrawer : CCNode
 @property ( nonatomic, strong) CCRenderTexture *renderTexture;
+- (void )addImageToUndoNow ;
 @end

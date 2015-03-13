@@ -218,7 +218,7 @@
                     </constraints>
                 </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-y9-S7R" userLabel="Save Button">
-                    <rect key="frame" x="265" y="275" width="70" height="51"/>
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="51"/>
                     <state key="normal" image="Save_button.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

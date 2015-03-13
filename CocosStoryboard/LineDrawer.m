@@ -63,6 +63,8 @@ typedef struct _LineVertex {
   NSMutableArray *points;
   NSMutableArray *velocities;
   NSMutableArray *circlesPoints;
+  NSMutableArray *undoArray;
+  CCTexture *previousTexture;
 
   BOOL connectingLine;
   CGPoint prevC, prevD;
@@ -81,6 +83,7 @@ typedef struct _LineVertex {
   
     self = [super init];
   if (self) {
+    undoArray = [NSMutableArray array];
     points = [NSMutableArray array];
     velocities = [NSMutableArray array];
     circlesPoints = [NSMutableArray array];
@@ -97,6 +100,7 @@ typedef struct _LineVertex {
       penSize = 3.0f;
 
     CGSize s = [[CCDirector sharedDirector] viewSize];
+      NSLog(@"Darwin pane inti with a size of width %f and height %f",s.width, s.height);
     //TODO -- SEE IF THIS FIX BELOW IS FOR BOTH Landscape and Portrait
       CGSize s2 = CGSizeMake (384 ,  612);
     self.renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
@@ -129,7 +133,7 @@ typedef struct _LineVertex {
       [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
       
       // the following renders a green line with no background image (original from line drawer )
-      //[renderTexture clear:1.0f g:1.0f b:1.0f a:0.0f];
+      //[self.renderTexture clear:1.0f g:1.0f b:1.0f a:0.0f];
       
       //the following renders a line with a background image ===GOOD
       //[renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
@@ -189,6 +193,7 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
 }
 
 -(void)parseNotification:(NSNotification *) notification
@@ -255,6 +260,10 @@ typedef struct _LineVertex {
         NSLog(@"CLEAR SLATE CALLED");
         [self clearSlate];
     }
+    if ([[notification name] isEqualToString:@"undoButton"]) {
+        NSLog(@"undoButton CALLED");
+        [self undoDraw];
+    }
     if ([[notification name] isEqualToString:@"markerPlusButton"]) {
         NSLog(@"markerPlusButton CALLED");
         [self increasePenSize];
@@ -272,14 +281,17 @@ typedef struct _LineVertex {
 #pragma mark - Handling points
 - (void)startNewLineFrom:(CGPoint)newPoint withSize:(CGFloat)aSize
 {
-  connectingLine = NO;
-  [self addPoint:newPoint withSize:aSize];
+    connectingLine = NO;
+    [self addPoint:newPoint withSize:aSize];
 }
 
 - (void)endLineAt:(CGPoint)aEndPoint withSize:(CGFloat)aSize
 {
+   
   [self addPoint:aEndPoint withSize:aSize];
   finishingLine = YES;
+  [self addImageToUndo];
+    
 }
 
 - (void)addPoint:(CGPoint)newPoint withSize:(CGFloat)size
@@ -587,16 +599,19 @@ typedef struct _LineVertex {
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
 {
   const CGPoint point = [[CCDirector sharedDirector] convertToGL:[panGestureRecognizer locationInView:panGestureRecognizer.view]];
+   
 
   if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-    [points removeAllObjects];
+     NSLog(@"Pan started from ( x: %f, y:%f)", point.x, point.y);
+      [points removeAllObjects];
     [velocities removeAllObjects];
 
     float size = [self extractSize:panGestureRecognizer];
 
     [self startNewLineFrom:point withSize:size];
     [self addPoint:point withSize:size];
-    [self addPoint:point withSize:size];
+    [self addPoint:point withSize:size]; // why do we call this twice?
+
   }
 
   if (panGestureRecognizer.state == UIGestureRecognizerStateChanged) {
@@ -619,6 +634,45 @@ typedef struct _LineVertex {
     [self endLineAt:point withSize:size];
   }
 }
+/*
+- (void)handlePanGesture:(UIPanGestureRecognizer *)panGestureRecognizer
+{
+    const CGPoint point = [[CCDirector sharedDirector] convertToGL:[panGestureRecognizer locationInView:panGestureRecognizer.view]];
+    
+    if (panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [points removeAllObjects];
+        [velocities removeAllObjects];
+        
+        float size = [self extractSize:panGestureRecognizer];
+        
+        [self startNewLineFrom:point withSize:size];
+        [self addPoint:point withSize:size];
+        [self addPoint:point withSize:size]; // why do we call this twice?
+        //
+        if (previousTexture)
+        {
+            [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+            [self.renderTexture begin];
+            CCSprite *existingDrawing = [CCSprite spriteWithTexture:previousTexture];
+            // position the saved image
+            existingDrawing.position = ccp(0, 0);
+            existingDrawing.anchorPoint = ccp(0, 0);
+            [existingDrawing visit];
+            
+            [self.renderTexture end];
+            
+            
+            
+            
+        }
+        
+        
+        
+        //
+        //
+    }
+
+*/
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPressGestureRecognizer
 {
@@ -701,8 +755,40 @@ typedef struct _LineVertex {
 /**
  Used by save  --- get the iamge that we drew and return it
  **/
--(UIImage *) getSlateContents {
+-(CGImageRef) getSlateContents {
     
-    return [self.renderTexture getUIImage];
+    return [self.renderTexture newCGImage];
 }
+
+//add the current image to the undo array
+- (void )addImageToUndo {
+    [undoArray addObject:(id)[self getSlateContents]];
+}
+
+- (void) undoDraw {
+    // grab the last image added to the undo array and pop it off the stack
+    if ([undoArray count] == 1)
+    {
+        [undoArray removeLastObject];
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        return;
+    }
+    if ([undoArray count] > 1)
+    {
+        [undoArray removeLastObject];
+        CGImageRef textureImageRef = (__bridge CGImageRef)([undoArray objectAtIndex:[undoArray count] - 1]);
+        previousTexture = [[CCTexture alloc]  initWithCGImage:textureImageRef contentScale:[CCDirector sharedDirector].contentScaleFactor ];
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        
+        [self.renderTexture begin];
+        CCSprite *existingDrawing = [CCSprite spriteWithTexture:previousTexture];
+        // position the saved image
+        existingDrawing.position = ccp(0, 0);
+        existingDrawing.anchorPoint = ccp(0, 0);
+        [existingDrawing visit];
+        [self.renderTexture end];
+    }
+}
+
+
 @end
