@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideBannertrim.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SideBannertrim.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
                     <rect key="frame" x="0.0" y="0.0" width="147" height="767"/>
                     <rect key="contentStretch" x="0.0" y="0.10000000000000001" width="1" height="1"/>
                     <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
@@ -133,7 +133,7 @@
                             </variation>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
-                            <rect key="frame" x="8" y="8" width="72" height="67"/>
+                            <rect key="frame" x="4" y="3" width="72" height="67"/>
                             <state key="normal" image="Home_icon.png"/>
                             <connections>
                                 <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
@@ -217,15 +217,16 @@
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="leading" secondItem="p9Q-6w-neV" secondAttribute="leading" id="x5Z-AP-POG"/>
                     </constraints>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-y9-S7R" userLabel="Save Button">
-                    <rect key="frame" x="0.0" y="0.0" width="70" height="51"/>
-                    <state key="normal" image="Save_button.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
                     <rect key="frame" x="78" y="571" width="4" height="8"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">
+                    <rect key="frame" x="75" y="38" width="72" height="67"/>
+                    <state key="normal" image="Save_icon.png"/>
+                    <connections>
+                        <action selector="saveButtonAction:" destination="-1" eventType="touchUpInside" id="iff-Qg-Wb1"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQk-ZQ-5gI"/>
@@ -251,7 +252,7 @@
         <image name="Pink_icon.png" width="80" height="28"/>
         <image name="Purple_icon.png" width="80" height="27"/>
         <image name="Red_icon.png" width="78" height="28"/>
-        <image name="Save_button.png" width="249" height="145"/>
+        <image name="Save_icon.png" width="48" height="35"/>
         <image name="SideBannertrim.png" width="147" height="767"/>
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="Yellow_icon.jpg" width="79" height="28"/>

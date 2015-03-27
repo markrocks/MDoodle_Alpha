@@ -19,6 +19,7 @@
 - (IBAction)markerMinusButtonAction:(id)sender;
 - (IBAction)eraserButtonAction:(id)sender;
 - (IBAction)undoButtonAction:(id)sender;
+- (IBAction)saveButtonAction:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *penNibImage;
 
 

@@ -232,7 +232,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"saveButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithImage" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"emailMonster" object:nil];
 
@@ -279,8 +279,8 @@
     if ([[notification name] isEqualToString:@"eraserButton"]) {
         NSLog(@"eraserButton clicked");
     }
-    if ([[notification name] isEqualToString:@"undoButton"]) {
-        NSLog(@"undoButton clicked");
+    if ([[notification name] isEqualToString:@"saveButton"]) {
+        NSLog(@"saveButton clicked");
         [self saveDrawing];
     }
     

@@ -75,6 +75,10 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"undoButton" object:self];
 }
 
+- (IBAction)saveButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"saveButton" object:self];
+}
+
 //
 //
 //
