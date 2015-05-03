@@ -233,8 +233,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"saveButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"penButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithImage" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"emailMonster" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"openSettings" object:nil];
 
 }
 
@@ -256,6 +258,10 @@
         [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
         //[self loadViewWithViewController:@"TrickCollectionViewController" usingViewClass:[TrickCollectionViewController class]];
         [self buttonPressedWithSound];
+    }
+    if ([[notification name] isEqualToString:@"openSettings"]) {
+        NSLog(@"Open Settings");
+        [self loadViewWithViewController:@"SettingsViewController" usingViewClass:[SettingsViewController class]];
     }
     if ([[notification name] isEqualToString:@"emailMonster"]) {
         NSLog(@"Email Monster");
@@ -282,6 +288,9 @@
     if ([[notification name] isEqualToString:@"saveButton"]) {
         NSLog(@"saveButton clicked");
         [self saveDrawing];
+    }
+    if ([[notification name] isEqualToString:@"penButton"]) {
+        NSLog(@"penButton clicked");
     }
     
     if ([[notification name] isEqualToString:@"loadDrawPaneWithImage"]) {

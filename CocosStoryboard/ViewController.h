@@ -17,6 +17,7 @@
 #import "EmailViewController.h"
 #import "ImageLoaderCollectionViewController.h"
 #import "TrickCollectionViewController.h"
+#import "SettingsViewController.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong) SelectionScreenViewController *selectionScreenViewController;

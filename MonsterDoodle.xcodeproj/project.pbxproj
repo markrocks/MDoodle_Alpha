@@ -203,6 +203,13 @@
 		8D02A9AA1A6380B1004CEBB9 /* Side_bannerAw.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9A91A6380B1004CEBB9 /* Side_bannerAw.png */; };
 		8D02A9AF1A64E56E004CEBB9 /* ImageSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */; };
 		8D02A9B01A64E56E004CEBB9 /* ImageSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */; };
+		8D0670DF1AD778B60036B7D7 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0670DE1AD778B60036B7D7 /* KLCPopup.m */; };
+		8D0670E21AD8C57D0036B7D7 /* PenSizePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0670E11AD8C57D0036B7D7 /* PenSizePopupView.m */; };
+		8D0670E51ADE132B0036B7D7 /* NibButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0670E41ADE132B0036B7D7 /* NibButton.m */; };
+		8D0DEFED1AF5E38E00B143B3 /* Email_parents_butons.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D0DEFEB1AF5E38E00B143B3 /* Email_parents_butons.png */; };
+		8D0DEFEE1AF5E38E00B143B3 /* Email_parents_butons@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D0DEFEC1AF5E38E00B143B3 /* Email_parents_butons@2x.png */; };
+		8D0DEFF21AF5EB1200B143B3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DEFF01AF5EB1200B143B3 /* SettingsViewController.m */; };
+		8D0DEFF31AF5EB1200B143B3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0DEFF11AF5EB1200B143B3 /* SettingsViewController.xib */; };
 		8D0FD0E41A81E7CE000BD428 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0FD0E21A81E7CE000BD428 /* EmailViewController.m */; };
 		8D0FD0E51A81E7CE000BD428 /* EmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0FD0E31A81E7CE000BD428 /* EmailViewController.xib */; };
 		8D0FD0E71A81FA5C000BD428 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0FD0E61A81FA5C000BD428 /* MessageUI.framework */; };
@@ -227,8 +234,6 @@
 		8D3BEA341AC26DFA007D2994 /* right horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3BEA1E1AC26DFA007D2994 /* right horn@2x.png */; };
 		8D3BEA351AC26DFA007D2994 /* tooth.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3BEA1F1AC26DFA007D2994 /* tooth.png */; };
 		8D3BEA361AC26DFA007D2994 /* tooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D3BEA201AC26DFA007D2994 /* tooth@2x.png */; };
-		8D3BEA371AC26DFA007D2994 /* ParentMonsterTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BEA221AC26DFA007D2994 /* ParentMonsterTestView.m */; };
-		8D4774C81ABBDA7F0093AF1A /* CrazymanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4774C71ABBDA7F0093AF1A /* CrazymanView.m */; };
 		8D4774CA1ABBDCCC0093AF1A /* win_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4774C91ABBDCCC0093AF1A /* win_1.png */; };
 		8D4774DA1ABBDD4E0093AF1A /* win_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4774CB1ABBDD4E0093AF1A /* win_2.png */; };
 		8D4774DB1ABBDD4E0093AF1A /* win_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4774CC1ABBDD4E0093AF1A /* win_3.png */; };
@@ -735,6 +740,17 @@
 		8D02A9AC1A64E56E004CEBB9 /* ImageSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSelectionViewController.h; sourceTree = "<group>"; };
 		8D02A9AD1A64E56E004CEBB9 /* ImageSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSelectionViewController.m; sourceTree = "<group>"; };
 		8D02A9AE1A64E56E004CEBB9 /* ImageSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSelectionViewController.xib; sourceTree = "<group>"; };
+		8D0670DD1AD778B60036B7D7 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		8D0670DE1AD778B60036B7D7 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		8D0670E01AD8C57D0036B7D7 /* PenSizePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenSizePopupView.h; sourceTree = "<group>"; };
+		8D0670E11AD8C57D0036B7D7 /* PenSizePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenSizePopupView.m; sourceTree = "<group>"; };
+		8D0670E31ADE132B0036B7D7 /* NibButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibButton.h; sourceTree = "<group>"; };
+		8D0670E41ADE132B0036B7D7 /* NibButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibButton.m; sourceTree = "<group>"; };
+		8D0DEFEB1AF5E38E00B143B3 /* Email_parents_butons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Email_parents_butons.png; sourceTree = "<group>"; };
+		8D0DEFEC1AF5E38E00B143B3 /* Email_parents_butons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email_parents_butons@2x.png"; sourceTree = "<group>"; };
+		8D0DEFEF1AF5EB1200B143B3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		8D0DEFF01AF5EB1200B143B3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		8D0DEFF11AF5EB1200B143B3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		8D0FD0E11A81E7CE000BD428 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
 		8D0FD0E21A81E7CE000BD428 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailViewController.m; sourceTree = "<group>"; };
 		8D0FD0E31A81E7CE000BD428 /* EmailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailViewController.xib; sourceTree = "<group>"; };
@@ -760,10 +776,6 @@
 		8D3BEA1E1AC26DFA007D2994 /* right horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right horn@2x.png"; sourceTree = "<group>"; };
 		8D3BEA1F1AC26DFA007D2994 /* tooth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tooth.png; sourceTree = "<group>"; };
 		8D3BEA201AC26DFA007D2994 /* tooth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tooth@2x.png"; sourceTree = "<group>"; };
-		8D3BEA211AC26DFA007D2994 /* ParentMonsterTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParentMonsterTestView.h; path = "Classes/animation classes/ParentMonsterTestView.h"; sourceTree = "<group>"; };
-		8D3BEA221AC26DFA007D2994 /* ParentMonsterTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParentMonsterTestView.m; path = "Classes/animation classes/ParentMonsterTestView.m"; sourceTree = "<group>"; };
-		8D4774C61ABBDA7F0093AF1A /* CrazymanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrazymanView.h; path = images/CrazymanView.h; sourceTree = "<group>"; };
-		8D4774C71ABBDA7F0093AF1A /* CrazymanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CrazymanView.m; path = images/CrazymanView.m; sourceTree = "<group>"; };
 		8D4774C91ABBDCCC0093AF1A /* win_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win_1.png; sourceTree = "<group>"; };
 		8D4774CB1ABBDD4E0093AF1A /* win_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win_2.png; sourceTree = "<group>"; };
 		8D4774CC1ABBDD4E0093AF1A /* win_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win_3.png; sourceTree = "<group>"; };
@@ -1684,6 +1696,7 @@
 		47D487BF19870F52006D83D7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8D0670DC1AD778B60036B7D7 /* KLCPopup */,
 				8DD6BB0E1AB93C8000B8A1E9 /* Animations */,
 				8DE0F9B41A6E19C60005D482 /* FXImageView */,
 				8DE0F9AD1A6E19950005D482 /* iCarousel */,
@@ -1705,6 +1718,24 @@
 				47D487D419870F75006D83D7 /* SceneViewController.mm */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		8D0670DC1AD778B60036B7D7 /* KLCPopup */ = {
+			isa = PBXGroup;
+			children = (
+				8D0670DD1AD778B60036B7D7 /* KLCPopup.h */,
+				8D0670DE1AD778B60036B7D7 /* KLCPopup.m */,
+			);
+			path = KLCPopup;
+			sourceTree = "<group>";
+		};
+		8D0DEFEA1AF5E37300B143B3 /* Round 2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				8D0DEFEB1AF5E38E00B143B3 /* Email_parents_butons.png */,
+				8D0DEFEC1AF5E38E00B143B3 /* Email_parents_butons@2x.png */,
+			);
+			name = "Round 2.1";
 			sourceTree = "<group>";
 		};
 		8D3BEA0C1AC26DFA007D2994 /* images */ = {
@@ -1820,6 +1851,9 @@
 				8DB454981A29A3DC004037B1 /* ViewController.h */,
 				8DB454991A29A3DC004037B1 /* ViewController.m */,
 				8DB4549A1A29A3DC004037B1 /* SelectionScreenViewController.h */,
+				8D0DEFEF1AF5EB1200B143B3 /* SettingsViewController.h */,
+				8D0DEFF01AF5EB1200B143B3 /* SettingsViewController.m */,
+				8D0DEFF11AF5EB1200B143B3 /* SettingsViewController.xib */,
 				8DB4549B1A29A3DC004037B1 /* SelectionScreenViewController.m */,
 				8DB4549C1A29A3DC004037B1 /* SelectionScreenViewController.xib */,
 				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
@@ -1841,6 +1875,10 @@
 				8DBD60251AA04C04006F96BF /* TrickCollectionViewController.h */,
 				8DBD60261AA04C04006F96BF /* TrickCollectionViewController.m */,
 				8DBD60271AA04C04006F96BF /* TrickCollectionViewController.xib */,
+				8D0670E01AD8C57D0036B7D7 /* PenSizePopupView.h */,
+				8D0670E11AD8C57D0036B7D7 /* PenSizePopupView.m */,
+				8D0670E31ADE132B0036B7D7 /* NibButton.h */,
+				8D0670E41ADE132B0036B7D7 /* NibButton.m */,
 			);
 			name = "MM Classes";
 			sourceTree = "<group>";
@@ -1848,6 +1886,7 @@
 		8DB454AA1A29A5D0004037B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8D0DEFEA1AF5E37300B143B3 /* Round 2.1 */,
 				8D346C351AC50CCD009057E2 /* refParentMonster.png */,
 				8DF36F161AAC00A100CAFAEC /* plus.png */,
 				8DF36F141AAC009900CAFAEC /* minus.png */,
@@ -1863,10 +1902,6 @@
 			isa = PBXGroup;
 			children = (
 				8D3BEA0C1AC26DFA007D2994 /* images */,
-				8D3BEA211AC26DFA007D2994 /* ParentMonsterTestView.h */,
-				8D3BEA221AC26DFA007D2994 /* ParentMonsterTestView.m */,
-				8D4774C61ABBDA7F0093AF1A /* CrazymanView.h */,
-				8D4774C71ABBDA7F0093AF1A /* CrazymanView.m */,
 				8DD6BB0F1AB93C9D00B8A1E9 /* images */,
 				8DD6BB141AB93C9D00B8A1E9 /* MonsterView.h */,
 				8DD6BB151AB93C9D00B8A1E9 /* MonsterView.m */,
@@ -2023,6 +2058,7 @@
 				8D9229501A34254200189D86 /* Pink_icon.png in Resources */,
 				8D9229461A34254200189D86 /* Aqua_icon.png in Resources */,
 				8DF36F171AAC00A100CAFAEC /* plus.png in Resources */,
+				8D0DEFED1AF5E38E00B143B3 /* Email_parents_butons.png in Resources */,
 				8D4774DA1ABBDD4E0093AF1A /* win_2.png in Resources */,
 				8D3BEA2B1AC26DFA007D2994 /* parent.png in Resources */,
 				8D346C361AC50CCD009057E2 /* refParentMonster.png in Resources */,
@@ -2112,6 +2148,8 @@
 				8D9229471A34254200189D86 /* Black_icon.png in Resources */,
 				8D3BEA321AC26DFA007D2994 /* right hand@2x.png in Resources */,
 				8D3BEA2E1AC26DFA007D2994 /* pupil@2x.png in Resources */,
+				8D0DEFF31AF5EB1200B143B3 /* SettingsViewController.xib in Resources */,
+				8D0DEFEE1AF5E38E00B143B3 /* Email_parents_butons@2x.png in Resources */,
 				8D92294E1A34254200189D86 /* Orange_icon.png in Resources */,
 				8D3BEA2F1AC26DFA007D2994 /* refParentMonster.png in Resources */,
 				8DBD60291AA04C04006F96BF /* TrickCollectionViewController.xib in Resources */,
@@ -2154,7 +2192,6 @@
 				47D4871319870F52006D83D7 /* OALAudioFile.m in Sources */,
 				8DE0F9B31A6E19BD0005D482 /* UIImage+FX.m in Sources */,
 				47D485EA19870F50006D83D7 /* CCDrawNode.m in Sources */,
-				8D4774C81ABBDA7F0093AF1A /* CrazymanView.m in Sources */,
 				47D486D519870F51006D83D7 /* OALAudioTracks.m in Sources */,
 				47D485A119870F50006D83D7 /* CCEffectColor.m in Sources */,
 				47D4859B19870F50006D83D7 /* CCEffect.m in Sources */,
@@ -2177,7 +2214,9 @@
 				47D4873619870F52006D83D7 /* CCAnimationManager.m in Sources */,
 				47D4860B19870F51006D83D7 /* CCNode+Debug.m in Sources */,
 				47D485A919870F50006D83D7 /* CCEffectNode.m in Sources */,
+				8D0DEFF21AF5EB1200B143B3 /* SettingsViewController.m in Sources */,
 				47D4862319870F51006D83D7 /* CCPhysicsBody.m in Sources */,
+				8D0670E21AD8C57D0036B7D7 /* PenSizePopupView.m in Sources */,
 				47D4869319870F51006D83D7 /* NSEvent+CC.m in Sources */,
 				47D486EA19870F51006D83D7 /* ALDevice.m in Sources */,
 				47D486B019870F51006D83D7 /* NSThread+performBlock.m in Sources */,
@@ -2205,6 +2244,7 @@
 				47D485CE19870F50006D83D7 /* CCActionManager.m in Sources */,
 				47D4863019870F51006D83D7 /* CCProgressNode.m in Sources */,
 				47D4863C19870F51006D83D7 /* CCResponderManager.m in Sources */,
+				8D0670E51ADE132B0036B7D7 /* NibButton.m in Sources */,
 				8DB454A31A29A3DC004037B1 /* ViewController.m in Sources */,
 				8DBD60281AA04C04006F96BF /* TrickCollectionViewController.m in Sources */,
 				8DAEEB391A7B214E00328C8A /* BundledCarouselViewController.m in Sources */,
@@ -2239,6 +2279,7 @@
 				47D487DF19870FC5006D83D7 /* CocosViewController.mm in Sources */,
 				47D4868A19870F51006D83D7 /* CCDirectorMac.m in Sources */,
 				47D4872019870F52006D83D7 /* CCControl.m in Sources */,
+				8D0670DF1AD778B60036B7D7 /* KLCPopup.m in Sources */,
 				47D4861A19870F51006D83D7 /* CCParticleSystem.m in Sources */,
 				47D4861619870F51006D83D7 /* CCParticleExamples.m in Sources */,
 				47D485E219870F50006D83D7 /* CCConfiguration.m in Sources */,
@@ -2286,7 +2327,6 @@
 				47D487BE19870F52006D83D7 /* main.m in Sources */,
 				47D487C819870F52006D83D7 /* IntroScene.mm in Sources */,
 				47D485AB19870F50006D83D7 /* CCEffectStack.m in Sources */,
-				8D3BEA371AC26DFA007D2994 /* ParentMonsterTestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2443,6 +2483,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2459,6 +2500,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = MonsterDoodle;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2468,6 +2510,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocosStoryboard/Supporting Files/Prefix.pch";
@@ -2483,6 +2526,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = MonsterDoodle;
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

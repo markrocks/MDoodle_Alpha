@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingControlsViewController">
@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SideBannertrim.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideBannertrim.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
                     <rect key="frame" x="0.0" y="0.0" width="147" height="767"/>
                     <rect key="contentStretch" x="0.0" y="0.10000000000000001" width="1" height="1"/>
                     <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
@@ -139,7 +139,7 @@
                                 <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
                             <rect key="frame" x="74" y="503" width="25" height="22"/>
                             <state key="normal" image="plus.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -160,6 +160,22 @@
                                 <rect key="frame" x="-25" y="502" width="181" height="99"/>
                             </variation>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-Jq-ww7" userLabel="Pen Button">
+                            <rect key="frame" x="0.0" y="539" width="124" height="72"/>
+                            <accessibility key="accessibilityConfiguration" label=""/>
+                            <state key="normal" title="Button" image="Pen_icon_no_nib.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="539" width="381" height="231"/>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="-25" y="502" width="181" height="99"/>
+                            </variation>
+                            <connections>
+                                <action selector="penButtonAction:" destination="-1" eventType="touchUpInside" id="B9j-gA-8fL"/>
+                            </connections>
+                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
                             <rect key="frame" x="0.0" y="539" width="124" height="72"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -169,7 +185,7 @@
                                 <rect key="frame" x="-25" y="502" width="181" height="99"/>
                             </variation>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
                             <rect key="frame" x="75" y="607" width="30" height="20"/>
                             <state key="normal" title="Button" image="minus.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,7 +233,7 @@
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="leading" secondItem="p9Q-6w-neV" secondAttribute="leading" id="x5Z-AP-POG"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
                     <rect key="frame" x="78" y="571" width="4" height="8"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">

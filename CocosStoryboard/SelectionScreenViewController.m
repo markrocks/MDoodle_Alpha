@@ -35,8 +35,7 @@
 */
 
 - (IBAction)findNewMonsterBtnAction:(id)sender {
-   
-    [self.movieMonster addFrankAnimationWithCompletion:^(BOOL finished){ [[NSNotificationCenter defaultCenter]postNotificationName:@"findNewMonster" object:nil];}];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"findNewMonster" object:self];
 }
 
 - (IBAction)saveMonstereButtonAction:(id)sender {
@@ -45,5 +44,9 @@
 
 - (IBAction)addMonsteroPhotoAction:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"emailMonster" object:self];
+}
+
+- (IBAction)openSettingsAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"openSettings" object:self];
 }
 @end

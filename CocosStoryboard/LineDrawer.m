@@ -123,6 +123,37 @@ typedef struct _LineVertex {
        //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_ZERO}];
       //Second Working One
       //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_SRC_COLOR}];
+      
+      //
+      // === FROM renderTexture====
+      /*
+       The sprite, by default, will use the following blending function: GL_ONE, GL_ONE_MINUS_SRC_ALPHA.
+       The blending function can be changed in runtime by calling:
+       - [[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_ALPHA}];
+       */
+      CCSprite *renderSprite =[self.renderTexture sprite];
+      /*
+       
+       renderSprite.blendMode = [CCBlendMode blendModeWithOptions:@{
+       CCBlendFuncSrcColor:@(GL_SRC_ALPHA),
+       CCBlendFuncSrcAlpha:@(GL_ONE),
+       CCBlendFuncDstColor:@(GL_SRC_ALPHA),
+       CCBlendFuncDstAlpha:@(GL_ONE)
+       }];*/
+      //renderSprite.blendMode = [CCBlendMode addMode];
+      //renderSprite.blendMode = [CCBlendMode alphaMode];
+      //renderSprite.blendMode = [CCBlendMode multiplyMode];
+      //self.blendMode = [CCBlendMode premultipliedAlphaMode];
+      
+      
+      
+      //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_ALPHA}];
+      //self.blendMode = [CCBlendMode premultipliedAlphaMode];
+      //self.shader = [CCShader positionTextureColorShader];
+      
+      [[self.renderTexture sprite]  setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
+     
+      
 
       // END ADDED CODE==================>
       self.renderTexture.positionType = CCPositionTypeNormalized;
@@ -193,6 +224,7 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerSizeSet" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
 }
 
@@ -264,6 +296,7 @@ typedef struct _LineVertex {
         NSLog(@"undoButton CALLED");
         [self undoDraw];
     }
+    
     if ([[notification name] isEqualToString:@"markerPlusButton"]) {
         NSLog(@"markerPlusButton CALLED");
         [self increasePenSize];
@@ -274,8 +307,39 @@ typedef struct _LineVertex {
         NSLog(@"markerMinusButton CALLED");
         [self reducePenSize];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                                                                            [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
+                                                                                                             [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
     }
+    if ([[notification name] isEqualToString:@"markerSizeSet"]) {
+        NSLog(@"marker size set CALLED");
+        NSNumber *passedPenSize = [notification.userInfo objectForKey:@"penSize"] ;
+        [self setPenSize:passedPenSize];
+    }
+    
+        
+        //
+        /*
+        
+        if ([[notification name] isEqualToString:@"undoButton"]) {
+            NSLog(@"undoButton CALLED");
+            [self undoDraw];
+        }
+        if ([[notification name] isEqualToString:@"markerPlusButton"]) {
+            NSLog(@"markerPlusButton CALLED");
+            [self increasePenSize];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                                 [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
+        }
+        if ([[notification name] isEqualToString:@"markerMinusButton"]) {
+            NSLog(@"markerMinusButton CALLED");
+            [self reducePenSize];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                                 [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];//markerSizeSetif ([[notification name] isEqualToString:@"markerMinusButton"]) {
+            NSLog(@"markerMinusButton CALLED");
+            [self reducePenSize];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                                 [NSNumber numberWithFloat:penSize] , @"penSize", nil] ];//markerSizeSet
+         */
+        
 }
 
 #pragma mark - Handling points
@@ -751,6 +815,10 @@ typedef struct _LineVertex {
      penSize -=.1;
      }
      */
+}
+
+-(void) setPenSize: (NSNumber *) size {
+    penSize = [size floatValue];
 }
 /**
  Used by save  --- get the iamge that we drew and return it

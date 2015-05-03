@@ -7,6 +7,8 @@
 //
 
 #import "DrawingControlsViewController.h"
+#import "KLCPopup.h"
+#import "NibButton.h"
 
 @interface DrawingControlsViewController ()
 
@@ -79,7 +81,13 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"saveButton" object:self];
 }
 
-//
+- (IBAction)penButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"penButton" object:self];
+    [self showButtonPressed:nil];
+}
+
+//Ï[self
+
 //
 //
 - (IBAction)color1Action:(id)sender {
@@ -167,109 +175,124 @@
 }
 
 
-//[[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeChanged" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:penSize] , @"penSize", nil] ];
-
-
-
 //
 //
 //
-/*
-#pragma mark - Color message listeners
--(void) registerEventListeners {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorPurple" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorBlue" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorRed" object:nil];
-    //
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color1" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color2" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color3" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color4" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color5" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color6" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color7" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color8" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color9" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"color10" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"clearSlate" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"eraserButton" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
+- (void) setPenSize: (NibButton*) sender {
+    NSNumber* pS = [NSNumber numberWithFloat:[sender.penSize floatValue] *.43];
+    NSLog(@"pensize = %i", [pS intValue]);
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"markerSizeSet" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                                         pS , @"penSize", nil] ];
 }
 
--(void)parseNotification:(NSNotification *) notification
-{
-    if ([[notification name] isEqualToString:@"colorPurple"]) {
-        NSLog(@"purple clicked");
-        penColor = ccc4f(0.8, 0.0, 0.8, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"colorBlue"]) {
-        NSLog(@"blue clicked");
-        penColor = ccc4f(0.0, 0.0, 0.8, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"colorRed"]) {
-        NSLog(@"red clicked");
-        penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
-    }
-    //
-    //
-    if ([[notification name] isEqualToString:@"color1"]) {
-        NSLog(@"color1 clicked");
-        penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color2"]) {
-        NSLog(@"color\2 clicked");
-        penColor = ccc4f(1.0, 0.0, 0.8, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color3"]) {
-        NSLog(@"color3 clicked");
-        penColor = ccc4f(0.5, 0.0, 1.0, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color4"]) {
-        NSLog(@"color4 clicked");
-        penColor = ccc4f(0.16, 0.75, 0.75, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color5"]) {
-        NSLog(@"color5 clicked");
-        penColor = ccc4f(0.1, 0.5, 0.2, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color6"]) {
-        NSLog(@"color6 clicked");
-        penColor = ccc4f(0.45, 0.95, 0.5, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color7"]) {
-        NSLog(@"color7 clicked");
-        penColor = ccc4f(0.95, 0.95, 0.2, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color8"]) {
-        NSLog(@"color8 clicked");
-        penColor = ccc4f(0.95, 0.7, 0.2, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color9"]) {
-        NSLog(@"color9 clicked");
-        penColor = ccc4f(0.5, 0.5, 0.5, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"color10"]) {
-        NSLog(@"color10 clicked");
-        penColor = ccc4f(0.0, 0.0, 0.0, 0.8);
-    }
-    if ([[notification name] isEqualToString:@"eraserButton"]) {
-        NSLog(@"eraserButton clicked");
-        penColor = ccc4f(1.0, 1.0, 1.0, 0.5);
-    }
-    if ([[notification name] isEqualToString:@"clearSlate"]) {
-        NSLog(@"CLEAR SLATE CALLED");
-        [self clearSlate];
-    }
-    if ([[notification name] isEqualToString:@"markerPlusButton"]) {
-        NSLog(@"markerPlusButton CALLED");
-        [self increasePenSize];
-    }
-    if ([[notification name] isEqualToString:@"markerMinusButton"]) {
-        NSLog(@"markerMinusButton CALLED");
-        [self reducePenSize];
-    }
+
+
+- (void)showButtonPressed:(id)sender {
+    
+    // Generate content view to present
+    UIView* contentView = [[UIView alloc] init];
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    contentView.backgroundColor = [UIColor grayColor];
+    contentView.layer.cornerRadius = 12.0;
+    [contentView setFrame:CGRectMake(0, 0, 557, 160)];
+   
+    NibButton* nibButton5 = [NibButton buttonWithType:UIButtonTypeCustom];
+    nibButton5.backgroundColor = [UIColor clearColor];
+    [nibButton5 setFrame:CGRectMake(30, 49, 62, 62)];
+    nibButton5.penSize = [NSNumber numberWithInt:2];
+    [nibButton5 addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    
+    NibButton* nibButton = [NibButton buttonWithType:UIButtonTypeCustom];
+    nibButton.backgroundColor = [UIColor clearColor];
+    [nibButton setFrame:CGRectMake(102, 47.5, 65, 65)];
+    nibButton.penSize = [NSNumber numberWithInt:5];;
+    [nibButton addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    
+    NibButton* nibButton1 = [NibButton buttonWithType:UIButtonTypeCustom];
+    nibButton1.backgroundColor = [UIColor clearColor];
+    [nibButton1 setFrame:CGRectMake(177, 45, 70, 70)];
+    nibButton1.penSize = [NSNumber numberWithInt:10];
+    [nibButton1 addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    
+    NibButton* nibButton2 = [NibButton buttonWithType:UIButtonTypeCustom];
+    nibButton2.backgroundColor = [UIColor clearColor];
+    [nibButton2 setFrame:CGRectMake(257, 40, 80, 80)];
+    nibButton2.penSize = [NSNumber numberWithInt:20];
+    [nibButton2 addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    
+    NibButton* nibButton3 = [NibButton buttonWithType:UIButtonTypeCustom];
+    nibButton3.backgroundColor = [UIColor clearColor];
+    [nibButton3 setFrame:CGRectMake(347, 35, 90, 90)];
+    nibButton3.penSize = [NSNumber numberWithInt:30];
+    [nibButton3 addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    NibButton* nibButton4 = [NibButton buttonWithType:UIButtonTypeCustom];
+    
+    nibButton4.backgroundColor = [UIColor clearColor];
+    [nibButton4 setFrame:CGRectMake(447, 30, 100, 100)];
+    nibButton4.penSize = [NSNumber numberWithInt:40];
+    [nibButton4 addTarget:self action:@selector(setPenSize:)  forControlEvents:UIControlEventTouchUpInside ];
+    
+    //[[NSNotificationCenter defaultCenter]postNotificationName:@"markerPlusButton" object:self];
+    
+
+    //[dismissButton addTarget:self action:@selector(dismissButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //[contentView addSubview:dismissLabel];
+    [contentView addSubview:nibButton5];
+    [contentView addSubview:nibButton];
+    [contentView addSubview:nibButton1];
+    [contentView addSubview:nibButton2];
+    [contentView addSubview:nibButton3];
+    [contentView addSubview:nibButton4];
+    
+    //NSDictionary* views = NSDictionaryOfVariableBindings(contentView, nibButton1,  nibButton2);
+    
+    /*[contentView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[contentView]-(2)-[dismissLabel]-|"
+                                             options:NSLayoutFormatAlignAllCenterX
+                                             metrics:nil
+                                               views:views]];*/
+    /*[contentView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[contentView]-(<=1)-[nibButton2]"
+                                             options:NSLayoutFormatAlignAllCenterX
+                                             metrics:nil
+                                               views:views]];//@"V:|-(100)-[nibButton2(40)]-|"
+    [contentView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"V:[contentView]-(<=1)-[nibButton1]"
+                                             options:NSLayoutFormatAlignAllCenterX
+                                             metrics:nil
+                                               views:views]];//@"V:|-(10)-[nibButton1(20)]-|" */
+    
+    /*[contentView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[dismissLabel]-(10)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];*/
+    /*[contentView addConstraints:
+     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(40)-[nibButton1]-(60)-[nibButton2]-(40)-|"
+                                             options:0
+                                             metrics:nil
+                                               views:views]];*/
+    
+    // Show in popup
+    KLCPopupLayout layout = KLCPopupLayoutMake((KLCPopupHorizontalLayout)3,
+                                               (KLCPopupVerticalLayout)3);
+    
+    KLCPopup* popup = [KLCPopup popupWithContentView:contentView
+                                            showType:(KLCPopupShowType)2
+                                         dismissType:(KLCPopupDismissType)3
+                                            maskType:(KLCPopupMaskType)1
+                            dismissOnBackgroundTouch:YES
+                               dismissOnContentTouch:YES];
+    
+    
+        [popup showWithLayout:layout];}
+
+
+- (void)setNibSize:(NSInteger)size {
+   
 }
 
-*/
+
+
 @end

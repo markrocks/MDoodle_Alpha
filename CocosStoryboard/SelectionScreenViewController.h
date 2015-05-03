@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CrazymanView.h"
-#import "ParentMonsterTestView.h"
 
 @interface SelectionScreenViewController : UIViewController
 - (IBAction)findNewMonsterBtnAction:(id)sender;
 - (IBAction)saveMonstereButtonAction:(id)sender;
 - (IBAction)addMonsteroPhotoAction:(id)sender;
-@property (strong, nonatomic) IBOutlet ParentMonsterTestView *movieMonster;
+- (IBAction)openSettingsAction:(id)sender;
 
 @end
