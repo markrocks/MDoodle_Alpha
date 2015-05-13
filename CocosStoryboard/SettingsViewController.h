@@ -12,5 +12,8 @@
 - (IBAction)enableEmailAction:(id)sender;
 - (IBAction)defaultVolumeAction:(id)sender;
 - (IBAction)homeButtonAction:(id)sender;
+@property NSUserDefaults *userDefaults;
+@property (strong, nonatomic) IBOutlet UISwitch *emailSwitch;
+@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
 
 @end

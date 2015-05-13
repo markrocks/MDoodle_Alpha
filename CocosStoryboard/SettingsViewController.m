@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userDefaults= [NSUserDefaults standardUserDefaults];
+    int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
+    [[self volumeSlider] setValue:((float)[self.userDefaults integerForKey:@"defaultVolume"] / 100)];
+    [[self emailSwitch] setOn:([self.userDefaults integerForKey:@"emailInt"] == 1)];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -35,11 +39,18 @@
 */
 
 - (IBAction)enableEmailAction:(id)sender {
-    NSLog(@"email switch activated");
+    int emailInt =  [self emailSwitch].on ? 1 : 0;
+    NSLog(@"email switch activated %i", emailInt);
+    [self.userDefaults setInteger:emailInt forKey:@"emailInt"];
+    [self.userDefaults synchronize];
 }
 
 - (IBAction)defaultVolumeAction:(id)sender {
-    NSLog(@"default volume slider activated");
+    int defaultVolume = [[self volumeSlider] value] * 100;
+    [self.userDefaults setInteger:defaultVolume forKey:@"defaultVolume"];
+    NSLog(@"default volume slider activated-- value %d", defaultVolume);
+    [self.userDefaults synchronize];
+    int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
 }
 
 - (IBAction)homeButtonAction:(id)sender {

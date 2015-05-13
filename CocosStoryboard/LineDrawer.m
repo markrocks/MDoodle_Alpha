@@ -114,7 +114,7 @@ typedef struct _LineVertex {
       
       
       // Changes colors of items within boundaries if area outside of boundary is white
-      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
+      //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_SRC_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
       
       //background elements appear in set color - drawing onyl appear on elements in different color
      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
@@ -132,6 +132,20 @@ typedef struct _LineVertex {
        - [[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE, GL_ONE_MINUS_SRC_ALPHA}];
        */
       CCSprite *renderSprite =[self.renderTexture sprite];
+      //
+      CCBlendMode *myBlendMode= [CCBlendMode blendModeWithOptions:@{
+                                                                    CCBlendFuncSrcColor: @(GL_ZERO),
+                                                                    CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
+                                                                    }];
+      
+      [renderSprite setBlendMode:myBlendMode];
+      
+      /* CCBLEND_PREMULTIPLIED_ALPHA = [self blendModeWithOptions:@{
+       CCBlendFuncSrcColor: @(GL_ZERO),
+       CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
+       }];
+       */
+      //
       /*
        
        renderSprite.blendMode = [CCBlendMode blendModeWithOptions:@{
@@ -151,7 +165,7 @@ typedef struct _LineVertex {
       //self.blendMode = [CCBlendMode premultipliedAlphaMode];
       //self.shader = [CCShader positionTextureColorShader];
       
-      [[self.renderTexture sprite]  setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
+     // [[self.renderTexture sprite]  setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
      
       
 
@@ -228,64 +242,97 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
 }
 
+-(void) resetBlendMode
+{
+    CCSprite *renderSprite =[self.renderTexture sprite];
+    //
+    CCBlendMode *myBlendMode= [CCBlendMode blendModeWithOptions:@{
+                                                                  CCBlendFuncSrcColor: @(GL_ONE_MINUS_DST_COLOR ),
+                                                                  CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA)
+                                                                  }];
+    
+    [renderSprite setBlendMode:myBlendMode];
+}
+
 -(void)parseNotification:(NSNotification *) notification
 {
     if ([[notification name] isEqualToString:@"colorPurple"]) {
         NSLog(@"purple clicked");
         penColor = ccc4f(0.8, 0.0, 0.8, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"colorBlue"]) {
         NSLog(@"blue clicked");
         penColor = ccc4f(0.0, 0.0, 0.8, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"colorRed"]) {
         NSLog(@"red clicked");
         penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
+        [self resetBlendMode];
     }
     //
     //
     if ([[notification name] isEqualToString:@"color1"]) {
         NSLog(@"color1 clicked");
         penColor = ccc4f(0.8, 0.0, 0.0, 1);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color2"]) {
         NSLog(@"color\2 clicked");
         penColor = ccc4f(1.0, 0.0, 0.8, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color3"]) {
         NSLog(@"color3 clicked");
         penColor = ccc4f(0.5, 0.0, 1.0, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color4"]) {
         NSLog(@"color4 clicked");
         penColor = ccc4f(0.16, 0.75, 0.75, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color5"]) {
         NSLog(@"color5 clicked");
         penColor = ccc4f(0.1, 0.5, 0.2, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color6"]) {
         NSLog(@"color6 clicked");
         penColor = ccc4f(0.45, 0.95, 0.5, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color7"]) {
         NSLog(@"color7 clicked");
         penColor = ccc4f(0.95, 0.95, 0.2, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color8"]) {
         NSLog(@"color8 clicked");
         penColor = ccc4f(0.95, 0.7, 0.2, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color9"]) {
         NSLog(@"color9 clicked");
         penColor = ccc4f(0.5, 0.5, 0.5, 0.8);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color10"]) {
         NSLog(@"color10 clicked");
         penColor = ccc4f(0.0, 0.0, 0.0, 1);
+        [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"eraserButton"]) {
         NSLog(@"eraserButton clicked");
+        CCSprite *renderSprite =[self.renderTexture sprite];
+        //
+        CCBlendMode *myBlendMode= [CCBlendMode blendModeWithOptions:@{
+                                                                      CCBlendFuncSrcColor: @(GL_ZERO),
+                                                                      CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
+                                                                      }];
+        
+        [renderSprite setBlendMode:myBlendMode];
         penColor = ccc4f(1.0, 1.0, 1.0, 0.5);
     }
     if ([[notification name] isEqualToString:@"clearSlate"]) {
@@ -558,6 +605,7 @@ typedef struct _LineVertex {
     vertices[i * 18 + 16].color = fullColor;
     vertices[i * 18+ 17].color = fadeOutColor;
   }
+    //TODO -- FIX BLEND MODES HERRE FOR ERASING
 
   CCRenderer *renderer = [CCRenderer currentRenderer];
 	
