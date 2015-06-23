@@ -130,7 +130,7 @@
         self.drawingPlaneController.view.opaque= YES;
         self.drawingPlaneController.view.alpha = 0;
         self.drawingPlaneController.view.frame = self.view.frame;
-    
+        
         [[self view] addSubview:self.drawingPlaneController.view];
         [self.drawingPlaneController didMoveToParentViewController:self];
         [[self view] bringSubviewToFront:self.drawingPlaneController.view];
@@ -141,6 +141,24 @@
         [[self view] bringSubviewToFront:self.drawingPlaneController.view];
         //TODO  Add Code to clear the drawing pane!
     }
+    /**
+    //Now the Cocos2d erasing plane
+    if ( self.erasingPlaneController == nil)
+    {
+        self.erasingPlaneController = [[SceneViewController alloc]initWithCoder:nil];
+        self.erasingPlaneController.view.opaque= YES;
+        self.erasingPlaneController.view.alpha = 0;
+        self.erasingPlaneController.view.frame = self.view.frame;
+        
+        [[self view] addSubview:self.erasingPlaneController.view];
+        [self.erasingPlaneController didMoveToParentViewController:self];
+        [[self view] bringSubviewToFront:self.erasingPlaneController.view];
+    }
+    else{
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"clearSlate" object:self];
+        [self.erasingPlaneController.view setHidden:NO];
+        [[self view] bringSubviewToFront:self.erasingPlaneController.view];    }
+     **/
     
     // Now the control overlay
     self.drawingControlsViewController = [[DrawingControlsViewController alloc]initWithNibName:@"DrawingControlsViewController" bundle:nil];

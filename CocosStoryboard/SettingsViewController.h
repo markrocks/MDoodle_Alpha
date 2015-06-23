@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet UISwitch *emailSwitch;
 @property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
 
+@property (strong, nonatomic) IBOutlet UILabel *emailPrefLabel;
+@property (strong, nonatomic) IBOutlet UILabel *volumePrefLabel;
 @end

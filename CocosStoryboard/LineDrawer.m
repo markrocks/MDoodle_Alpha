@@ -57,6 +57,8 @@ typedef struct _LineVertex {
 
 - (void)drawLines:(NSArray *)linePoints withColor:(ccColor4F)color;
 
+
+
 @end
 
 @implementation LineDrawer {
@@ -65,6 +67,7 @@ typedef struct _LineVertex {
   NSMutableArray *circlesPoints;
   NSMutableArray *undoArray;
   CCTexture *previousTexture;
+    int undoCursorLoc;
 
   BOOL connectingLine;
   CGPoint prevC, prevD;
@@ -87,6 +90,7 @@ typedef struct _LineVertex {
     points = [NSMutableArray array];
     velocities = [NSMutableArray array];
     circlesPoints = [NSMutableArray array];
+      undoCursorLoc = -1;
       
       /* ===========TEST SETTINGS============
        overdraw 0.3 == fine tip marker
@@ -118,6 +122,7 @@ typedef struct _LineVertex {
       
       //background elements appear in set color - drawing onyl appear on elements in different color
      //[[renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_ONE_MINUS_DST_COLOR, GL_ONE_MINUS_SRC_ALPHA}];
+     
       
       //First working one
        //[[self.renderTexture sprite] setBlendFunc:(ccBlendFunc){GL_DST_COLOR, GL_ZERO}];
@@ -133,10 +138,25 @@ typedef struct _LineVertex {
        */
       CCSprite *renderSprite =[self.renderTexture sprite];
       //
+      CCBlendMode *myBlendMode;
+      if (self.isEraseLayer){
+          myBlendMode= [CCBlendMode blendModeWithOptions:@{
+                                                                        CCBlendFuncSrcColor: @(GL_ZERO),
+                                                                        CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
+                                                                        }];
+          penSize = 0;
+      } else{
+          myBlendMode= [CCBlendMode blendModeWithOptions:@{
+                                                                        CCBlendFuncSrcColor: @(GL_ZERO),
+                                                                        CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
+                                                                        }];
+      }
+      /**
       CCBlendMode *myBlendMode= [CCBlendMode blendModeWithOptions:@{
                                                                     CCBlendFuncSrcColor: @(GL_ZERO),
                                                                     CCBlendFuncDstColor: @(GL_ONE_MINUS_SRC_ALPHA),
                                                                     }];
+       **/
       
       [renderSprite setBlendMode:myBlendMode];
       
@@ -240,6 +260,7 @@ typedef struct _LineVertex {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerMinusButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerSizeSet" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"undoButton" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"redoButton" object:nil];
 }
 
 -(void) resetBlendMode
@@ -342,6 +363,10 @@ typedef struct _LineVertex {
     if ([[notification name] isEqualToString:@"undoButton"]) {
         NSLog(@"undoButton CALLED");
         [self undoDraw];
+    }
+    if ([[notification name] isEqualToString:@"redoButton"]) {
+        NSLog(@"redoButton CALLED");
+        [self redoDraw];
     }
     
     if ([[notification name] isEqualToString:@"markerPlusButton"]) {
@@ -878,11 +903,33 @@ typedef struct _LineVertex {
 
 //add the current image to the undo array
 - (void )addImageToUndo {
+    /*
+    if(undoCursorLoc == undoArray.count-1)
+    {
+       [undoArray addObject:(id)[self getSlateContents]];
+        undoCursorLoc++;
+    }
+    else
+    {
+        if (undoArray.count > 0)
+        {
+            if (undoCursorLoc >=0)
+          [undoArray removeObjectsInRange:NSMakeRange(undoCursorLoc, undoArray.count-1)];
+        }
+    }
+     */
+    if (undoArray.count > 0 && undoCursorLoc != undoArray.count-1)
+    {
+            [undoArray removeObjectsInRange:NSMakeRange(undoCursorLoc+1, undoArray.count-(undoCursorLoc+1))];
+    }
     [undoArray addObject:(id)[self getSlateContents]];
+    undoCursorLoc++;
+    
 }
 
 - (void) undoDraw {
     // grab the last image added to the undo array and pop it off the stack
+    /*
     if ([undoArray count] == 1)
     {
         [undoArray removeLastObject];
@@ -893,6 +940,67 @@ typedef struct _LineVertex {
     {
         [undoArray removeLastObject];
         CGImageRef textureImageRef = (__bridge CGImageRef)([undoArray objectAtIndex:[undoArray count] - 1]);
+        previousTexture = [[CCTexture alloc]  initWithCGImage:textureImageRef contentScale:[CCDirector sharedDirector].contentScaleFactor ];
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        
+        [self.renderTexture begin];
+        CCSprite *existingDrawing = [CCSprite spriteWithTexture:previousTexture];
+        // position the saved image
+        existingDrawing.position = ccp(0, 0);
+        existingDrawing.anchorPoint = ccp(0, 0);
+        [existingDrawing visit];
+        [self.renderTexture end];
+    }
+     */
+    undoCursorLoc--;
+    if (undoCursorLoc > -1)
+    {
+    CGImageRef textureImageRef = (__bridge CGImageRef)([undoArray objectAtIndex:undoCursorLoc]);
+    previousTexture = [[CCTexture alloc]  initWithCGImage:textureImageRef contentScale:[CCDirector sharedDirector].contentScaleFactor ];
+    [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+    
+    [self.renderTexture begin];
+    CCSprite *existingDrawing = [CCSprite spriteWithTexture:previousTexture];
+    // position the saved image
+    existingDrawing.position = ccp(0, 0);
+    existingDrawing.anchorPoint = ccp(0, 0);
+    [existingDrawing visit];
+    [self.renderTexture end];
+    }
+    else{
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        undoCursorLoc = -1;
+    }
+}
+
+- (void) redoDraw {
+    // grab the last image added to the undo array and pop it off the stack
+    /*
+    if ([undoArray count] == 1)
+    {
+        [undoArray removeLastObject];
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        return;
+    }
+    if ([undoArray count] > 1)
+    {
+        [undoArray removeLastObject];
+        CGImageRef textureImageRef = (__bridge CGImageRef)([undoArray objectAtIndex:[undoArray count] - 1]);
+        previousTexture = [[CCTexture alloc]  initWithCGImage:textureImageRef contentScale:[CCDirector sharedDirector].contentScaleFactor ];
+        [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+        
+        [self.renderTexture begin];
+        CCSprite *existingDrawing = [CCSprite spriteWithTexture:previousTexture];
+        // position the saved image
+        existingDrawing.position = ccp(0, 0);
+        existingDrawing.anchorPoint = ccp(0, 0);
+        [existingDrawing visit];
+        [self.renderTexture end];
+    }
+     */
+    if ((undoCursorLoc +1 )< [undoArray count] ) {
+        undoCursorLoc++;
+        CGImageRef textureImageRef = (__bridge CGImageRef)([undoArray objectAtIndex:undoCursorLoc]);
         previousTexture = [[CCTexture alloc]  initWithCGImage:textureImageRef contentScale:[CCDirector sharedDirector].contentScaleFactor ];
         [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
         

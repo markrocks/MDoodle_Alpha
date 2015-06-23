@@ -20,6 +20,9 @@
     int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
     [[self volumeSlider] setValue:((float)[self.userDefaults integerForKey:@"defaultVolume"] / 100)];
     [[self emailSwitch] setOn:([self.userDefaults integerForKey:@"emailInt"] == 1)];
+    
+    _emailPrefLabel.text = [NSString stringWithFormat:NSLocalizedString(@"enableEmailText", nil)];
+    _volumePrefLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Default Volume Level", nil)];
     // Do any additional setup after loading the view from its nib.
 }
 

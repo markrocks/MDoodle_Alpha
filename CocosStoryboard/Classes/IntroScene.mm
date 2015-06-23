@@ -74,8 +74,10 @@
     self.lineDrawer.contentSize = [CCDirector sharedDirector].viewSize;
     self.lineDrawer.position = CGPointZero;
     self.lineDrawer.anchorPoint = CGPointZero;
+    self.lineDrawer2.isEraseLayer = NO;
     //lineDrawer
     [self addChild:self.lineDrawer];
+    
     
    
     /*

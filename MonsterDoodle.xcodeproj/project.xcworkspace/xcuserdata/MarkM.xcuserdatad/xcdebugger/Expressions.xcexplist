@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[CCES2Renderer initWithDepthFormat:withPixelFormat:withSharegroup:withMultiSampling:withNumberOfSamples:]:CCES2Renderer.m">
+         contextName = "-[UserCarouselViewController getImagePaths]:UserCarouselViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[UserCarouselViewController getImagePaths]:UserCarouselViewController.m">
+         contextName = "-[CCES2Renderer initWithDepthFormat:withPixelFormat:withSharegroup:withMultiSampling:withNumberOfSamples:]:CCES2Renderer.m">
       </ContextState>
       <ContextState
          contextName = "-[CCGLView layoutSubviews]:CCGLView.m">
@@ -25,10 +25,35 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[LineDrawer addImageToUndo]:LineDrawer.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "undoArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CocosViewController startDirector]:CocosViewController.mm">
          <PersistentStrings>
             <PersistentString
                value = "self.directorIsInitialized">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CocosViewController tryToSetupCocos2dWithOptions:]:CocosViewController.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "director.isViewLoaded">
+            </PersistentString>
+            <PersistentString
+               value = "self.wantsFullScreenLayout">
+            </PersistentString>
+            <PersistentString
+               value = "director.wantsFullScreenLayout">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,24 +66,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[CocosViewController tryToSetupCocos2dWithOptions:]:CocosViewController.mm">
-         <PersistentStrings>
-            <PersistentString
-               value = "director.isViewLoaded">
-            </PersistentString>
-            <PersistentString
-               value = "self.wantsFullScreenLayout">
-            </PersistentString>
-            <PersistentString
-               value = "director.wantsFullScreenLayout">
-            </PersistentString>
-            <PersistentString
-               value = "self.view.bounds">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[ViewController saveDrawing]:ViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[ViewController saveDrawing]:ViewController.m">
+         contextName = "-[LineDrawer redoDraw]:LineDrawer.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "undoCursorLoc">
+            </PersistentString>
+            <PersistentString
+               value = "undoCursorLoc &lt; ([undoArray count] - 1)">
+            </PersistentString>
+            <PersistentString
+               value = "[undoArray count]">
+            </PersistentString>
+            <PersistentString
+               value = "(undoCursorLoc +1 )&lt; [undoArray count] ">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -29,6 +29,7 @@
 @property (nonatomic, strong) UIView *cocosView;
 @property (nonatomic, strong) UIImageView *background;
 @property (nonatomic, strong) LineDrawer* lineDrawer ;
+@property (nonatomic, strong) LineDrawer* lineDrawer2 ;
 
 
 // -----------------------------------------------------------------------

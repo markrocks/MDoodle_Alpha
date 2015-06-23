@@ -24,6 +24,7 @@
 @property (nonatomic,strong) DrawingScreenViewController *drawingScreenViewController;
 @property (nonatomic,strong) DrawingControlsViewController *drawingControlsViewController;
 @property (nonatomic,strong) SceneViewController *drawingPlaneController;
+@property (nonatomic,strong) SceneViewController *erasingPlaneController;
 
 -(void)buttonPressedWithSound;
 

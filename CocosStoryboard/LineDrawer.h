@@ -28,5 +28,6 @@
 
 @interface LineDrawer : CCNode
 @property ( nonatomic, strong) CCRenderTexture *renderTexture;
-- (void )addImageToUndoNow ;
+@property(nonatomic, assign) BOOL isEraseLayer;
+//- (void )addImageToUndoNow ;
 @end

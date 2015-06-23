@@ -77,6 +77,10 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:@"undoButton" object:self];
 }
 
+- (IBAction)redoButtonAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"redoButton" object:self];
+}
+
 - (IBAction)saveButtonAction:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"saveButton" object:self];
 }
@@ -192,9 +196,20 @@
     // Generate content view to present
     UIView* contentView = [[UIView alloc] init];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.backgroundColor = [UIColor grayColor];
+    contentView.backgroundColor = [UIColor blackColor];
     contentView.layer.cornerRadius = 12.0;
     [contentView setFrame:CGRectMake(0, 0, 557, 160)];
+    
+    NSString *thePath = [[NSBundle mainBundle] pathForResource:@"Brush_window_final2" ofType:@"png"];
+    UIImage *prodImg = [[UIImage alloc] initWithContentsOfFile:thePath];
+    //controller.productImg.image = prodImg;
+
+    
+    //UIImage *monsterImage = [[UIImage alloc]initWithContentsOfFile:@"Brush_window_final2"];
+    UIImageView *monsterImageView =[[UIImageView alloc]initWithImage:prodImg];
+    //monsterImageView.frame = contentView.bounds;
+    //[contentView setFrame:CGRectMake(-278, -80, 557, 160)];
+    [monsterImageView setCenter:CGPointMake(CGRectGetMidX([contentView bounds]), CGRectGetMidY([contentView bounds]))];
    
     NibButton* nibButton5 = [NibButton buttonWithType:UIButtonTypeCustom];
     nibButton5.backgroundColor = [UIColor clearColor];
@@ -238,6 +253,7 @@
     //[dismissButton addTarget:self action:@selector(dismissButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     //[contentView addSubview:dismissLabel];
+    [contentView addSubview:monsterImageView];
     [contentView addSubview:nibButton5];
     [contentView addSubview:nibButton];
     [contentView addSubview:nibButton1];

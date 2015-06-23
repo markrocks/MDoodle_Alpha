@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  MonsterDoodle
+
+  Created by Mark Martin on 5/20/15.
+  Copyright (c) 2015 Sias Studios. All rights reserved.
+*/
+
+"presents" = "PRESENTS";
+"New Monster" = "New Monster";
+"Saved Monster" = "Saved Monster";
+"enableEmailText" = "ENGLISH2 Enable ability to email monsters";
+"emailBoilerplatetext" = "Someone crafed an awesome monster with the Monster Doodle app and wanted to send it to you. Check it out!";
+"Default Volume Level" = "ENGLISH2 Default Volume Level";
+"backgroundSelectText" = "ENGLISH2 Select a background for your monster";
+"easterEgg" = "Monsters dont lay eggs!";
+"DRAW WINGS" = "DRAW WINGS";
+"DRAW BAT WINGS" = "DRAW BAT WINGS";
+"DRAW TONGUE" = "DRAW TONGUE";
+"DRAW TAIL" = "DRAW TAIL";
+"DRAW NOSE" = "DRAW NOSE";
+"DRAW MOUTH" = "DRAW MOUTH";
+"DRAW FEET" = "DRAW FEET";
+"DRAW SPIKES" = "DRAW SPIKES";
+"DRAW BODY" = "DRAW BODY";
+"DRAW TEETH" = "DRAW TEETH";
+"DRAW EYES" = "DRAW EYES";
+"DRAW CLAWS" = "DRAW CLAWS";
+"DRAW FIRE BREATH" = "DRAW FIRE BREATH";
+"DRAW EVIL MUSTACHE" = "DRAW EVIL MUSTACHE";
+"DRAW CLAWS" = "DRAW CLAWS";
+"DRAW EMBARRASSING HAIRCUT" = "DRAW EMBARRASSING HAIRCUT";
+"DRAW LEGS" = "DRAW LEGS";
+"DRAW BACK SPIKES" = "DRAW BACK SPIKES";
+"DRAW SECOND HEAD" = "DRAW SECOND HEAD";
+"DRAW DROOL" = "DRAW DROOL";
