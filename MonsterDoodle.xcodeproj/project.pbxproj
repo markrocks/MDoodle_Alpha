@@ -342,6 +342,9 @@
 		8DF36F191AAC053500CAFAEC /* nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F181AAC053500CAFAEC /* nib.png */; };
 		8DF36F1B1AAC054900CAFAEC /* Pen_icon_no_nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */; };
 		8DF36F1D1AAD5E7E00CAFAEC /* Pen_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */; };
+		F89BDAC11BA92A730001E605 /* SideBannertrimAAA.png in Resources */ = {isa = PBXBuildFile; fileRef = F89BDAC01BA92A730001E605 /* SideBannertrimAAA.png */; };
+		F89CAA961BD9DB4800130F13 /* DrawTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F89CAA941BD9DB4800130F13 /* DrawTwoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F89CAA971BD9DB4800130F13 /* DrawTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F89CAA951BD9DB4800130F13 /* DrawTwoViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -922,6 +925,10 @@
 		8DF36F181AAC053500CAFAEC /* nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nib.png; path = "Round 2/nib.png"; sourceTree = "<group>"; };
 		8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon_no_nib.png; path = "Round 2/Pen_icon_no_nib.png"; sourceTree = "<group>"; };
 		8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon2.png; path = "Round 2/Pen_icon2.png"; sourceTree = "<group>"; };
+		F89BDAC01BA92A730001E605 /* SideBannertrimAAA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SideBannertrimAAA.png; path = "Round 2/SideBannertrimAAA.png"; sourceTree = "<group>"; };
+		F89CAA931BD9DB4800130F13 /* DrawTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawTwoViewController.h; path = ../DrawTwoViewController.h; sourceTree = "<group>"; };
+		F89CAA941BD9DB4800130F13 /* DrawTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawTwoViewController.m; path = ../DrawTwoViewController.m; sourceTree = "<group>"; };
+		F89CAA951BD9DB4800130F13 /* DrawTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DrawTwoViewController.xib; path = ../DrawTwoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1834,6 +1841,7 @@
 		8D9229581A34254C00189D86 /* Round 2 */ = {
 			isa = PBXGroup;
 			children = (
+				F89BDAC01BA92A730001E605 /* SideBannertrimAAA.png */,
 				8DF36F181AAC053500CAFAEC /* nib.png */,
 				8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */,
 				8D97698E1A9D90C200EFAD18 /* SideBannertrim.png */,
@@ -1912,7 +1920,16 @@
 		8DB454971A29A3C7004037B1 /* MM Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F89CAA941BD9DB4800130F13 /* DrawTwoViewController.m */,
+				F89CAA931BD9DB4800130F13 /* DrawTwoViewController.h */,
+				F89CAA951BD9DB4800130F13 /* DrawTwoViewController.xib */,
+				8DB454A01A29A3DC004037B1 /* DrawingControlsViewController.h */,
+				8DB454A11A29A3DC004037B1 /* DrawingControlsViewController.m */,
+				8DB454A21A29A3DC004037B1 /* DrawingControlsViewController.xib */,
 				8DECDD911A70CAC100EB7F38 /* Unused */,
+				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
+				8DB4549E1A29A3DC004037B1 /* DrawingScreenViewController.m */,
+				8DB4549F1A29A3DC004037B1 /* DrawingScreenViewController.xib */,
 				8DB454981A29A3DC004037B1 /* ViewController.h */,
 				8DB454991A29A3DC004037B1 /* ViewController.m */,
 				8DB4549A1A29A3DC004037B1 /* SelectionScreenViewController.h */,
@@ -1921,12 +1938,6 @@
 				8D0DEFEF1AF5EB1200B143B3 /* SettingsViewController.h */,
 				8D0DEFF01AF5EB1200B143B3 /* SettingsViewController.m */,
 				8D2D6D611B0D7A9400C39D23 /* SettingsViewController.xib */,
-				8DB4549D1A29A3DC004037B1 /* DrawingScreenViewController.h */,
-				8DB4549E1A29A3DC004037B1 /* DrawingScreenViewController.m */,
-				8DB4549F1A29A3DC004037B1 /* DrawingScreenViewController.xib */,
-				8DB454A01A29A3DC004037B1 /* DrawingControlsViewController.h */,
-				8DB454A11A29A3DC004037B1 /* DrawingControlsViewController.m */,
-				8DB454A21A29A3DC004037B1 /* DrawingControlsViewController.xib */,
 				8DE0F9B71A6E1C6B0005D482 /* ImageLoaderCarouselViewController.h */,
 				8DE0F9B81A6E1C6B0005D482 /* ImageLoaderCarouselViewController.m */,
 				8DE0F9B91A6E1C6B0005D482 /* ImageLoaderCarouselViewController.xib */,
@@ -2189,6 +2200,7 @@
 				8D3BEA241AC26DFA007D2994 /* kid head@2x.png in Resources */,
 				8D9229531A34254200189D86 /* Save_icon.png in Resources */,
 				8D9229571A34254200189D86 /* Yellow_icon.jpg in Resources */,
+				F89BDAC11BA92A730001E605 /* SideBannertrimAAA.png in Resources */,
 				8D97696D1A9AFC1B00EFAD18 /* LOAD SCREEN_Feb22_SSlogo.png in Resources */,
 				8D92294A1A34254200189D86 /* Green_ligth_icon.png in Resources */,
 				47D4874C19870F52006D83D7 /* LICENSE_CCBReader.txt in Resources */,
@@ -2196,6 +2208,7 @@
 				47D486BC19870F51006D83D7 /* LICENSE_cocos2d.txt in Resources */,
 				8DA8BF1C1B1D73F900A7F519 /* home2@2x.png in Resources */,
 				8D3BEA2D1AC26DFA007D2994 /* pupil.png in Resources */,
+				F89CAA971BD9DB4800130F13 /* DrawTwoViewController.xib in Resources */,
 				47D487DC19870F8B006D83D7 /* Published-iOS in Resources */,
 				8D2D6D7F1B18222600C39D23 /* colorButton1.png in Resources */,
 				8D4774E11ABBDD4E0093AF1A /* win_9.png in Resources */,
@@ -2395,6 +2408,7 @@
 				47D485C419870F50006D83D7 /* CCActionEase.m in Sources */,
 				47D485A519870F50006D83D7 /* CCEffectGlow.m in Sources */,
 				47D486F119870F52006D83D7 /* ALSoundSourcePool.m in Sources */,
+				F89CAA961BD9DB4800130F13 /* DrawTwoViewController.m in Sources */,
 				47D4873C19870F52006D83D7 /* CCBKeyframe.m in Sources */,
 				47D485F219870F51006D83D7 /* CCLabelBMFont.m in Sources */,
 				47D486E119870F51006D83D7 /* ALCaptureDevice.m in Sources */,
