@@ -30,8 +30,15 @@
                     </variation>
                 </imageView>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9Q-6w-neV" userLabel="UI Controls">
-                    <rect key="frame" x="0.0" y="0.0" width="236" height="768"/>
+                    <rect key="frame" x="0.0" y="0.0" width="138" height="768"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
+                            <rect key="frame" x="12" y="5" width="94" height="75"/>
+                            <state key="normal" image="home2.png"/>
+                            <connections>
+                                <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
+                            </connections>
+                        </button>
                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-9U-iPa" userLabel="Color Controls-85:289">
                             <rect key="frame" x="0.0" y="88" width="138" height="680"/>
                             <subviews>
@@ -210,26 +217,7 @@
                                 <rect key="frame" x="0.0" y="85" width="125" height="422"/>
                             </variation>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
-                            <rect key="frame" x="12" y="5" width="94" height="75"/>
-                            <state key="normal" image="home2.png"/>
-                            <connections>
-                                <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
-                            </connections>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
-                            <rect key="frame" x="74" y="503" width="25" height="22"/>
-                            <state key="normal" image="plus.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="74" y="509" width="25" height="22"/>
-                            </variation>
-                            <connections>
-                                <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
-                            </connections>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
                             <rect key="frame" x="0.0" y="484" width="124" height="72"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="1" y="449" width="181" height="99"/>
@@ -238,7 +226,7 @@
                                 <rect key="frame" x="-25" y="502" width="181" height="99"/>
                             </variation>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-Jq-ww7" userLabel="Pen Button">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-Jq-ww7" userLabel="Pen Button">
                             <rect key="frame" x="0.0" y="484" width="124" height="72"/>
                             <accessibility key="accessibilityConfiguration" label=""/>
                             <state key="normal" title="Button" image="Pen_icon_no_nib.png">
@@ -254,7 +242,7 @@
                                 <action selector="penButtonAction:" destination="-1" eventType="touchUpInside" id="B9j-gA-8fL"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
                             <rect key="frame" x="0.0" y="484" width="124" height="72"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="1" y="449" width="181" height="99"/>
@@ -263,18 +251,6 @@
                                 <rect key="frame" x="-25" y="502" width="181" height="99"/>
                             </variation>
                         </imageView>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
-                            <rect key="frame" x="75" y="607" width="30" height="20"/>
-                            <state key="normal" title="Button" image="minus.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="75" y="574" width="30" height="20"/>
-                            </variation>
-                            <connections>
-                                <action selector="markerMinusButtonAction:" destination="-1" eventType="touchUpInside" id="4Us-l8-MA2"/>
-                            </connections>
-                        </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAs-yr-nId" userLabel="Eraser-71:34">
                             <rect key="frame" x="0.0" y="620" width="102" height="38"/>
                             <state key="normal" backgroundImage="Erase_icon.png">
@@ -290,7 +266,7 @@
                                 <action selector="eraserButtonAction:" destination="-1" eventType="touchUpInside" id="Lhb-e3-yi7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">
                             <rect key="frame" x="15" y="545" width="72" height="67"/>
                             <state key="normal" image="save2.png"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -300,7 +276,7 @@
                                 <action selector="saveButtonAction:" destination="-1" eventType="touchUpInside" id="iff-Qg-Wb1"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-yx-KWM" userLabel="Undo-67:65">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-yx-KWM" userLabel="Undo-67:65">
                             <rect key="frame" x="0.0" y="678" width="78" height="75"/>
                             <state key="normal" backgroundImage="undo2.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -315,7 +291,7 @@
                                 <action selector="undoButtonAction:" destination="-1" eventType="touchUpInside" id="reD-7C-xQH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Be-hL1" userLabel="Redo-67:65">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Be-hL1" userLabel="Redo-67:65">
                             <rect key="frame" x="0.0" y="608" width="78" height="75"/>
                             <state key="normal" backgroundImage="undo2.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,20 +306,68 @@
                                 <action selector="redoButtonAction:" destination="-1" eventType="touchUpInside" id="E2D-2X-qos"/>
                             </connections>
                         </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
+                            <rect key="frame" x="74" y="503" width="25" height="22"/>
+                            <state key="normal" image="plus.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="74" y="509" width="25" height="22"/>
+                            </variation>
+                            <connections>
+                                <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
+                            <rect key="frame" x="75" y="607" width="30" height="20"/>
+                            <state key="normal" title="Button" image="minus.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="75" y="574" width="30" height="20"/>
+                            </variation>
+                            <connections>
+                                <action selector="markerMinusButtonAction:" destination="-1" eventType="touchUpInside" id="4Us-l8-MA2"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="C8z-BT-Oo7" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="106:135" id="0Gw-VJ-goD"/>
                         <constraint firstItem="C8z-BT-Oo7" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="5:768" id="1jy-MQ-luD"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="612:768" id="3FA-Xa-4VD"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="72:138" id="5ef-h0-cc0"/>
                         <constraint firstItem="C8z-BT-Oo7" firstAttribute="leading" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="12:147" id="5uH-ZP-eHY"/>
+                        <constraint firstItem="Ero-dR-VTz" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="8Vr-df-ZYm"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="78:138" id="Akn-Kt-CCK"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="leading" secondItem="p9Q-6w-neV" secondAttribute="leading" id="Fjn-gN-gHL"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="753:768" id="Jg6-Mm-han"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="678:768" id="K50-le-2nO"/>
                         <constraint firstItem="C8z-BT-Oo7" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="80:768" id="L9K-52-RP9"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="88:768" id="La7-Zs-kyI"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="87:138" id="PJ5-hd-9a2"/>
+                        <constraint firstItem="Ero-dR-VTz" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="124:138" id="QxK-G7-Wef"/>
+                        <constraint firstItem="Ero-dR-VTz" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="124:138" id="R0G-7w-dIp"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="683:768" id="TXU-oH-0In"/>
+                        <constraint firstItem="y91-0t-3tv" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="VNZ-T1-20w"/>
+                        <constraint firstItem="Ero-dR-VTz" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="Xes-Ru-hjT"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" id="YB3-QV-lhf"/>
+                        <constraint firstItem="JMl-Jq-ww7" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="124:138" id="ZdB-KK-rSW"/>
+                        <constraint firstItem="JMl-Jq-ww7" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="124:138" id="aO8-a9-JL6"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="78:138" id="dav-bm-UNT"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="78:138" id="dov-5F-8pH"/>
+                        <constraint firstItem="y91-0t-3tv" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="124:138" id="f4v-47-6Re"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="78:138" id="fpF-oa-K2H"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="608:768" id="gFM-l2-Yfk"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" id="gVY-bn-z6Y"/>
+                        <constraint firstItem="JMl-Jq-ww7" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="hXk-LN-we5"/>
+                        <constraint firstItem="y91-0t-3tv" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="124:138" id="jHx-F6-rSc"/>
+                        <constraint firstItem="y91-0t-3tv" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="rHp-A3-dDb"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="545:768" id="wBm-2R-auw"/>
+                        <constraint firstItem="JMl-Jq-ww7" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="xjf-ZG-v7E"/>
                     </constraints>
                 </view>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
-                    <rect key="frame" x="78" y="571" width="4" height="8"/>
+                    <rect key="frame" x="78" y="584" width="4" height="8"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="4" id="RYt-tI-Kjt"/>
                     </constraints>
