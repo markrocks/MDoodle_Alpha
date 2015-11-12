@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -20,6 +20,18 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="1024" placeholderIntrinsicHeight="768" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SGm-Hn-Em6" userLabel="BACKGROUND  1024_768">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">
+                    <rect key="frame" x="525" y="51" width="376" height="536"/>
+                    <state key="normal" title="Button" image="choose_saved_off.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="332" y="51" width="187" height="267"/>
+                    </variation>
+                    <connections>
+                        <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
+                    </connections>
+                </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
                     <rect key="frame" x="24" y="22" width="164" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -35,8 +47,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-a6-hS1" userLabel="SettingsButton">
-                    <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-a6-hS1" userLabel="SettingsButton">
+                    <rect key="frame" x="481" y="0.0" width="174" height="128"/>
                     <state key="normal" title="Button" image="Email_parents_butons.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -47,7 +59,7 @@
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster 242_282 484_564">
                     <rect key="frame" x="-2" y="51" width="484" height="564"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="121:141" id="AuU-AW-FeH"/>
+                        <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="121:141" id="aMq-Jy-Ffm"/>
                     </constraints>
                     <state key="normal" image="choose_new_off.png">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,57 +67,57 @@
                     </state>
                     <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                         <rect key="frame" x="8" y="30" width="434" height="564"/>
+                        <mask key="constraints">
+                            <exclude reference="aMq-Jy-Ffm"/>
+                        </mask>
                     </variation>
                     <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                        <rect key="frame" x="18" y="94" width="505" height="587"/>
+                        <rect key="frame" x="16" y="80" width="579" height="675"/>
                     </variation>
                     <connections>
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Go Draw">
-                    <rect key="frame" x="525" y="51" width="376" height="536"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="xY0-gA-jRk" secondAttribute="height" multiplier="47:67" id="Foh-cN-iCG"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="choose_saved_off.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="heightClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="332" y="51" width="187" height="267"/>
-                    </variation>
-                    <connections>
-                        <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.234" id="0Wg-gy-g14"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.63" id="9Hd-jy-QrO">
-                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.28" id="0lm-lc-7lF">
+                    <variation key="heightClass=regular-widthClass=regular" constant="-65"/>
+                </constraint>
+                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.488" id="0yM-bU-Ool">
+                    <variation key="heightClass=compact-widthClass=compact" constant="-138"/>
                 </constraint>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQQ-hw-2db"/>
                 <constraint firstItem="Ge7-a6-hS1" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" constant="55" id="CHe-7n-RJZ"/>
                 <constraint firstAttribute="trailing" secondItem="SGm-Hn-Em6" secondAttribute="trailing" id="MeD-g9-k5U"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.234" id="OYy-2O-7Ug"/>
                 <constraint firstItem="Ge7-a6-hS1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RI5-dh-14Y"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.816" id="RsK-kE-MWf">
-                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                </constraint>
-                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.046" id="bEL-Ag-z7D"/>
+                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.04" id="WF3-ft-NwF"/>
+                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="bwS-xg-56Y"/>
                 <constraint firstAttribute="bottom" secondItem="SGm-Hn-Em6" secondAttribute="bottom" id="cGy-5T-8aI"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eXJ-24-kR8"/>
-                <constraint firstItem="ph0-Sf-Tdc" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.703" id="mZ4-Ex-yUk">
-                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                </constraint>
             </constraints>
-            <variation key="heightClass=compact-widthClass=compact">
+            <variation key="default">
                 <mask key="constraints">
-                    <include reference="MeD-g9-k5U"/>
+                    <exclude reference="0yM-bU-Ool"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="193" y="62"/>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="BQQ-hw-2db"/>
+                    <include reference="MeD-g9-k5U"/>
+                    <include reference="cGy-5T-8aI"/>
+                    <include reference="eXJ-24-kR8"/>
+                    <exclude reference="0yM-bU-Ool"/>
+                    <include reference="WF3-ft-NwF"/>
+                    <include reference="bwS-xg-56Y"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="0lm-lc-7lF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="240" y="81"/>
         </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yd7-J2-HoN">
             <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>

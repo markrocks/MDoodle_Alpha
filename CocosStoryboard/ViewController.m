@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 //===================================
-#define SPLASH_DELAY 3
+#define SPLASH_DELAY 0 //3
 #define SCREEN_FADE_RATE 1
+#define DRAWING_CONTROLS_WIDTH 147
+#define DRAWING_CONTROLS_HEIGHT 767
 
 
 @interface ViewController ()
@@ -115,7 +117,9 @@
     
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
     self.drawingScreenViewController.view.alpha = 0;
-    //self.drawingScreenViewController.view.frame = self.view.frame;
+    
+    self.drawingScreenViewController.view.frame = self.view.frame;
+    
     [self.drawingScreenViewController.monsterImage setImage:image];
     
     [[self view] addSubview:self.drawingScreenViewController.view];
@@ -163,7 +167,12 @@
     // Now the control overlay
     self.drawingControlsViewController = [[DrawingControlsViewController alloc]initWithNibName:@"DrawingControlsViewController" bundle:nil];
     self.drawingControlsViewController.view.alpha = 1;
-    self.drawingControlsViewController.view.frame = self.drawingControlsViewController.uiBackground.frame;//CGRectMake(50, 50,300 ,300);
+    //self.drawingControlsViewController.view.frame = self.view.frame;
+    //self.drawingControlsViewController.view.frame = self.drawingControlsViewController.uiBackground.frame;//CGRectMake(50, 50,300 ,300); // THIS IS WHAT CAUSES ALL THE REDRAW WIERDNESS
+    
+    //The background is 147 x 767 -- we need to make sure the frame is the same aspect ratio
+    self.drawingControlsViewController.view.frame = CGRectMake(0, 0,(self.view.frame.size.height / DRAWING_CONTROLS_HEIGHT )* DRAWING_CONTROLS_WIDTH ,self.view.frame.size.height);
+    
      
     [[self view] addSubview:self.drawingControlsViewController.view];
     [self.drawingControlsViewController didMoveToParentViewController:self];

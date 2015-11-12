@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageLoaderCarouselViewController">
@@ -17,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-B3-jfU" userLabel="background">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-B3-jfU" userLabel="background">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-27-56e" userLabel="iCarousel Object" customClass="iCarousel">
-                    <rect key="frame" x="60" y="60" width="480" height="273"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-27-56e" userLabel="iCarousel Object" customClass="iCarousel">
+                    <rect key="frame" x="12" y="12" width="1000" height="744"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Jcj-XV-yWe"/>
@@ -37,16 +36,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="d3t-27-56e" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.8" id="137-kb-QwV"/>
-                <constraint firstAttribute="bottom" secondItem="YoE-B3-jfU" secondAttribute="bottom" id="ARE-AX-ct8"/>
-                <constraint firstAttribute="trailing" secondItem="YoE-B3-jfU" secondAttribute="trailing" id="T3w-cO-nao"/>
-                <constraint firstItem="d3t-27-56e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.2" id="ara-pq-lND"/>
-                <constraint firstItem="d3t-27-56e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.2" id="ci8-Jh-dA7"/>
-                <constraint firstItem="YoE-B3-jfU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iws-cj-T3f"/>
-                <constraint firstAttribute="bottom" secondItem="d3t-27-56e" secondAttribute="bottom" multiplier="1.8" id="j4m-mP-kg1"/>
-                <constraint firstItem="YoE-B3-jfU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qFY-Na-bVz"/>
-            </constraints>
         </view>
     </objects>
     <resources>
