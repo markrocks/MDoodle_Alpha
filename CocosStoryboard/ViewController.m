@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 //===================================
-#define SPLASH_DELAY 0 //3
+#define SPLASH_DELAY 0//3
 #define SCREEN_FADE_RATE 1
 #define DRAWING_CONTROLS_WIDTH 147
 #define DRAWING_CONTROLS_HEIGHT 767
@@ -31,7 +31,10 @@
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
     //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
-    self.view.frame = CGRectMake(0, 0, 1024, 768);
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
+    //NSLog(self);
+    //NSLog(self.view);
     
 }
 

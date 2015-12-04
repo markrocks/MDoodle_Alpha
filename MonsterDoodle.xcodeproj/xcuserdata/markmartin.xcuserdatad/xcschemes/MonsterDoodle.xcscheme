@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "47D4854219870F50006D83D7"
-               BuildableName = "MonsterDoodle.app"
+               BuildableName = "MonsterDoodles.app"
                BlueprintName = "MonsterDoodle"
                ReferencedContainer = "container:MonsterDoodle.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "47D4854219870F50006D83D7"
-            BuildableName = "MonsterDoodle.app"
+            BuildableName = "MonsterDoodles.app"
             BlueprintName = "MonsterDoodle"
             ReferencedContainer = "container:MonsterDoodle.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "47D4854219870F50006D83D7"
-            BuildableName = "MonsterDoodle.app"
+            BuildableName = "MonsterDoodles.app"
             BlueprintName = "MonsterDoodle"
             ReferencedContainer = "container:MonsterDoodle.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "47D4854219870F50006D83D7"
-            BuildableName = "MonsterDoodle.app"
+            BuildableName = "MonsterDoodles.app"
             BlueprintName = "MonsterDoodle"
             ReferencedContainer = "container:MonsterDoodle.xcodeproj">
          </BuildableReference>

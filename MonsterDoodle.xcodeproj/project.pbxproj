@@ -356,7 +356,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		47D4854319870F50006D83D7 /* MonsterDoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterDoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47D4854319870F50006D83D7 /* MonsterDoodles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterDoodles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D4854619870F50006D83D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		47D4854819870F50006D83D7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		47D4854A19870F50006D83D7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -964,7 +964,7 @@
 		47D4854419870F50006D83D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47D4854319870F50006D83D7 /* MonsterDoodle.app */,
+				47D4854319870F50006D83D7 /* MonsterDoodles.app */,
 				47D4855C19870F50006D83D7 /* libObjectiveChipmunk.a */,
 			);
 			name = Products;
@@ -2059,7 +2059,7 @@
 			);
 			name = MonsterDoodle;
 			productName = CocosStoryboard;
-			productReference = 47D4854319870F50006D83D7 /* MonsterDoodle.app */;
+			productReference = 47D4854319870F50006D83D7 /* MonsterDoodles.app */;
 			productType = "com.apple.product-type.application";
 		};
 		47D4855B19870F50006D83D7 /* ObjectiveChipmunk */ = {
@@ -2520,6 +2520,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2554,6 +2555,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2612,6 +2614,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2627,7 +2630,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = MonsterDoodle;
+				PRODUCT_NAME = MonsterDoodles;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2639,6 +2642,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CocosStoryboard/Supporting Files/Prefix.pch";
@@ -2653,7 +2657,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = MonsterDoodle;
+				PRODUCT_NAME = MonsterDoodles;
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
