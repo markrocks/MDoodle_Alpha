@@ -17,6 +17,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Load images
+    //--- NEW BUTTON
+    
+    // -- create an array of img names
+    NSArray *newImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"NewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4.png"];
+    
+    // -- create an array of images by creating instances based on names in previous array
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < newImageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[newImageNames objectAtIndex:i]]];
+    }
+    
+    // set the ImageView's animationImages object to the image array above
+    self.addNewMonsterButton.imageView.animationImages = images;
+    
+    //set the duration of the animation
+    self.addNewMonsterButton.imageView.animationDuration = 1.5;
+    
+    //set the number of times to run
+    self.addNewMonsterButton.imageView.animationRepeatCount = 1;
+    
+    //--- SAVED BUTTON
+    /**
+    
+    // -- create an array of img names
+    NSArray *newImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"wNewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4"];
+    
+    // -- create an array of images by creating instances based on names in previous array
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < newImageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[newImageNames objectAtIndex:i]]];
+    }
+    
+    // set the ImageView's animationImages object to the image array above
+    self.addNewMonsterButton.imageView.animationImages = images;
+    
+    //set the duration of the animation
+    self.addNewMonsterButton.imageView.animationDuration = 2;
+
+    
+    [self.addNewMonsterButton startAnimating];
+     **/
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +79,19 @@
 */
 
 - (IBAction)findNewMonsterBtnAction:(id)sender {
+    //[self.addNewMonsterButton.imageView startAnimating];
+    if (!self.addNewMonsterButton.imageView.isAnimating) {
+        NSLog(@"new button anim started");
+        [self.addNewMonsterButton.imageView startAnimating];
+        [self.addNewMonsterButton.imageView setImage:[self.addNewMonsterButton.imageView.animationImages lastObject]];
+        [self performSelector:@selector(newAnimationDidFinish) withObject:nil afterDelay:self.addNewMonsterButton.imageView.animationDuration];
+    }
+    
+}
+
+- (void)newAnimationDidFinish
+{
+    NSLog(@"new button anim ENDED");
     [[NSNotificationCenter defaultCenter]postNotificationName:@"findNewMonster" object:self];
 }
 

@@ -28,14 +28,33 @@
     [super viewDidLoad];
     self.timeVal =  SPLASH_DELAY;
     // Do any additional setup after loading the view, typically from a nib.
+    // if showSplash ( is true )
+        //load splash and then load SelectionScreenViewController
+    
+    //TO DO -- add completion block passing to  loadViewWithViewController
+    
+    
+    
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"  %@", name);
+        }
+    }
+
+    
+    
+    
+    
+    
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
     //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
-    //NSLog(self);
-    //NSLog(self.view);
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -251,6 +270,49 @@
     return stringFromDate;
 }
 
+-(void) findNewMonster {
+    //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+    //[self loadViewWithViewController:@"TrickCollectionViewController" usingViewClass:[TrickCollectionViewController class]];
+    [self buttonPressedWithSound];
+    
+    [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+    
+    /**
+    //
+    //
+    void (^animationBlock)() = ^{
+        NSArray *rainbowColors = @[[UIColor orangeColor],
+                                   [UIColor yellowColor],
+                                   [UIColor greenColor],
+                                   [UIColor blueColor],
+                                   [UIColor purpleColor],
+                                   [UIColor redColor]];
+        
+        NSUInteger colorCount = [rainbowColors count];
+        for(NSUInteger i=0; i<colorCount; i++) {
+            [UIView addKeyframeWithRelativeStartTime:i/(CGFloat)colorCount
+                                    relativeDuration:1/(CGFloat)colorCount
+                                          animations:^{
+                                              self.activeController.view.backgroundColor = rainbowColors[i];
+                                          }];
+        }
+    };
+    //----------
+    [UIView animateKeyframesWithDuration:4.0
+                                   delay:0.0
+                                 options:UIViewKeyframeAnimationOptionCalculationModeLinear |
+     UIViewAnimationOptionCurveLinear
+                              animations:animationBlock
+                              completion:^(BOOL finished) {
+                                  //[self enableToolbarItems:YES];
+                                  [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+                              }];
+    //
+    //
+     **/
+    
+}
+
 -(void) registerEventListeners {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorPurple" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorBlue" object:nil];
@@ -285,9 +347,7 @@
     }
     if ([[notification name] isEqualToString:@"findNewMonster"]) {
         NSLog(@"Find New");
-        [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
-        //[self loadViewWithViewController:@"TrickCollectionViewController" usingViewClass:[TrickCollectionViewController class]];
-        [self buttonPressedWithSound];
+        [self findNewMonster];
     }
     if ([[notification name] isEqualToString:@"openSettings"]) {
         NSLog(@"Open Settings");

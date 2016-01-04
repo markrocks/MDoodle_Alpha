@@ -13,5 +13,7 @@
 - (IBAction)saveMonstereButtonAction:(id)sender;
 - (IBAction)addMonsteroPhotoAction:(id)sender;
 - (IBAction)openSettingsAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *addNewMonsterButton;
+@property (weak, nonatomic) IBOutlet UIButton *loadSavedMonsterButton;
 
 @end
