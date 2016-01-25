@@ -55,10 +55,14 @@
                         <action selector="openSettingsAction:" destination="-1" eventType="touchUpInside" id="M1u-Ce-bwX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
                     <rect key="frame" x="160" y="34" width="164" height="60"/>
-                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="60"/>
+                    <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=compact" misplaced="YES">
+                        <rect key="frame" x="177" y="4" width="213" height="206"/>
+                    </variation>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster 242_282 484_564">
                     <rect key="frame" x="0.0" y="51" width="484" height="564"/>
@@ -86,9 +90,12 @@
                     <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                 </constraint>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="484:1024" id="0yM-bU-Ool"/>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="top" secondItem="ph0-Sf-Tdc" secondAttribute="top" multiplier="57:101" id="2T6-NM-mHg"/>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="width" multiplier="213:458" id="7ew-3Y-uba"/>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="484:1024" constant="50" id="AcI-6r-rTZ">
                     <variation key="heightClass=compact" constant="0.0"/>
                 </constraint>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="height" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="102:534" id="AuP-Gz-Qh7"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQQ-hw-2db"/>
                 <constraint firstItem="Ge7-a6-hS1" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="CHe-7n-RJZ"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="586:768" id="Fem-S1-qBZ"/>
@@ -100,6 +107,7 @@
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="101:768" id="bwS-xg-56Y"/>
                 <constraint firstAttribute="bottom" secondItem="SGm-Hn-Em6" secondAttribute="bottom" id="cGy-5T-8aI"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eXJ-24-kR8"/>
+                <constraint firstItem="IbW-sh-fXG" firstAttribute="centerX" secondItem="ph0-Sf-Tdc" secondAttribute="centerX" id="gvf-Cq-qsr"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="51:768" id="mgq-vX-GR9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -112,6 +120,10 @@
             <variation key="heightClass=compact">
                 <mask key="constraints">
                     <include reference="AcI-6r-rTZ"/>
+                    <include reference="2T6-NM-mHg"/>
+                    <include reference="7ew-3Y-uba"/>
+                    <include reference="AuP-Gz-Qh7"/>
+                    <include reference="gvf-Cq-qsr"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact-widthClass=compact">

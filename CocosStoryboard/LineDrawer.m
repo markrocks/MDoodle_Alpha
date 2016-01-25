@@ -277,6 +277,7 @@ typedef struct _LineVertex {
 
 -(void)parseNotification:(NSNotification *) notification
 {
+    //TODO -- Change these to a switch statement
     if ([[notification name] isEqualToString:@"colorPurple"]) {
         NSLog(@"purple clicked");
         penColor = ccc4f(0.8, 0.0, 0.8, 0.8);
@@ -833,6 +834,7 @@ typedef struct _LineVertex {
     
     
     [self.renderTexture clear:0.0f g:0.0f b:0.0f a:0.0f];
+    undoCursorLoc = -1;
 }
 
 -(void) increasePenSize {
@@ -918,6 +920,7 @@ typedef struct _LineVertex {
         }
     }
      */
+    // TODO explain code below
     if (undoArray.count > 0 && undoCursorLoc != undoArray.count-1)
     {
             [undoArray removeObjectsInRange:NSMakeRange(undoCursorLoc+1, undoArray.count-(undoCursorLoc+1))];

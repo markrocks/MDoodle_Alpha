@@ -19,9 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //[carousel
     
     //configure carousel
     _carousel.type = iCarouselTypeRotary;
+    //_carousel.iCarouselOptionCount = 10;
+   // _carousel.iCarouselOptionVisibleItems = 10;
+    //_carousel.type = iCarouselTypeTimeMachine;
+    //_carousel.perspective = -0.0025;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

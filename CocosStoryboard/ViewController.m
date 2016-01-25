@@ -396,7 +396,7 @@
     NSLog(@"random sound number = %i", randomSoundNumber);
     
     NSString *monsterSoundFile;
-    
+    /**
     switch (randomSoundNumber) {
         case 0:
             monsterSoundFile = @"MONSTERBite1.mp3";
@@ -423,7 +423,7 @@
     AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(soundUrl), &soundID);
     AudioServicesPlaySystemSound(soundID);
 
-
+**/
 }
 
 
