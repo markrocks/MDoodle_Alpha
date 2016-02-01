@@ -6,23 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CocosStoryboard/ViewController.m"
-<<<<<<< HEAD
             timestampString = "475995063.044706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-=======
-            timestampString = "470728953.70709"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
->>>>>>> parent of 4fd6071... New Font /  Resize fixes
             landmarkName = "-loadDrawingView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -34,7 +26,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CocosStoryboard/ViewController.m"
-<<<<<<< HEAD
             timestampString = "471164019.596908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -68,13 +59,10 @@
             continueAfterRunningActions = "No"
             filePath = "CocosStoryboard/SelectionScreenViewController.m"
             timestampString = "473063654.021242"
-=======
-            timestampString = "470728849.838877"
->>>>>>> parent of 4fd6071... New Font /  Resize fixes
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
