@@ -307,6 +307,7 @@
 		8DA8BF1E1B1D73F900A7F519 /* save2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8BF161B1D73F900A7F519 /* save2@2x.png */; };
 		8DA8BF221B1EAA4000A7F519 /* undo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8BF211B1EAA4000A7F519 /* undo2@2x.png */; };
 		8DA8BF241B1EAA9A00A7F519 /* undo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA8BF231B1EAA9A00A7F519 /* undo2.png */; };
+		8DAEEB361A7560CF00328C8A /* Icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DAEEB351A7560CF00328C8A /* Icon-small.png */; };
 		8DAEEB391A7B214E00328C8A /* BundledCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEEB381A7B214D00328C8A /* BundledCarouselViewController.m */; };
 		8DAEEB3C1A7B216F00328C8A /* UserCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAEEB3B1A7B216F00328C8A /* UserCarouselViewController.m */; };
 		8DB454961A29A10E004037B1 /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB454951A29A10E004037B1 /* LineDrawer.m */; };
@@ -341,11 +342,8 @@
 		8DF36F191AAC053500CAFAEC /* nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F181AAC053500CAFAEC /* nib.png */; };
 		8DF36F1B1AAC054900CAFAEC /* Pen_icon_no_nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */; };
 		8DF36F1D1AAD5E7E00CAFAEC /* Pen_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */; };
-		F82CF3C41C3A3FB8007C9150 /* A Love of Thunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */; settings = {ASSET_TAGS = (); }; };
-		F847909E1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F847909C1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg */; settings = {ASSET_TAGS = (); }; };
-		F847909F1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F847909D1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg */; settings = {ASSET_TAGS = (); }; };
-		F84790A11C1562F20016FDEF /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84790A01C1562F20016FDEF /* Chalkduster.ttf */; settings = {ASSET_TAGS = (); }; };
 		F869E3611BF0431400C20323 /* bkgndTest.png in Resources */ = {isa = PBXBuildFile; fileRef = F869E3601BF0431400C20323 /* bkgndTest.png */; settings = {ASSET_TAGS = (); }; };
+<<<<<<< HEAD
 		F88A63451C11787F00C8505B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88A63441C11787F00C8505B /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		F8ECB8611C5890D000D5C0C0 /* SavedButtonv2_Cropped1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8ECB8591C5890D000D5C0C0 /* SavedButtonv2_Cropped1.png */; settings = {ASSET_TAGS = (); }; };
 		F8ECB8621C5890D000D5C0C0 /* SavedButtonv2_Cropped1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8ECB85A1C5890D000D5C0C0 /* SavedButtonv2_Cropped1@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -359,6 +357,8 @@
 		F8F99EAB1C32617D009F9E8C /* NewButtonv2_Cropped4.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F99EA71C32617D009F9E8C /* NewButtonv2_Cropped4.png */; settings = {ASSET_TAGS = (); }; };
 		F8F99EAC1C32617D009F9E8C /* NewButtonv2_Cropped1.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F99EA81C32617D009F9E8C /* NewButtonv2_Cropped1.png */; settings = {ASSET_TAGS = (); }; };
 		F8F99EAD1C32617D009F9E8C /* NewButtonv2_Cropped3.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F99EA91C32617D009F9E8C /* NewButtonv2_Cropped3.png */; settings = {ASSET_TAGS = (); }; };
+=======
+>>>>>>> parent of 4fd6071... New Font /  Resize fixes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -889,6 +889,7 @@
 		8DA8BF161B1D73F900A7F519 /* save2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save2@2x.png"; sourceTree = "<group>"; };
 		8DA8BF211B1EAA4000A7F519 /* undo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo2@2x.png"; sourceTree = "<group>"; };
 		8DA8BF231B1EAA9A00A7F519 /* undo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo2.png; sourceTree = "<group>"; };
+		8DAEEB351A7560CF00328C8A /* Icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-small.png"; sourceTree = "<group>"; };
 		8DAEEB371A7B214D00328C8A /* BundledCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundledCarouselViewController.h; sourceTree = "<group>"; };
 		8DAEEB381A7B214D00328C8A /* BundledCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundledCarouselViewController.m; sourceTree = "<group>"; };
 		8DAEEB3A1A7B216F00328C8A /* UserCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCarouselViewController.h; sourceTree = "<group>"; };
@@ -938,11 +939,8 @@
 		8DF36F181AAC053500CAFAEC /* nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nib.png; path = "Round 2/nib.png"; sourceTree = "<group>"; };
 		8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon_no_nib.png; path = "Round 2/Pen_icon_no_nib.png"; sourceTree = "<group>"; };
 		8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon2.png; path = "Round 2/Pen_icon2.png"; sourceTree = "<group>"; };
-		F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Love of Thunder.ttf"; path = "../A Love of Thunder.ttf"; sourceTree = "<group>"; };
-		F847909C1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LOAD SCREEN_OCt24.jpg"; sourceTree = "<group>"; };
-		F847909D1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LOAD SCREEN_OCt24@2x.jpg"; sourceTree = "<group>"; };
-		F84790A01C1562F20016FDEF /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
 		F869E3601BF0431400C20323 /* bkgndTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgndTest.png; path = "Round 2/bkgndTest.png"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F88A63441C11787F00C8505B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MonsterDoodle/Images.xcassets; sourceTree = "<group>"; };
 		F8ECB8591C5890D000D5C0C0 /* SavedButtonv2_Cropped1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SavedButtonv2_Cropped1.png; sourceTree = "<group>"; };
 		F8ECB85A1C5890D000D5C0C0 /* SavedButtonv2_Cropped1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SavedButtonv2_Cropped1@2x.png"; sourceTree = "<group>"; };
@@ -956,6 +954,8 @@
 		F8F99EA71C32617D009F9E8C /* NewButtonv2_Cropped4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewButtonv2_Cropped4.png; sourceTree = "<group>"; };
 		F8F99EA81C32617D009F9E8C /* NewButtonv2_Cropped1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewButtonv2_Cropped1.png; sourceTree = "<group>"; };
 		F8F99EA91C32617D009F9E8C /* NewButtonv2_Cropped3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewButtonv2_Cropped3.png; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of 4fd6071... New Font /  Resize fixes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -984,7 +984,6 @@
 		47D4853A19870F50006D83D7 = {
 			isa = PBXGroup;
 			children = (
-				F88A63441C11787F00C8505B /* Images.xcassets */,
 				8DBD60201AA04257006F96BF /* CollectionViewCell.h */,
 				8DBD60211AA04257006F96BF /* CollectionViewCell.m */,
 				8DBD60221AA04257006F96BF /* CollectionViewCell.xib */,
@@ -1040,8 +1039,6 @@
 			children = (
 				47D487DB19870F8B006D83D7 /* Published-iOS */,
 				47D487D819870F85006D83D7 /* Storyboard.storyboard */,
-				F84790A01C1562F20016FDEF /* Chalkduster.ttf */,
-				F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */,
 				47D4856219870F50006D83D7 /* Default2.png */,
 				47D4856419870F50006D83D7 /* Default2@2x.png */,
 				8DF36F121AABFE4500CAFAEC /* Default-Landscape~ipad.png */,
@@ -1057,6 +1054,7 @@
 		47D4856A19870F50006D83D7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				8DAEEB351A7560CF00328C8A /* Icon-small.png */,
 				47D4857719870F50006D83D7 /* Icon-120.png */,
 				47D4857919870F50006D83D7 /* Icon-iPad-Spotlight-iOS7@2x.png */,
 				47D4857B19870F50006D83D7 /* Icon-Small-50.png */,
@@ -1809,8 +1807,6 @@
 		8D0DEFEA1AF5E37300B143B3 /* Round 2.1 */ = {
 			isa = PBXGroup;
 			children = (
-				F847909C1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg */,
-				F847909D1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg */,
 				8D0DEFEB1AF5E38E00B143B3 /* Email_parents_butons.png */,
 				8D0DEFEC1AF5E38E00B143B3 /* Email_parents_butons@2x.png */,
 			);
@@ -1990,7 +1986,6 @@
 		8DB454AA1A29A5D0004037B1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				F8F99EA51C32616E009F9E8C /* Round 4 */,
 				8D2D6D6D1B18220200C39D23 /* Round 3 */,
 				8D0DEFEA1AF5E37300B143B3 /* Round 2.1 */,
 				8D346C351AC50CCD009057E2 /* refParentMonster.png */,
@@ -2078,6 +2073,7 @@
 			name = Unused;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		F8F99EA51C32616E009F9E8C /* Round 4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2097,6 +2093,8 @@
 			name = "Round 4";
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> parent of 4fd6071... New Font /  Resize fixes
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2172,7 +2170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3BEA2A1AC26DFA007D2994 /* mouth@2x.png in Resources */,
-				F84790A11C1562F20016FDEF /* Chalkduster.ttf in Resources */,
 				47D4856519870F50006D83D7 /* Default2@2x.png in Resources */,
 				8D9229521A34254200189D86 /* Red_icon.png in Resources */,
 				8D3BEA341AC26DFA007D2994 /* right horn@2x.png in Resources */,
@@ -2183,7 +2180,6 @@
 				8D9769691A9AFC1B00EFAD18 /* LOAD SCREEN_Feb22_logo.png in Resources */,
 				8D9769661A9AFC1B00EFAD18 /* LOAD SCREEN_Feb22@2x.png in Resources */,
 				8D2D6D631B0D7FBF00C39D23 /* LOAD SCREEN_Feb22.png in Resources */,
-				F847909E1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg in Resources */,
 				8D9229501A34254200189D86 /* Pink_icon.png in Resources */,
 				8D9229461A34254200189D86 /* Aqua_icon.png in Resources */,
 				8DF36F171AAC00A100CAFAEC /* plus.png in Resources */,
@@ -2196,7 +2192,6 @@
 				8D3BEA291AC26DFA007D2994 /* mouth.png in Resources */,
 				47D487DA19870F85006D83D7 /* Storyboard.storyboard in Resources */,
 				8DA49C751A35757500F60091 /* ColorSwatchView.xib in Resources */,
-				F8F99EAD1C32617D009F9E8C /* NewButtonv2_Cropped3.png in Resources */,
 				8DF36F131AABFE4500CAFAEC /* Default-Landscape~ipad.png in Resources */,
 				8D9769801A9C29A100EFAD18 /* Choose_background.png in Resources */,
 				8D4774E81ABBDD4E0093AF1A /* win_16.png in Resources */,
@@ -2221,7 +2216,6 @@
 				8D3BEA261AC26DFA007D2994 /* left hand@2x.png in Resources */,
 				8D3BEA281AC26DFA007D2994 /* left horn@2x.png in Resources */,
 				8D3BEA361AC26DFA007D2994 /* tooth@2x.png in Resources */,
-				F8F99EAC1C32617D009F9E8C /* NewButtonv2_Cropped1.png in Resources */,
 				8D3BEA231AC26DFA007D2994 /* kid head.png in Resources */,
 				8D92294F1A34254200189D86 /* Pen_icon.png in Resources */,
 				8DBD60241AA04257006F96BF /* CollectionViewCell.xib in Resources */,
@@ -2231,6 +2225,7 @@
 				8DF36F191AAC053500CAFAEC /* nib.png in Resources */,
 				8D4774E01ABBDD4E0093AF1A /* win_8.png in Resources */,
 				8D9229551A34254200189D86 /* undo_icon.png in Resources */,
+				8DAEEB361A7560CF00328C8A /* Icon-small.png in Resources */,
 				8D9229561A34254200189D86 /* White_behind_colors.png in Resources */,
 				8D4774DC1ABBDD4E0093AF1A /* win_4.png in Resources */,
 				8D4774E41ABBDD4E0093AF1A /* win_12.png in Resources */,
@@ -2238,7 +2233,6 @@
 				F8ECB8621C5890D000D5C0C0 /* SavedButtonv2_Cropped1@2x.png in Resources */,
 				47D4857C19870F50006D83D7 /* Icon-Small-50.png in Resources */,
 				8DA49C771A36C5CB00F60091 /* Side_bannerA.png in Resources */,
-				F8F99EAB1C32617D009F9E8C /* NewButtonv2_Cropped4.png in Resources */,
 				47D487BA19870F52006D83D7 /* LICENSE_Chipmunk.txt in Resources */,
 				8DA8BF1D1B1D73F900A7F519 /* save2.png in Resources */,
 				8DD6BB191AB93C9D00B8A1E9 /* toothless@2x.png in Resources */,
@@ -2264,8 +2258,6 @@
 				8DA8BF1C1B1D73F900A7F519 /* home2@2x.png in Resources */,
 				8D3BEA2D1AC26DFA007D2994 /* pupil.png in Resources */,
 				47D487DC19870F8B006D83D7 /* Published-iOS in Resources */,
-				F847909F1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg in Resources */,
-				F8F99EAA1C32617D009F9E8C /* NewButtonv2_Cropped2.png in Resources */,
 				8D2D6D7F1B18222600C39D23 /* colorButton1.png in Resources */,
 				8D4774E11ABBDD4E0093AF1A /* win_9.png in Resources */,
 				8D92294C1A34254200189D86 /* Home_icon.png in Resources */,
@@ -2275,7 +2267,6 @@
 				47D4856719870F50006D83D7 /* Default-568h2@2x.png in Resources */,
 				8DBD601D1AA03D19006F96BF /* ImageLoaderCollectionViewController.xib in Resources */,
 				8DF36F1D1AAD5E7E00CAFAEC /* Pen_icon2.png in Resources */,
-				F88A63451C11787F00C8505B /* Images.xcassets in Resources */,
 				47D4858719870F50006D83D7 /* iTunesArtwork in Resources */,
 				8D2D6D691B0D853000C39D23 /* Localizable.strings in Resources */,
 				8DE0F9B61A6E1A1B0005D482 /* Bundled Assets in Resources */,
@@ -2313,7 +2304,6 @@
 				8DBD60291AA04C04006F96BF /* TrickCollectionViewController.xib in Resources */,
 				8DA8BF241B1EAA9A00A7F519 /* undo2.png in Resources */,
 				8D9769851A9C29A100EFAD18 /* choose_saved_off.png in Resources */,
-				F82CF3C41C3A3FB8007C9150 /* A Love of Thunder.ttf in Resources */,
 				8D9769831A9C29A100EFAD18 /* choose_new_on.png in Resources */,
 				8D2D6D771B18222600C39D23 /* colorButton9.png in Resources */,
 				8D0FD0E51A81E7CE000BD428 /* EmailViewController.xib in Resources */,
@@ -2684,8 +2674,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -2714,8 +2702,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;

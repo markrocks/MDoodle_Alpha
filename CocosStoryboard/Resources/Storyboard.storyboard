@@ -4,13 +4,7 @@
         <deployment version="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Chalkduster.ttf">
-            <string>Chalkduster</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="8Ag-4D-gWT">
@@ -21,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jkY-X2-cqF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hge-3X-HZT">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="LOAD SCREEN_OCt24.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="z9p-HF-cWB">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOAD SCREEN_Feb22.png" translatesAutoresizingMaskIntoConstraints="NO" id="z9p-HF-cWB">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="miniMonsrter.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-ff-XZc">
                                 <rect key="frame" x="373" y="0.0" width="240" height="187"/>
@@ -33,6 +27,7 @@
                                     <constraint firstAttribute="width" secondItem="Pph-ff-XZc" secondAttribute="height" multiplier="240:187" id="BsO-qh-q6k"/>
                                 </constraints>
                             </imageView>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster Doodles" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="e2q-Rg-yuQ">
                                 <rect key="frame" x="78" y="596" width="867" height="102"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.80000000000000004" height="0.84999999999999998"/>
@@ -40,30 +35,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+=======
+>>>>>>> parent of 4fd6071... New Font /  Resize fixes
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="e2q-Rg-yuQ" firstAttribute="bottom" secondItem="z9p-HF-cWB" secondAttribute="bottom" multiplier="698:768" id="2pT-qx-Lso"/>
                             <constraint firstAttribute="trailing" secondItem="z9p-HF-cWB" secondAttribute="trailing" id="CHi-Hg-dhh"/>
-                            <constraint firstItem="e2q-Rg-yuQ" firstAttribute="trailing" secondItem="z9p-HF-cWB" secondAttribute="trailing" multiplier="945:1024" id="D2x-xb-Cfm"/>
                             <constraint firstItem="jkY-X2-cqF" firstAttribute="top" secondItem="z9p-HF-cWB" secondAttribute="bottom" id="EmU-es-S01"/>
                             <constraint firstItem="z9p-HF-cWB" firstAttribute="leading" secondItem="Hge-3X-HZT" secondAttribute="leading" id="Sne-lk-Pym"/>
-                            <constraint firstItem="e2q-Rg-yuQ" firstAttribute="top" secondItem="z9p-HF-cWB" secondAttribute="bottom" multiplier="596:768" id="iNP-d4-jke"/>
                             <constraint firstItem="z9p-HF-cWB" firstAttribute="top" secondItem="Qph-h0-OhO" secondAttribute="bottom" id="xmB-x1-PbR"/>
-                            <constraint firstItem="e2q-Rg-yuQ" firstAttribute="leading" secondItem="z9p-HF-cWB" secondAttribute="trailing" multiplier="78:1024" id="yi6-NY-aOb"/>
                         </constraints>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVa-VM-FIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="95"/>
+            <point key="canvasLocation" x="-60" y="95.070422535211264"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LOAD SCREEN_OCt24.jpg" width="1024" height="768"/>
+        <image name="LOAD SCREEN_Feb22.png" width="1024" height="768"/>
         <image name="miniMonsrter.png" width="340" height="257"/>
     </resources>
 </document>
