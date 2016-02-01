@@ -70,6 +70,7 @@
     //Manage memory by having only one ViewController at a time
     
    // NSTimeInterval *time =
+    NSLog(@"loadViewWithViewController nibNameOrNil: %@", controllerPropertyName);
     
     //First we create the new controller using the controller class argument that was passed in
     id viewController = [(UIViewController *)[[viewClass class] alloc ] initWithNibName:controllerPropertyName bundle:nil];

@@ -15,7 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectionScreenViewController">
             <connections>
                 <outlet property="addNewMonsterButton" destination="ph0-Sf-Tdc" id="ErN-r0-tYj"/>
-                <outlet property="loadSavedMonsterButton" destination="xY0-gA-jRk" id="KkS-kk-lyD"/>
+                <outlet property="loadSavedMonsterButton" destination="xY0-gA-jRk" id="ZeP-1G-hiB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,15 +27,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="1024" placeholderIntrinsicHeight="768" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SGm-Hn-Em6" userLabel="BACKGROUND  1024_768">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Load saved monster button">
-                    <rect key="frame" x="525" y="51" width="376" height="535"/>
-                    <state key="normal" title="Button" image="choose_saved_off.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
-                    </connections>
-                </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
                     <rect key="frame" x="24" y="22" width="164" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -55,7 +46,7 @@
                         <action selector="openSettingsAction:" destination="-1" eventType="touchUpInside" id="M1u-Ce-bwX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
                     <rect key="frame" x="160" y="34" width="164" height="60"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
                     <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
@@ -73,6 +64,9 @@
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <variation key="heightClass=compact" misplaced="YES">
+                        <rect key="frame" x="24" y="101" width="458" height="534"/>
+                    </variation>
                     <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                         <rect key="frame" x="8" y="30" width="434" height="564"/>
                     </variation>
@@ -81,6 +75,15 @@
                     </variation>
                     <connections>
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Load saved monster button">
+                    <rect key="frame" x="525" y="51" width="376" height="535"/>
+                    <state key="normal" title="Button" image="SavedButtonv2_Cropped1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
                     </connections>
                 </button>
             </subviews>
@@ -154,6 +157,6 @@
         <image name="Choose_background.png" width="1024" height="768"/>
         <image name="Email_parents_butons.png" width="120" height="128"/>
         <image name="NewButtonv2_Cropped1.png" width="361" height="494"/>
-        <image name="choose_saved_off.png" width="376" height="536"/>
+        <image name="SavedButtonv2_Cropped1.png" width="415" height="494"/>
     </resources>
 </document>
