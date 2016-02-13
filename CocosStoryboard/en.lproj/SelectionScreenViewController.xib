@@ -7,7 +7,8 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="A Love of Thunder.ttf">
+        <mutableArray key="A Love of Thunder - Licensed Version.ttf">
+            <string>ALoveofThunder</string>
             <string>ALoveofThunder</string>
         </mutableArray>
     </customFonts>
@@ -28,8 +29,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Load saved monster button">
-                    <rect key="frame" x="525" y="51" width="376" height="535"/>
-                    <state key="normal" title="Button" image="choose_saved_off.png">
+                    <rect key="frame" x="525" y="81" width="376" height="535"/>
+                    <state key="normal" title="Button" image="SavedButtonv2_Cropped1.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -55,7 +56,7 @@
                         <action selector="openSettingsAction:" destination="-1" eventType="touchUpInside" id="M1u-Ce-bwX"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
                     <rect key="frame" x="160" y="34" width="164" height="60"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
                     <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
@@ -69,6 +70,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="121:141" id="2Mh-dj-5fk"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" image="NewButtonv2_Cropped1.png">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,6 +85,12 @@
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saved" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-o9-Le5">
+                    <rect key="frame" x="550" y="34" width="361" height="73"/>
+                    <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -98,17 +106,21 @@
                 <constraint firstItem="IbW-sh-fXG" firstAttribute="height" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="102:534" id="AuP-Gz-Qh7"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQQ-hw-2db"/>
                 <constraint firstItem="Ge7-a6-hS1" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="CHe-7n-RJZ"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="586:768" id="Fem-S1-qBZ"/>
+                <constraint firstItem="AYG-o9-Le5" firstAttribute="height" secondItem="IbW-sh-fXG" secondAttribute="height" id="CM6-53-3pC"/>
+                <constraint firstItem="xY0-gA-jRk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="616:768" id="Fem-S1-qBZ"/>
+                <constraint firstItem="AYG-o9-Le5" firstAttribute="width" secondItem="IbW-sh-fXG" secondAttribute="width" multiplier="1.42" id="JjL-5w-9q8"/>
                 <constraint firstAttribute="trailing" secondItem="SGm-Hn-Em6" secondAttribute="trailing" id="MeD-g9-k5U"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="376:1024" id="OHz-SK-xGr"/>
                 <constraint firstItem="Ge7-a6-hS1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RI5-dh-14Y"/>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="484:1024" id="Vq6-m6-swV"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="901:1024" id="X2K-Ng-7Iu"/>
+                <constraint firstItem="AYG-o9-Le5" firstAttribute="top" secondItem="ph0-Sf-Tdc" secondAttribute="top" multiplier="57:101" id="aFL-Dj-Tch"/>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="101:768" id="bwS-xg-56Y"/>
                 <constraint firstAttribute="bottom" secondItem="SGm-Hn-Em6" secondAttribute="bottom" id="cGy-5T-8aI"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eXJ-24-kR8"/>
                 <constraint firstItem="IbW-sh-fXG" firstAttribute="centerX" secondItem="ph0-Sf-Tdc" secondAttribute="centerX" id="gvf-Cq-qsr"/>
-                <constraint firstItem="xY0-gA-jRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="51:768" id="mgq-vX-GR9"/>
+                <constraint firstItem="xY0-gA-jRk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="81:768" id="mgq-vX-GR9"/>
+                <constraint firstItem="xY0-gA-jRk" firstAttribute="centerX" secondItem="AYG-o9-Le5" secondAttribute="centerX" id="pig-xy-uhv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
@@ -154,6 +166,6 @@
         <image name="Choose_background.png" width="1024" height="768"/>
         <image name="Email_parents_butons.png" width="120" height="128"/>
         <image name="NewButtonv2_Cropped1.png" width="361" height="494"/>
-        <image name="choose_saved_off.png" width="376" height="536"/>
+        <image name="SavedButtonv2_Cropped1.png" width="415" height="494"/>
     </resources>
 </document>

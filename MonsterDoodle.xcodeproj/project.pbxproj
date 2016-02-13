@@ -341,11 +341,15 @@
 		8DF36F191AAC053500CAFAEC /* nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F181AAC053500CAFAEC /* nib.png */; };
 		8DF36F1B1AAC054900CAFAEC /* Pen_icon_no_nib.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */; };
 		8DF36F1D1AAD5E7E00CAFAEC /* Pen_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */; };
-		F82CF3C41C3A3FB8007C9150 /* A Love of Thunder.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */; settings = {ASSET_TAGS = (); }; };
 		F847909E1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F847909C1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg */; settings = {ASSET_TAGS = (); }; };
 		F847909F1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F847909D1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg */; settings = {ASSET_TAGS = (); }; };
 		F84790A11C1562F20016FDEF /* Chalkduster.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F84790A01C1562F20016FDEF /* Chalkduster.ttf */; settings = {ASSET_TAGS = (); }; };
 		F869E3611BF0431400C20323 /* bkgndTest.png in Resources */ = {isa = PBXBuildFile; fileRef = F869E3601BF0431400C20323 /* bkgndTest.png */; settings = {ASSET_TAGS = (); }; };
+		F86D2EA71C6EE38B0050964D /* A Love of Thunder - Licensed Version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F86D2EA61C6EE38B0050964D /* A Love of Thunder - Licensed Version.ttf */; settings = {ASSET_TAGS = (); }; };
+		F86D2EAC1C6EF0200050964D /* SavedButtonv2_Cropped1.png in Resources */ = {isa = PBXBuildFile; fileRef = F86D2EA81C6EF0200050964D /* SavedButtonv2_Cropped1.png */; settings = {ASSET_TAGS = (); }; };
+		F86D2EAD1C6EF0200050964D /* SavedButtonv2_Cropped2.png in Resources */ = {isa = PBXBuildFile; fileRef = F86D2EA91C6EF0200050964D /* SavedButtonv2_Cropped2.png */; settings = {ASSET_TAGS = (); }; };
+		F86D2EAE1C6EF0200050964D /* SavedButtonv2_Cropped3.png in Resources */ = {isa = PBXBuildFile; fileRef = F86D2EAA1C6EF0200050964D /* SavedButtonv2_Cropped3.png */; settings = {ASSET_TAGS = (); }; };
+		F86D2EAF1C6EF0200050964D /* SavedButtonv2_Cropped4.png in Resources */ = {isa = PBXBuildFile; fileRef = F86D2EAB1C6EF0200050964D /* SavedButtonv2_Cropped4.png */; settings = {ASSET_TAGS = (); }; };
 		F88A63451C11787F00C8505B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88A63441C11787F00C8505B /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		F8F99EAA1C32617D009F9E8C /* NewButtonv2_Cropped2.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F99EA61C32617D009F9E8C /* NewButtonv2_Cropped2.png */; settings = {ASSET_TAGS = (); }; };
 		F8F99EAB1C32617D009F9E8C /* NewButtonv2_Cropped4.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F99EA71C32617D009F9E8C /* NewButtonv2_Cropped4.png */; settings = {ASSET_TAGS = (); }; };
@@ -930,11 +934,15 @@
 		8DF36F181AAC053500CAFAEC /* nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nib.png; path = "Round 2/nib.png"; sourceTree = "<group>"; };
 		8DF36F1A1AAC054900CAFAEC /* Pen_icon_no_nib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon_no_nib.png; path = "Round 2/Pen_icon_no_nib.png"; sourceTree = "<group>"; };
 		8DF36F1C1AAD5E7E00CAFAEC /* Pen_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pen_icon2.png; path = "Round 2/Pen_icon2.png"; sourceTree = "<group>"; };
-		F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Love of Thunder.ttf"; path = "../A Love of Thunder.ttf"; sourceTree = "<group>"; };
 		F847909C1C1554340016FDEF /* LOAD SCREEN_OCt24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LOAD SCREEN_OCt24.jpg"; sourceTree = "<group>"; };
 		F847909D1C1554340016FDEF /* LOAD SCREEN_OCt24@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LOAD SCREEN_OCt24@2x.jpg"; sourceTree = "<group>"; };
 		F84790A01C1562F20016FDEF /* Chalkduster.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chalkduster.ttf; sourceTree = "<group>"; };
 		F869E3601BF0431400C20323 /* bkgndTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bkgndTest.png; path = "Round 2/bkgndTest.png"; sourceTree = "<group>"; };
+		F86D2EA61C6EE38B0050964D /* A Love of Thunder - Licensed Version.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "A Love of Thunder - Licensed Version.ttf"; sourceTree = "<group>"; };
+		F86D2EA81C6EF0200050964D /* SavedButtonv2_Cropped1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SavedButtonv2_Cropped1.png; sourceTree = "<group>"; };
+		F86D2EA91C6EF0200050964D /* SavedButtonv2_Cropped2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SavedButtonv2_Cropped2.png; sourceTree = "<group>"; };
+		F86D2EAA1C6EF0200050964D /* SavedButtonv2_Cropped3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SavedButtonv2_Cropped3.png; sourceTree = "<group>"; };
+		F86D2EAB1C6EF0200050964D /* SavedButtonv2_Cropped4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SavedButtonv2_Cropped4.png; sourceTree = "<group>"; };
 		F88A63441C11787F00C8505B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MonsterDoodle/Images.xcassets; sourceTree = "<group>"; };
 		F8F99EA61C32617D009F9E8C /* NewButtonv2_Cropped2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewButtonv2_Cropped2.png; sourceTree = "<group>"; };
 		F8F99EA71C32617D009F9E8C /* NewButtonv2_Cropped4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewButtonv2_Cropped4.png; sourceTree = "<group>"; };
@@ -1022,10 +1030,10 @@
 		47D4856119870F50006D83D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F86D2EA61C6EE38B0050964D /* A Love of Thunder - Licensed Version.ttf */,
 				47D487DB19870F8B006D83D7 /* Published-iOS */,
 				47D487D819870F85006D83D7 /* Storyboard.storyboard */,
 				F84790A01C1562F20016FDEF /* Chalkduster.ttf */,
-				F82CF3C31C3A3FB8007C9150 /* A Love of Thunder.ttf */,
 				47D4856219870F50006D83D7 /* Default2.png */,
 				47D4856419870F50006D83D7 /* Default2@2x.png */,
 				8DF36F121AABFE4500CAFAEC /* Default-Landscape~ipad.png */,
@@ -2065,6 +2073,10 @@
 		F8F99EA51C32616E009F9E8C /* Round 4 */ = {
 			isa = PBXGroup;
 			children = (
+				F86D2EA81C6EF0200050964D /* SavedButtonv2_Cropped1.png */,
+				F86D2EA91C6EF0200050964D /* SavedButtonv2_Cropped2.png */,
+				F86D2EAA1C6EF0200050964D /* SavedButtonv2_Cropped3.png */,
+				F86D2EAB1C6EF0200050964D /* SavedButtonv2_Cropped4.png */,
 				F8F99EA61C32617D009F9E8C /* NewButtonv2_Cropped2.png */,
 				F8F99EA71C32617D009F9E8C /* NewButtonv2_Cropped4.png */,
 				F8F99EA81C32617D009F9E8C /* NewButtonv2_Cropped1.png */,
@@ -2115,7 +2127,7 @@
 		47D4853B19870F50006D83D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sias Studios";
 				TargetAttributes = {
 					47D4854219870F50006D83D7 = {
@@ -2168,6 +2180,8 @@
 				8D3BEA2B1AC26DFA007D2994 /* parent.png in Resources */,
 				8D346C361AC50CCD009057E2 /* refParentMonster.png in Resources */,
 				8D9769811A9C29A100EFAD18 /* choose_new_off.png in Resources */,
+				F86D2EAC1C6EF0200050964D /* SavedButtonv2_Cropped1.png in Resources */,
+				F86D2EAD1C6EF0200050964D /* SavedButtonv2_Cropped2.png in Resources */,
 				8D3BEA291AC26DFA007D2994 /* mouth.png in Resources */,
 				47D487DA19870F85006D83D7 /* Storyboard.storyboard in Resources */,
 				8DA49C751A35757500F60091 /* ColorSwatchView.xib in Resources */,
@@ -2204,6 +2218,7 @@
 				8DF36F191AAC053500CAFAEC /* nib.png in Resources */,
 				8D4774E01ABBDD4E0093AF1A /* win_8.png in Resources */,
 				8D9229551A34254200189D86 /* undo_icon.png in Resources */,
+				F86D2EAE1C6EF0200050964D /* SavedButtonv2_Cropped3.png in Resources */,
 				8D9229561A34254200189D86 /* White_behind_colors.png in Resources */,
 				8D4774DC1ABBDD4E0093AF1A /* win_4.png in Resources */,
 				8D4774E41ABBDD4E0093AF1A /* win_12.png in Resources */,
@@ -2218,6 +2233,7 @@
 				8D4774DF1ABBDD4E0093AF1A /* win_7.png in Resources */,
 				8D9229491A34254200189D86 /* Green_dark_icon.png in Resources */,
 				8D4774E71ABBDD4E0093AF1A /* win_15.png in Resources */,
+				F86D2EA71C6EE38B0050964D /* A Love of Thunder - Licensed Version.ttf in Resources */,
 				8D9229511A34254200189D86 /* Purple_icon.png in Resources */,
 				8D4774E51ABBDD4E0093AF1A /* win_13.png in Resources */,
 				8D02A9AA1A6380B1004CEBB9 /* Side_bannerAw.png in Resources */,
@@ -2260,6 +2276,7 @@
 				8D2D6D7E1B18222600C39D23 /* colorButton2.png in Resources */,
 				8D2D6D7A1B18222600C39D23 /* colorButton6.png in Resources */,
 				F869E3611BF0431400C20323 /* bkgndTest.png in Resources */,
+				F86D2EAF1C6EF0200050964D /* SavedButtonv2_Cropped4.png in Resources */,
 				8D9229541A34254200189D86 /* Side_banner.png in Resources */,
 				8D97698F1A9D90C200EFAD18 /* SideBannertrim.png in Resources */,
 				8D9229481A34254200189D86 /* Erase_icon.png in Resources */,
@@ -2281,7 +2298,6 @@
 				8DBD60291AA04C04006F96BF /* TrickCollectionViewController.xib in Resources */,
 				8DA8BF241B1EAA9A00A7F519 /* undo2.png in Resources */,
 				8D9769851A9C29A100EFAD18 /* choose_saved_off.png in Resources */,
-				F82CF3C41C3A3FB8007C9150 /* A Love of Thunder.ttf in Resources */,
 				8D9769831A9C29A100EFAD18 /* choose_new_on.png in Resources */,
 				8D2D6D771B18222600C39D23 /* colorButton9.png in Resources */,
 				8D0FD0E51A81E7CE000BD428 /* EmailViewController.xib in Resources */,

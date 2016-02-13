@@ -31,22 +31,6 @@
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
-      "filename" : "LOAD SCREEN_OCt24.jpg",
-      "minimum-system-version" : "7.0",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
-      "filename" : "LOAD SCREEN_OCt24@2x.jpg",
-      "minimum-system-version" : "7.0",
-      "unassigned" : true,
-      "scale" : "2x"
     }
   ],
   "info" : {

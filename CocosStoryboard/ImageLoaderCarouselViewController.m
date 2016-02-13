@@ -31,6 +31,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    NSLog(@"nibNam = %@  nibBundle %@", nibNameOrNil,nibBundleOrNil );
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
     {
         //get image paths

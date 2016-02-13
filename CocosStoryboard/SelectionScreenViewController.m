@@ -23,15 +23,16 @@
     
     // -- create an array of img names
     NSArray *newImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"NewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4.png"];
+    //NSArray *savedImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"NewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4.png"];
     
     // -- create an array of images by creating instances based on names in previous array
-    NSMutableArray *images = [[NSMutableArray alloc] init];
+    NSMutableArray *newButtonImages = [[NSMutableArray alloc] init];
     for (int i = 0; i < newImageNames.count; i++) {
-        [images addObject:[UIImage imageNamed:[newImageNames objectAtIndex:i]]];
+        [newButtonImages addObject:[UIImage imageNamed:[newImageNames objectAtIndex:i]]];
     }
     
     // set the ImageView's animationImages object to the image array above
-    self.addNewMonsterButton.imageView.animationImages = images;
+    self.addNewMonsterButton.imageView.animationImages = newButtonImages;
     
     //set the duration of the animation
     self.addNewMonsterButton.imageView.animationDuration = 1.5;
@@ -40,26 +41,30 @@
     self.addNewMonsterButton.imageView.animationRepeatCount = 1;
     
     //--- SAVED BUTTON
-    /**
+    
     
     // -- create an array of img names
-    NSArray *newImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"wNewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4"];
+   // NSArray *savedImageNames = @[@"NewButtonv2_Cropped1.png", @"NewButtonv2_Cropped2.png", @"wNewButtonv2_Cropped3.png", @"NewButtonv2_Cropped4"];
+    NSArray *savedImageNames = @[@"SavedButtonv2_Cropped1.png", @"SavedButtonv2_Cropped1.png", @"SavedButtonv2_Cropped3.png", @"SavedButtonv2_Cropped4.png"];
     
     // -- create an array of images by creating instances based on names in previous array
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    for (int i = 0; i < newImageNames.count; i++) {
-        [images addObject:[UIImage imageNamed:[newImageNames objectAtIndex:i]]];
+    NSMutableArray *savedButtonImages = [[NSMutableArray alloc] init];
+    for (int i = 0; i < savedImageNames.count; i++) {
+        [savedButtonImages addObject:[UIImage imageNamed:[savedImageNames objectAtIndex:i]]];
     }
     
     // set the ImageView's animationImages object to the image array above
-    self.addNewMonsterButton.imageView.animationImages = images;
+    self.loadSavedMonsterButton.imageView.animationImages = savedButtonImages;
     
     //set the duration of the animation
-    self.addNewMonsterButton.imageView.animationDuration = 2;
+    self.loadSavedMonsterButton.imageView.animationDuration = 2.5;
+    
+    //set the number of times to run
+    self.loadSavedMonsterButton.imageView.animationRepeatCount = 1;
 
     
-    [self.addNewMonsterButton startAnimating];
-     **/
+    ///[self.addNewMonsterButton startAnimating];
+    
 
 }
 
@@ -79,7 +84,6 @@
 */
 
 - (IBAction)findNewMonsterBtnAction:(id)sender {
-    //[self.addNewMonsterButton.imageView startAnimating];
     if (!self.addNewMonsterButton.imageView.isAnimating) {
         NSLog(@"new button anim started");
         [self.addNewMonsterButton.imageView startAnimating];
@@ -96,6 +100,18 @@
 }
 
 - (IBAction)saveMonstereButtonAction:(id)sender {
+    //[[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self];
+    if (!self.loadSavedMonsterButton.imageView.isAnimating) {
+        NSLog(@"load saved button anim started");
+        [self.loadSavedMonsterButton.imageView startAnimating];
+        [self.loadSavedMonsterButton.imageView setImage:[self.loadSavedMonsterButton.imageView.animationImages lastObject]];
+        [self performSelector:@selector(loadSavedAnimationDidFinish) withObject:nil afterDelay:self.loadSavedMonsterButton.imageView.animationDuration];
+    }
+}
+
+- (void)loadSavedAnimationDidFinish
+{
+    NSLog(@"lod save button anim ENDED");
     [[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self];
 }
 

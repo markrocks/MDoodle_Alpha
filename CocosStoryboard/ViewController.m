@@ -72,6 +72,7 @@
    // NSTimeInterval *time =
     
     //First we create the new controller using the controller class argument that was passed in
+     NSLog(@"controllerPropertyName = %@", controllerPropertyName );
     id viewController = [(UIViewController *)[[viewClass class] alloc ] initWithNibName:controllerPropertyName bundle:nil];
     
     //Now create a working refernce theat is a UIViewController so that we can perform some standard set up routines
@@ -152,7 +153,8 @@
     //Now the Cocos2d drawing plane
     if ( self.drawingPlaneController == nil)
     {
-        self.drawingPlaneController = [[SceneViewController alloc]initWithCoder:nil];
+        //self.drawingPlaneController = [[SceneViewController alloc]initWithCoder:nil];
+        self.drawingPlaneController = [[SceneViewController alloc]init];
         self.drawingPlaneController.view.opaque= YES;
         self.drawingPlaneController.view.alpha = 0;
         self.drawingPlaneController.view.frame = self.view.frame;
@@ -395,7 +397,7 @@
     
     NSLog(@"random sound number = %i", randomSoundNumber);
     
-    NSString *monsterSoundFile;
+    //NSString *monsterSoundFile;
     /**
     switch (randomSoundNumber) {
         case 0:
