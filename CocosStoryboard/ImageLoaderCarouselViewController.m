@@ -85,7 +85,10 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 500.0f, 500.0f)];
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width/2.2, screenRect.size.height/2.2);
+
+        FXImageView *imageView = [[FXImageView alloc] initWithFrame:self.view.frame];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
         imageView.reflectionScale = 0.5f;

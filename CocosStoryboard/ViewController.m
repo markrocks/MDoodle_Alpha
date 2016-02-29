@@ -45,9 +45,7 @@
         }
     }
 
-    
-    
-    
+
     
     
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
@@ -75,7 +73,7 @@
      NSLog(@"controllerPropertyName = %@", controllerPropertyName );
     id viewController = [(UIViewController *)[[viewClass class] alloc ] initWithNibName:controllerPropertyName bundle:nil];
     
-    //Now create a working refernce theat is a UIViewController so that we can perform some standard set up routines
+    //Now create a working refernce that is a UIViewController so that we can perform some standard set up routines
     UIViewController *setupController = (UIViewController *) viewController;
     setupController.view.alpha = 0;
     setupController.view.frame = self.view.frame;
@@ -105,7 +103,7 @@
         [self.activeController removeFromParentViewController];
         self.activeController = nil;
     }
-    if ( self.drawingScreenViewController != nil)
+    if ( self.drawingScreenViewController != nil) // the view that contains the monster image
     {
         [self.drawingScreenViewController removeFromParentViewController];
         [self.drawingScreenViewController willMoveToParentViewController:nil];
@@ -113,7 +111,7 @@
         [self.drawingScreenViewController removeFromParentViewController];
         self.drawingScreenViewController = nil;
     }
-    if ( self.drawingPlaneController != nil)
+    if ( self.drawingPlaneController != nil)// The layer where the drawing takes place
     {
         [self.drawingPlaneController.view setHidden:YES];
         /*
@@ -123,7 +121,7 @@
         self.drawingPlaneController = nil;
          */			
     }
-    if ( self.drawingControlsViewController != nil)
+    if ( self.drawingControlsViewController != nil) // the button view
     {
         [self.drawingControlsViewController removeFromParentViewController];
         [self.drawingControlsViewController willMoveToParentViewController:nil];
@@ -141,9 +139,10 @@
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
     self.drawingScreenViewController.view.alpha = 0;
     
-    self.drawingScreenViewController.view.frame = self.view.frame;
+    self.drawingScreenViewController.view.frame = self.view.frame; // resize the monster image frame  to fit the device
     
     [self.drawingScreenViewController.monsterImage setImage:image];
+    self.drawingScreenViewController.monsterImage.contentMode = UIViewContentModeScaleAspectFit;
     
     [[self view] addSubview:self.drawingScreenViewController.view];
     [self.drawingScreenViewController didMoveToParentViewController:self];
@@ -157,7 +156,7 @@
         self.drawingPlaneController = [[SceneViewController alloc]init];
         self.drawingPlaneController.view.opaque= YES;
         self.drawingPlaneController.view.alpha = 0;
-        self.drawingPlaneController.view.frame = self.view.frame;
+        self.drawingPlaneController.view.frame = self.view.frame;// resize the draw layer frame  to fit the device
         
         [[self view] addSubview:self.drawingPlaneController.view];
         [self.drawingPlaneController didMoveToParentViewController:self];
@@ -190,8 +189,8 @@
     
     // Now the control overlay
     self.drawingControlsViewController = [[DrawingControlsViewController alloc]initWithNibName:@"DrawingControlsViewController" bundle:nil];
-    self.drawingControlsViewController.view.alpha = 1;
-    //self.drawingControlsViewController.view.frame = self.view.frame;
+    //self.drawingControlsViewController.view.alpha = 1;
+    
     //self.drawingControlsViewController.view.frame = self.drawingControlsViewController.uiBackground.frame;//CGRectMake(50, 50,300 ,300); // THIS IS WHAT CAUSES ALL THE REDRAW WIERDNESS
     
     //The background is 147 x 767 -- we need to make sure the frame is the same aspect ratio
@@ -205,7 +204,7 @@
     // now animate selection screen into view
     [UIView animateWithDuration:SCREEN_FADE_RATE delay:0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
      self.drawingScreenViewController.view.alpha = 1;
-     //self.drawingControlsViewController.view.alpha = 1;
+     self.drawingControlsViewController.view.alpha = 1;
      self.drawingPlaneController.view.alpha = 1;
      } completion:nil];//^(BOOL finished){
     
@@ -242,11 +241,11 @@
     UIGraphicsBeginImageContext( newSize );
     
     // Use existing opacity as is
-    [bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];///1st image set frame
+    [bottomImage drawInRect:CGRectMake(0,0,newSize.width * [bottomImage scale],newSize.height * [bottomImage scale])];///1st image set frame
     
     // Apply supplied opacity if applicable
     
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:1]; //2nd image set frame on bottom image with alpha value
+    [image drawInRect:CGRectMake(0,0,newSize.width * [image scale],newSize.height *[image scale]) blendMode:kCGBlendModeNormal alpha:1]; //2nd image set frame on bottom image with alpha value
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -258,6 +257,18 @@
     NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:imgName];
     NSData *imageData = UIImagePNGRepresentation(newImage);
     [imageData writeToFile:savedImagePath atomically:NO];
+}
+
+
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (NSString *) createSavedImageName {
