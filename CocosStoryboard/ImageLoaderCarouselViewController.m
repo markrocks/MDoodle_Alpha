@@ -11,8 +11,24 @@
 @interface ImageLoaderCarouselViewController ()
 
 @property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSMutableArray *imagesWithDeleteRefs;
 
 @end
+
+@interface ImgWithDeleteRef : NSObject
+{
+    NSString *path;
+    UIImage *image;
+}
+@property NSString *path;
+@property UIImage *image;
+@end
+@implementation ImgWithDeleteRef
+@end
+
+
+
+
 
 @implementation ImageLoaderCarouselViewController
 
@@ -27,6 +43,8 @@
    // _carousel.iCarouselOptionVisibleItems = 10;
     //_carousel.type = iCarouselTypeTimeMachine;
     //_carousel.perspective = -0.0025;
+    
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +57,7 @@
         
         //preload images (although FXImageView can actually do this for us on the fly)
         _images = [[NSMutableArray alloc] init];
+        _imagesWithDeleteRefs = [[NSMutableArray alloc] init];
         UIImage *monsterImage;
         for (NSObject *path in imagePaths)
         {
@@ -48,6 +67,10 @@
                 if((monsterImage == nil)==NO)
                 {
                     [_images addObject:monsterImage];
+                    ImgWithDeleteRef *mObj = [ImgWithDeleteRef new];
+                    [mObj setPath:path];
+                    [mObj setImage:monsterImage];
+                    [_imagesWithDeleteRefs addObject:mObj];
                 }
             }
             
@@ -58,6 +81,10 @@
                 if((monsterImage == nil)==NO)
                 {
                     [_images addObject:monsterImage];
+                    ImgWithDeleteRef *mObj = [ImgWithDeleteRef new];
+                    [mObj setPath:pathString];
+                    [mObj setImage:monsterImage];
+                    [_imagesWithDeleteRefs addObject:mObj];
                     
                 }
             }
@@ -66,6 +93,7 @@
     }
     return self;
 }
+
 
 /**
  This method calculated the location of the images for the carousel. This method is meant to be overriden by sub classes --
@@ -143,5 +171,28 @@
 
 - (IBAction)homeButtonAction:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"loadMenuScreen" object:self];
+}
+
+
+
+- (IBAction)deleteButtonAction:(id)sender{
+    //[[NSNotificationCenter defaultCenter]postNotificationName:@"loadMenuScreen" object:self];
+
+}
+
+
+
+
+- (IBAction)removeImgAction:(id)sender {
+    NSError *error = nil;
+    FXImageView *myView = [self.carousel currentItemView];
+        for (ImgWithDeleteRef *img in self.imagesWithDeleteRefs)
+        {
+            if ([myView image]== [img image]){
+                NSLog(@"img path found is = %@  ", [img path] );
+                [[NSFileManager defaultManager] removeItemAtPath:[img path]  error:&error];
+                [self.carousel removeItemAtIndex:[self.carousel indexOfItemView:myView] animated:YES];
+            }
+        }
 }
 @end

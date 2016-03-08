@@ -359,7 +359,7 @@ FindPOTScale(CGFloat size, CGFloat fixedSize)
     
     // Initialise OpenAL
 	
-    [OALSimpleAudio sharedInstance];
+    //[OALSimpleAudio sharedInstance]; // TODO -- Note -- we dont need cocos3d audio -- so disabling it
 }
 
 #pragma mark CCDirectorDelegate

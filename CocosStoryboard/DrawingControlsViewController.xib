@@ -110,7 +110,7 @@
                                         <rect key="frame" x="-8" y="198" width="137" height="49"/>
                                     </variation>
                                     <connections>
-                                        <action selector="color6Action:" destination="-1" eventType="touchUpInside" id="Gz8-Yh-2Gg"/>
+                                        <action selector="color6Action:" destination="-1" eventType="touchUpInside" id="Ft4-Yb-Cn4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exG-4i-l4F" userLabel="yellow -79:28">
@@ -127,7 +127,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRK-eC-aFC" userLabel="grey -79:28">
                                     <rect key="frame" x="-23" y="272" width="137" height="49"/>
-                                    <state key="normal" backgroundImage="colorButton9.png">
+                                    <state key="normal" backgroundImage="colorButton10.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <variation key="heightClass=regular" fixedFrame="YES">
@@ -139,7 +139,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-cV-wXS" userLabel="black -78:28">
                                     <rect key="frame" x="-23" y="309" width="137" height="49"/>
-                                    <state key="normal" backgroundImage="colorButton1.png">
+                                    <state key="normal" backgroundImage="colorButton8.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <variation key="heightClass=regular" fixedFrame="YES">
@@ -151,7 +151,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eex-a2-JiL" userLabel="orange -78:26">
                                     <rect key="frame" x="-23" y="346" width="137" height="49"/>
-                                    <state key="normal" backgroundImage="colorButton8.png">
+                                    <state key="normal" backgroundImage="colorButton9.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <variation key="heightClass=regular" fixedFrame="YES">
@@ -395,6 +395,7 @@
         <image name="Side_banner.png" width="119" height="552"/>
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="colorButton1.png" width="231" height="106"/>
+        <image name="colorButton10.png" width="231" height="106"/>
         <image name="colorButton2.png" width="231" height="106"/>
         <image name="colorButton3.png" width="231" height="106"/>
         <image name="colorButton4.png" width="231" height="106"/>

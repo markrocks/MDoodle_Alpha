@@ -124,28 +124,41 @@
 }
 
 - (IBAction)color6Action:(id)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"color6" object:self];
+//    self.penImage.tintColor = [UIColor colorWithRed:.45 green:0.95 blue:0.5 alpha:.5]; //(0.45, 0.95, 0.5, 0.8)
+    
     [[NSNotificationCenter defaultCenter]postNotificationName:@"color6" object:self];
-    self.penImage.tintColor = [UIColor colorWithRed:.45 green:0.95 blue:0.5 alpha:.5]; //(0.45, 0.95, 0.5, 0.8)
+    self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.95 blue:0.2 alpha:.5]; //(0.95, 0.95, 0.2, 0.8)
+    //self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.7 blue:0.2 alpha:.5]; //(0.95, 0.7, 0.2, 0.8)
 }
 
 - (IBAction)color7Action:(id)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"color7" object:self];
+//    self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.95 blue:0.2 alpha:.5]; //(0.95, 0.95, 0.2, 0.8)
     [[NSNotificationCenter defaultCenter]postNotificationName:@"color7" object:self];
-    self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.95 blue:0.2 alpha:.5]; //(0.95, 0.95, 0.2, 0.8)
+    //self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.7 blue:0.2 alpha:.5]; //(0.95, 0.7, 0.2, 0.8)
+    self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.7 blue:0.2 alpha:.5]; //(0.95, 0.7, 0.2, 0.8)
 }
 
 - (IBAction)color8Action:(id)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"color8" object:self];
-    self.penImage.tintColor = [UIColor colorWithRed:.95 green:0.7 blue:0.2 alpha:.5]; //(0.95, 0.7, 0.2, 0.8)
+    self.penImage.tintColor = [UIColor colorWithRed:.0 green:0.0 blue:0.0 alpha:.5]; //(0.0, 0.0, 0.0, 0.8)
 }
 
 - (IBAction)color9Action:(id)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"color9" object:self];
+//    self.penImage.tintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:.5]; //(0.5, 0.5, 0.5, 0.8)
     [[NSNotificationCenter defaultCenter]postNotificationName:@"color9" object:self];
-    self.penImage.tintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:.5]; //(0.5, 0.5, 0.5, 0.8)
+    self.penImage.tintColor = [UIColor colorWithRed:.0 green:0.0 blue:1.0 alpha:.5]; //(0.0, 0.0, 0.0, 0.8)
+    
+
 }
 
 - (IBAction)color10Action:(id)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"color10" object:self];
+//    self.penImage.tintColor = [UIColor colorWithRed:.0 green:0.0 blue:0.0 alpha:.5]; //(0.0, 0.0, 0.0, 0.8)
     [[NSNotificationCenter defaultCenter]postNotificationName:@"color10" object:self];
-    self.penImage.tintColor = [UIColor colorWithRed:.0 green:0.0 blue:0.0 alpha:.5]; //(0.0, 0.0, 0.0, 0.8)
+    self.penImage.tintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:.5]; //(0.5, 0.5, 0.5, 0.8)
 }
 
 - (void) markerSizeAdjust :(NSNotification *) notification
@@ -196,7 +209,7 @@
     // Generate content view to present
     UIView* contentView = [[UIView alloc] init];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.backgroundColor = [UIColor blackColor];
+    contentView.backgroundColor = [UIColor whiteColor];
     contentView.layer.cornerRadius = 12.0;
     [contentView setFrame:CGRectMake(0, 0, 557, 160)];
     

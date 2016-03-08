@@ -322,27 +322,27 @@ typedef struct _LineVertex {
     }
     if ([[notification name] isEqualToString:@"color6"]) {
         NSLog(@"color6 clicked");
-        penColor = ccc4f(0.45, 0.95, 0.5, 0.8);
+        penColor = ccc4f(0.95, 0.95, 0.2, 0.8);//0.45, 0.95, 0.5, 0.8);
         [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color7"]) {
         NSLog(@"color7 clicked");
-        penColor = ccc4f(0.95, 0.95, 0.2, 0.8);
+        penColor = ccc4f(0.95, 0.7, 0.2, 0.8);
         [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color8"]) {
         NSLog(@"color8 clicked");
-        penColor = ccc4f(0.95, 0.7, 0.2, 0.8);
+        penColor = ccc4f(0.0, 0.0, 0.0, 1);//(0.0, 0.0, 1.0, 0.8);//(0.95, 0.7, 0.2, 0.8);
         [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color9"]) {
         NSLog(@"color9 clicked");
-        penColor = ccc4f(0.5, 0.5, 0.5, 0.8);
+        penColor = ccc4f(0.0, 0.0, 1.0, 0.8);//(0.5, 0.5, 0.5, 0.8);
         [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"color10"]) {
         NSLog(@"color10 clicked");
-        penColor = ccc4f(0.0, 0.0, 0.0, 1);
+        penColor = ccc4f(0.5, 0.5, 0.5, 0.8);//(0.0, 0.0, 0.0, 1);
         [self resetBlendMode];
     }
     if ([[notification name] isEqualToString:@"eraserButton"]) {

@@ -14,5 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet iCarousel *carousel;
 - (IBAction)homeButtonAction:(id)sender;
+- (IBAction)deleteButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+- (IBAction)removeImgAction:(id)sender;
 
 @end

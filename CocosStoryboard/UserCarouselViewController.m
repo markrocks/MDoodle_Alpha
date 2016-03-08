@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.deleteButton setHidden:false];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,6 +66,10 @@
         
     }
     return imagePaths;
+}
+
+- (IBAction)deleteButtonAction:(id)sender {
+    [self.carousel currentItemView];
 }
 
 /*

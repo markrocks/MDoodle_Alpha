@@ -35,21 +35,20 @@
     
     
     
-    for (NSString* family in [UIFont familyNames])
-    {
-        NSLog(@"%@", family);
-        
-        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-        {
-            NSLog(@"  %@", name);
-        }
-    }
+//    for (NSString* family in [UIFont familyNames])
+//    {
+//        NSLog(@"%@", family);
+//        
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//        {
+//            NSLog(@"  %@", name);
+//        }
+//    }
 
 
     
     
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
-    //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[ImageLoaderCarouselViewController class]];
     [self registerEventListeners];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
@@ -253,7 +252,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *imgName = [self createSavedImageName];
-    NSLog(@"imgName");
+    NSLog(@"imgName = %@", imgName);
     NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:imgName];
     NSData *imageData = UIImagePNGRepresentation(newImage);
     [imageData writeToFile:savedImagePath atomically:NO];
@@ -273,7 +272,7 @@
 
 - (NSString *) createSavedImageName {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy_MM_dd_hhmm"];
+    [formatter setDateFormat:@"yyyy_MM_dd_HHmm_ss"];
     
     //Optionally for time zone conversions
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
@@ -289,6 +288,10 @@
     [self buttonPressedWithSound];
     
     [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
+    
+    //--SAVED MONSTERS --
+    //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[UserCarouselViewController class]];
+
     
     /**
     //
