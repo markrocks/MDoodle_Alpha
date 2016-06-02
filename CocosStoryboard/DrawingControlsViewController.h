@@ -39,5 +39,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *penImage;
 @property (strong, nonatomic) IBOutlet UIImageView *penImageBase;
+@property (strong, nonatomic) IBOutlet UILabel *instructionLabel;
 
+- (void)displayInstructions: (NSNumber *) inte;
 @end

@@ -9,10 +9,6 @@
 #import "ImageLoaderCarouselViewController.h"
 
 @interface ImageLoaderCarouselViewController ()
-
-@property (nonatomic, strong) NSMutableArray *images;
-@property (nonatomic, strong) NSMutableArray *imagesWithDeleteRefs;
-
 @end
 
 @interface ImgWithDeleteRef : NSObject
@@ -108,6 +104,10 @@
     return [_images count];
 }
 
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel{
+    
+    [self.counterLabel setText:[NSString stringWithFormat: @"%ld/%ld", (long)[self.carousel currentItemIndex]+1, (long)[self.carousel numberOfItems]]] ;   }
+
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
     //create new view if no view is available for recycling
@@ -126,7 +126,10 @@
         imageView.shadowBlur = 5.0f;
         imageView.cornerRadius = 10.0f;
         view = imageView;
+        [self.counterLabel setText:[NSString stringWithFormat: @"%ld/%ld", (long)[self.carousel currentItemIndex]+1, (long)[self.carousel numberOfItems]]] ;  
+ 
     }
+    
     
     //show placeholder
     ((FXImageView *)view).processedImage = [UIImage imageNamed:@"placeholder.png"];
@@ -145,14 +148,7 @@
 
 #pragma mark iCarousel taps
 
-- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
-{
-    UIImage *image = (UIImage *)(_images)[(NSUInteger)index];
-    NSLog(@"Tappedimage: %@", image);
-    NSDictionary * imgDict = [NSDictionary dictionaryWithObject:image
-                                                         forKey:@"image"];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadDrawPaneWithImage" object:self userInfo:imgDict]; 
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

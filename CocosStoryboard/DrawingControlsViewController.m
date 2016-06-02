@@ -1,3 +1,4 @@
+
 //
 //  DrawingControlsViewController.m
 //  Monster Doodle
@@ -31,8 +32,60 @@
     rect.size = size;
     [self.penNibImage setFrame:rect];
     self.penNibImage.image = [self imageWithImage:[UIImage imageNamed:@"nib.png"] scaledToSize:size];
+    [self.instructionLabel setHidden:YES];
+    
+//    [self displayInstructions:@"hello"];
+    
+}
+
+- (void)displayInstructions: (NSNumber *) inte{
+    int imgNumber = [inte intValue];
+    NSString *message;
+   
+    NSArray *captionArray =[NSArray arrayWithObjects:@"Draw Eyes",
+    @"Draw drool",
+    @"Draw an embaressing haircut",
+    @"Draw 2d head",
+    @"Draw teeth",
+    @"Draw evil moustash",
+    @"Draw legs",
+    @"Draw his brain",
+    @"Draw feet",
+    @"Draw tounge",
+    @"Draw mouth",
+    @"Draw nose spikes",
+    @"What is he eating?",
+    @"Draw spikes",
+    @"Draw wings",
+//       @"Draw giant claw",
+    @"Draw claws",
+    @"Draw mouth",
+    @"Draw his body",
+//    @"Draw ice breath",
+    @"Draw arms",
+    @"Draw wings",
+    @"Draw crazy eyebrows",
+    @"Draw back spikes",
+    @"Draw his body",
+    @"Draw fire breath",
+    @"Draw an underwater monster",
+    @"Draw creepy nose",
+    @"What is chasing this monster?",
+//    @"Draw a head",
+    @"Draw a tail", nil ];
     
     
+    [self.instructionLabel setHidden:NO];
+    [self.instructionLabel setText:[captionArray objectAtIndex:imgNumber]];
+
+    [UIView animateWithDuration:3.0
+     delay:2.0 options:UIViewAnimationOptionCurveEaseInOut
+                     animations: ^{[self.instructionLabel setAlpha:1];}
+                     completion:
+     ^(BOOL finished) {
+         [UIView animateWithDuration:3.0 delay:5.0 options:UIViewAnimationOptionCurveEaseInOut
+                          animations:^{ [self.instructionLabel setAlpha:0]; }completion:^(BOOL finished) {}];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

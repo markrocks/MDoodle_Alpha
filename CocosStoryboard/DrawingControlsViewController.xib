@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="A Love of Thunder - Licensed Version.otf">
+            <string>ALoveofThunder</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingControlsViewController">
             <connections>
+                <outlet property="instructionLabel" destination="eGC-QX-Vw8" id="kVe-Qs-huE"/>
                 <outlet property="penImage" destination="Ero-dR-VTz" id="BsW-ts-yEr"/>
                 <outlet property="penNibImage" destination="LwD-TW-9xi" id="x0n-pK-5Z9"/>
                 <outlet property="uiBackground" destination="Khk-zc-7HN" id="fN3-Q3-JV1"/>
@@ -260,7 +266,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">
-                            <rect key="frame" x="15" y="545" width="72" height="67"/>
+                            <rect key="frame" x="15" y="693" width="72" height="67"/>
                             <state key="normal" image="save2.png"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="15" y="583" width="72" height="67"/>
@@ -270,7 +276,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-yx-KWM" userLabel="Undo-67:65">
-                            <rect key="frame" x="0.0" y="678" width="78" height="75"/>
+                            <rect key="frame" x="0.0" y="618" width="78" height="75"/>
                             <state key="normal" backgroundImage="undo2.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -285,8 +291,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Be-hL1" userLabel="Redo-67:65">
-                            <rect key="frame" x="0.0" y="608" width="78" height="75"/>
-                            <state key="normal" backgroundImage="undo2.png">
+                            <rect key="frame" x="0.0" y="545" width="78" height="75"/>
+                            <state key="normal" backgroundImage="REdo_.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <variation key="heightClass=regular" fixedFrame="YES">
@@ -325,18 +331,18 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="d84-Gr-9hh" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="612:768" id="3FA-Xa-4VD"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="760:768" id="3FA-Xa-4VD"/>
                         <constraint firstItem="d84-Gr-9hh" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="72:138" id="5ef-h0-cc0"/>
                         <constraint firstItem="Ero-dR-VTz" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="8Vr-df-ZYm"/>
                         <constraint firstItem="dpa-Be-hL1" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="78:138" id="Akn-Kt-CCK"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="leading" secondItem="p9Q-6w-neV" secondAttribute="leading" id="Fjn-gN-gHL"/>
-                        <constraint firstItem="GHc-yx-KWM" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="753:768" id="Jg6-Mm-han"/>
-                        <constraint firstItem="GHc-yx-KWM" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="678:768" id="K50-le-2nO"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="693:768" id="Jg6-Mm-han"/>
+                        <constraint firstItem="GHc-yx-KWM" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="618:768" id="K50-le-2nO"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="88:768" id="La7-Zs-kyI"/>
                         <constraint firstItem="d84-Gr-9hh" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="87:138" id="PJ5-hd-9a2"/>
                         <constraint firstItem="Ero-dR-VTz" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="124:138" id="QxK-G7-Wef"/>
                         <constraint firstItem="Ero-dR-VTz" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="124:138" id="R0G-7w-dIp"/>
-                        <constraint firstItem="dpa-Be-hL1" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="683:768" id="TXU-oH-0In"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="620:768" id="TXU-oH-0In"/>
                         <constraint firstItem="y91-0t-3tv" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="VNZ-T1-20w"/>
                         <constraint firstItem="Ero-dR-VTz" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="Xes-Ru-hjT"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" id="YB3-QV-lhf"/>
@@ -346,12 +352,12 @@
                         <constraint firstItem="dpa-Be-hL1" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="78:138" id="dov-5F-8pH"/>
                         <constraint firstItem="y91-0t-3tv" firstAttribute="width" secondItem="p9Q-6w-neV" secondAttribute="width" multiplier="124:138" id="f4v-47-6Re"/>
                         <constraint firstItem="GHc-yx-KWM" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="78:138" id="fpF-oa-K2H"/>
-                        <constraint firstItem="dpa-Be-hL1" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="608:768" id="gFM-l2-Yfk"/>
+                        <constraint firstItem="dpa-Be-hL1" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="545:768" id="gFM-l2-Yfk"/>
                         <constraint firstItem="DkP-9U-iPa" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" id="gVY-bn-z6Y"/>
                         <constraint firstItem="JMl-Jq-ww7" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="hXk-LN-we5"/>
                         <constraint firstItem="y91-0t-3tv" firstAttribute="trailing" secondItem="p9Q-6w-neV" secondAttribute="trailing" multiplier="124:138" id="jHx-F6-rSc"/>
                         <constraint firstItem="y91-0t-3tv" firstAttribute="bottom" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="556:768" id="rHp-A3-dDb"/>
-                        <constraint firstItem="d84-Gr-9hh" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="545:768" id="wBm-2R-auw"/>
+                        <constraint firstItem="d84-Gr-9hh" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="693:768" id="wBm-2R-auw"/>
                         <constraint firstItem="JMl-Jq-ww7" firstAttribute="top" secondItem="p9Q-6w-neV" secondAttribute="bottom" multiplier="484:768" id="xjf-ZG-v7E"/>
                     </constraints>
                 </view>
@@ -361,37 +367,60 @@
                         <constraint firstAttribute="width" constant="4" id="RYt-tI-Kjt"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
-                    <rect key="frame" x="0.0" y="5" width="738" height="75"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
+                    <rect key="frame" x="0.0" y="5" width="92" height="75"/>
                     <state key="normal" image="home2.png"/>
                     <connections>
                         <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Draw Eyes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGC-QX-Vw8" customClass="THLabel">
+                    <rect key="frame" x="0.0" y="63" width="1024" height="60"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="51"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Khk-zc-7HN" secondAttribute="bottom" id="2Eq-iZ-Q4m"/>
                 <constraint firstAttribute="bottom" secondItem="LwD-TW-9xi" secondAttribute="bottom" constant="21" id="5U6-2N-Obp"/>
                 <constraint firstItem="LwD-TW-9xi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="78" id="7Ro-ZT-Qxy"/>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQk-ZQ-5gI"/>
+                <constraint firstItem="eGC-QX-Vw8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="CYw-h8-iaf"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="leading" secondItem="Khk-zc-7HN" secondAttribute="leading" id="Dry-Zv-eCo"/>
                 <constraint firstItem="C8z-BT-Oo7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" multiplier="12:147" id="DwE-Rf-GsI"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="bottom" secondItem="Khk-zc-7HN" secondAttribute="bottom" id="F7G-MC-dPb"/>
+                <constraint firstItem="eGC-QX-Vw8" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="1000/1024" id="QXg-wK-3Kb"/>
                 <constraint firstItem="C8z-BT-Oo7" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="80:768" id="Tpj-L4-wuY"/>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="centerY" secondItem="LwD-TW-9xi" secondAttribute="centerY" constant="-194" id="VWZ-tM-U6K"/>
                 <constraint firstItem="C8z-BT-Oo7" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="106:147" id="YdV-Vv-XEl"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="trailing" secondItem="Khk-zc-7HN" secondAttribute="trailing" multiplier="138:147" id="Yh4-sg-9bg"/>
+                <constraint firstItem="eGC-QX-Vw8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" multiplier="65:7668" id="aA0-qQ-sG3"/>
                 <constraint firstItem="Khk-zc-7HN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gyj-L4-giY"/>
                 <constraint firstItem="C8z-BT-Oo7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="5:768" id="tEM-tM-vl5"/>
                 <constraint firstItem="p9Q-6w-neV" firstAttribute="top" secondItem="Khk-zc-7HN" secondAttribute="top" id="x52-hR-Uvo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QXg-wK-3Kb"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="576" y="241"/>
         </view>
     </objects>
     <resources>
         <image name="Erase_icon.png" width="71" height="34"/>
         <image name="Pen_icon_no_nib.png" width="326" height="231"/>
+        <image name="REdo_.png" width="79" height="76"/>
         <image name="Side_banner.png" width="119" height="552"/>
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="colorButton1.png" width="231" height="106"/>

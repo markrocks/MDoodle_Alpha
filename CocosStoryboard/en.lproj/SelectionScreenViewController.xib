@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="A Love of Thunder - Licensed Version.ttf">
+        <mutableArray key="A Love of Thunder - Licensed Version.otf">
             <string>ALoveofThunder</string>
             <string>ALoveofThunder</string>
         </mutableArray>
@@ -47,9 +47,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-a6-hS1" userLabel="SettingsButton">
-                    <rect key="frame" x="481" y="0.0" width="174" height="128"/>
-                    <state key="normal" title="Button" image="Email_parents_butons.png">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-a6-hS1" userLabel="SettingsButton">
+                    <rect key="frame" x="960" y="0.0" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ge7-a6-hS1" secondAttribute="height" multiplier="1:1" id="OQB-C1-bHV"/>
+                    </constraints>
+                    <state key="normal" image="Setting_icon_march19.png">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -59,7 +63,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
                     <rect key="frame" x="160" y="34" width="164" height="60"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
-                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="88"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=compact" misplaced="YES">
                         <rect key="frame" x="177" y="4" width="213" height="206"/>
@@ -88,7 +92,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saved" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-o9-Le5">
                     <rect key="frame" x="550" y="34" width="361" height="73"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
-                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="87"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="88"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -105,13 +109,14 @@
                 </constraint>
                 <constraint firstItem="IbW-sh-fXG" firstAttribute="height" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="102:534" id="AuP-Gz-Qh7"/>
                 <constraint firstItem="SGm-Hn-Em6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BQQ-hw-2db"/>
-                <constraint firstItem="Ge7-a6-hS1" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="CHe-7n-RJZ"/>
+                <constraint firstItem="Ge7-a6-hS1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1900:1024" id="CHe-7n-RJZ"/>
                 <constraint firstItem="AYG-o9-Le5" firstAttribute="height" secondItem="IbW-sh-fXG" secondAttribute="height" id="CM6-53-3pC"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="616:768" id="Fem-S1-qBZ"/>
                 <constraint firstItem="AYG-o9-Le5" firstAttribute="width" secondItem="IbW-sh-fXG" secondAttribute="width" multiplier="1.42" id="JjL-5w-9q8"/>
                 <constraint firstAttribute="trailing" secondItem="SGm-Hn-Em6" secondAttribute="trailing" id="MeD-g9-k5U"/>
+                <constraint firstItem="Ge7-a6-hS1" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="100:768" id="MkD-sn-dX3"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="376:1024" id="OHz-SK-xGr"/>
-                <constraint firstItem="Ge7-a6-hS1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RI5-dh-14Y"/>
+                <constraint firstItem="Ge7-a6-hS1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="150:768" id="RI5-dh-14Y"/>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="484:1024" id="Vq6-m6-swV"/>
                 <constraint firstItem="xY0-gA-jRk" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="901:1024" id="X2K-Ng-7Iu"/>
                 <constraint firstItem="AYG-o9-Le5" firstAttribute="top" secondItem="ph0-Sf-Tdc" secondAttribute="top" multiplier="57:101" id="aFL-Dj-Tch"/>
@@ -164,8 +169,8 @@
     </objects>
     <resources>
         <image name="Choose_background.png" width="1024" height="768"/>
-        <image name="Email_parents_butons.png" width="120" height="128"/>
         <image name="NewButtonv2_Cropped1.png" width="361" height="494"/>
         <image name="SavedButtonv2_Cropped1.png" width="415" height="494"/>
+        <image name="Setting_icon_march19.png" width="95" height="100"/>
     </resources>
 </document>

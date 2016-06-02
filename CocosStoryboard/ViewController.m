@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 //===================================
-#define SPLASH_DELAY 0//3
+#define SPLASH_DELAY 5//3
 #define SCREEN_FADE_RATE 1
 #define DRAWING_CONTROLS_WIDTH 147
 #define DRAWING_CONTROLS_HEIGHT 767
@@ -32,27 +32,38 @@
         //load splash and then load SelectionScreenViewController
     
     //TO DO -- add completion block passing to  loadViewWithViewController
-    
-    
-    
-//    for (NSString* family in [UIFont familyNames])
-//    {
-//        NSLog(@"%@", family);
-//        
-//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
-//        {
-//            NSLog(@"  %@", name);
-//        }
-//    }
 
-
-    
-    
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
     [self registerEventListeners];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
+    [self beginPlayingAudioBackground];
 }
+
+
+
+
+- (NSString *)splashImageNameForOrientation:(UIInterfaceOrientation)orientation {
+    CGSize viewSize = self.view.bounds.size;
+    NSString* viewOrientation = @"Portrait";
+    if (UIDeviceOrientationIsLandscape(orientation)) {
+        viewSize = CGSizeMake(viewSize.height, viewSize.width);
+        viewOrientation = @"Landscape";
+    }
+    
+    NSArray* imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary* dict in imagesDict) {
+        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dict[@"UILaunchImageOrientation"]])
+            return dict[@"UILaunchImageName"];
+    }
+    return nil;
+}
+
+
+
+//
+//
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -120,6 +131,7 @@
         self.drawingPlaneController = nil;
          */			
     }
+    
     if ( self.drawingControlsViewController != nil) // the button view
     {
         [self.drawingControlsViewController removeFromParentViewController];
@@ -133,7 +145,7 @@
 /**
  This method loads the Drawing screen
  **/
--(void) loadDrawingView:(UIImage *) image {
+-(void) loadDrawingView:(UIImage *) image withIndex:(NSNumber *)index fromUser:(BOOL)user {
     
     self.drawingScreenViewController = [[DrawingScreenViewController alloc]initWithNibName:@"DrawingScreenViewController" bundle:nil];
     self.drawingScreenViewController.view.alpha = 0;
@@ -199,6 +211,9 @@
     [[self view] addSubview:self.drawingControlsViewController.view];
     [self.drawingControlsViewController didMoveToParentViewController:self];
     [[self view] bringSubviewToFront:self.drawingControlsViewController.view];
+    if(user==NO){
+       [self.drawingControlsViewController displayInstructions:index];
+    }
 
     // now animate selection screen into view
     [UIView animateWithDuration:SCREEN_FADE_RATE delay:0 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
@@ -232,6 +247,12 @@
  Save the drawing layer ontop of the background iamge layer to 1 composite image. Files are saved in the Documents directory
  **/
 -(void) saveDrawing {
+    CGFloat screenScale = 1;
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]
+        && [[UIScreen mainScreen] scale] >= 2.0) {
+        screenScale = [[UIScreen mainScreen] scale] ;
+    }
+    
     
     UIImage *bottomImage = self.drawingScreenViewController.monsterImage.image; //background image ////1st image
     UIImage *image       = [self.drawingPlaneController.introScene.lineDrawer.renderTexture  getUIImage]  ; //foreground image///2nd image
@@ -244,7 +265,7 @@
     
     // Apply supplied opacity if applicable
     
-    [image drawInRect:CGRectMake(0,0,newSize.width * [image scale],newSize.height *[image scale]) blendMode:kCGBlendModeNormal alpha:1]; //2nd image set frame on bottom image with alpha value
+    [image drawInRect:CGRectMake(0,0,(newSize.width * [image scale])/screenScale,(newSize.height *[image scale])/screenScale) blendMode:kCGBlendModeNormal alpha:1]; //2nd image set frame on bottom image with alpha value
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -285,7 +306,7 @@
 -(void) findNewMonster {
     //[self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
     //[self loadViewWithViewController:@"TrickCollectionViewController" usingViewClass:[TrickCollectionViewController class]];
-    [self buttonPressedWithSound];
+    //[self buttonPressedWithSound];
     
     [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[BundledCarouselViewController class]];
     
@@ -335,6 +356,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"colorRed" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"findNewMonster" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"getOldMonster" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"findNewMonsterInitialClick" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"getOldMonsterInitialClick" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadMenuScreen" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"markerPlusButton" object:nil];
@@ -343,6 +366,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"saveButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"penButton" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithImage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"loadDrawPaneWithUserImage" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"emailMonster" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(parseNotification:) name:@"openSettings" object:nil];
 
@@ -361,10 +386,7 @@
     if ([[notification name] isEqualToString:@"colorRed"]) {
         NSLog(@"red clicked");
     }
-    if ([[notification name] isEqualToString:@"findNewMonster"]) {
-        NSLog(@"Find New");
-        [self findNewMonster];
-    }
+
     if ([[notification name] isEqualToString:@"openSettings"]) {
         NSLog(@"Open Settings");
         [self loadViewWithViewController:@"SettingsViewController" usingViewClass:[SettingsViewController class]];
@@ -372,11 +394,6 @@
     if ([[notification name] isEqualToString:@"emailMonster"]) {
         NSLog(@"Email Monster");
         [self loadViewWithViewController:@"EmailViewController" usingViewClass:[EmailViewController class]];
-    }
-    if ([[notification name] isEqualToString:@"getOldMonster"]) {
-        NSLog(@"get Old");
-        [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[UserCarouselViewController class]];
-        [self buttonPressedWithSound];
     }
     if ([[notification name] isEqualToString:@"loadMenuScreen"]) {
         NSLog(@"loading selection screen");
@@ -401,45 +418,109 @@
     
     if ([[notification name] isEqualToString:@"loadDrawPaneWithImage"]) {
         NSLog(@"loadDrawPaneWithImage clicked");
-        [self loadDrawingView:dict[@"image"]];
+        [self loadDrawingView:dict[@"image"] withIndex:dict[@"index"] fromUser:NO];
+    }
+    if ([[notification name] isEqualToString:@"loadDrawPaneWithUserImage"]) {
+        NSLog(@"loadDrawPaneWithImage clicked");
+        [self loadDrawingView:dict[@"image"] withIndex:dict[@"index"] fromUser:YES];
+    }
+    if ([[notification name] isEqualToString:@"getOldMonster"]) {
+        NSLog(@"get Old");
+        [self loadViewWithViewController:@"ImageLoaderCarouselViewController" usingViewClass:[UserCarouselViewController class]];
+    }
+    if ([[notification name] isEqualToString:@"findNewMonster"]) {
+        NSLog(@"Find New");
+        [self findNewMonster];
+    }
+    if ([[notification name] isEqualToString:@"getOldMonsterInitialClick"]) {
+        NSLog(@"get Old sound");
+        [self buttonPressedWithSound:@"m_saved"];
+    }
+    if ([[notification name] isEqualToString:@"findNewMonsterInitialClick"]) {
+        NSLog(@"Find New sound");
+        [self buttonPressedWithSound:@"m_new"];
+        
     }
 }
 
--(void)buttonPressedWithSound {
+-(void)beginPlayingAudioBackground{
+//    NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+//    resourcePath = [resourcePath stringByAppendingString:@"/YOURMUSICNAME.mp3"];
+    
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bkgnd.mp3" ofType:nil inDirectory:@"audio"];
+    
+    
+    NSLog(@"Path to play: %@", soundPath);
+    NSError* err;
+    
+    //Initialize our player pointing to the path to our resource
+    AVAudioPlayer* player;
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:
+              [NSURL fileURLWithPath:soundPath] error:&err];
+    
+    if( err ){
+        //bail!
+        NSLog(@"Failed with reason: %@", [err localizedDescription]);
+    }
+    else{
+        //set our delegate and begin playback
+        player.delegate = self;
+        [player play];
+        player.numberOfLoops = -1;
+        player.currentTime = 0;
+        player.volume = 1.0;
+    }
+    
+}
+
+
+//    NSString *soundPath = [[NSBundle mainBundle] pathForResource:monsterSoundFile ofType:nil inDirectory:@"audio"];
+//    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+//
+//    AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(soundUrl), &soundID);
+//    AudioServicesPlaySystemSound(soundID);
+
+
+
+-(void)buttonPressedWithSound: (NSString *) soundName{
     
     int randomSoundNumber = arc4random() % 4; //random number from 0 to 3
     
     NSLog(@"random sound number = %i", randomSoundNumber);
     
-    //NSString *monsterSoundFile;
-    /**
-    switch (randomSoundNumber) {
-        case 0:
-            monsterSoundFile = @"MONSTERBite1.mp3";
-            break;
-        case 1:
-            monsterSoundFile = @"MONSTERBite2.mp3";
-            break;
-        case 2:
-            monsterSoundFile = @"MONSTERBite3.mp3";
-            break;
-        case 3:
-            monsterSoundFile = @"MONSTERBite4.mp3";
-            break;
-            
-        default:
-            break;
-    }
+    NSString *monsterSoundFile;
+    monsterSoundFile = [soundName stringByAppendingString:@".mp3"];
+    
+   // (@"%@.mp3", soundName); //  soundName @"MONSTERBite1.mp3";
+    
+//    switch (randomSoundNumber) {
+//        case 0:
+//            monsterSoundFile = @"MONSTERBite1.mp3";
+//            break;
+//        case 1:
+//            monsterSoundFile = @"MONSTERBite2.mp3";
+//            break;
+//        case 2:
+//            monsterSoundFile = @"MONSTERBite3.mp3";
+//            break;
+//        case 3:
+//            monsterSoundFile = @"MONSTERBite4.mp3";
+//            break;
+//            
+//        default:
+//            break;
+//    }
     
     SystemSoundID soundID;
+    //TODO  -- fix audio
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:monsterSoundFile ofType:nil inDirectory:@"Bundled Assets"];
-    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
-    
-    AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(soundUrl), &soundID);
-    AudioServicesPlaySystemSound(soundID);
+//    NSString *soundPath = [[NSBundle mainBundle] pathForResource:monsterSoundFile ofType:nil inDirectory:@"audio"];
+//    NSURL *soundUrl = [NSURL fileURLWithPath:soundPath];
+//    
+//    AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(soundUrl), &soundID);
+//    AudioServicesPlaySystemSound(soundID);
 
-**/
+
 }
 
 

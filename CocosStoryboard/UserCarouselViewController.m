@@ -68,6 +68,21 @@
     return imagePaths;
 }
 
+- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    UIImage *image = (UIImage *)(self.images)[(NSUInteger)index];
+    NSLog(@"Tappedimage: %@", image);
+    //NSDictionary * imgDict = [NSDictionary dictionaryWithObject:image
+    // forKey:@"image"];
+    //
+    NSDictionary *imgDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:image,[NSNumber numberWithInt:index],nil]
+                                                        forKeys:[NSArray arrayWithObjects:@"image",@"index",nil]];
+    
+    //
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadDrawPaneWithUserImage" object:self userInfo:imgDict];
+    //TODO Call sound
+}
+
 - (IBAction)deleteButtonAction:(id)sender {
     [self.carousel currentItemView];
 }

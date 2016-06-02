@@ -86,6 +86,7 @@
 - (IBAction)findNewMonsterBtnAction:(id)sender {
     if (!self.addNewMonsterButton.imageView.isAnimating) {
         NSLog(@"new button anim started");
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"findNewMonsterInitialClick" object:self];
         [self.addNewMonsterButton.imageView startAnimating];
         [self.addNewMonsterButton.imageView setImage:[self.addNewMonsterButton.imageView.animationImages lastObject]];
         [self performSelector:@selector(newAnimationDidFinish) withObject:nil afterDelay:self.addNewMonsterButton.imageView.animationDuration];
@@ -103,6 +104,7 @@
     //[[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonster" object:self];
     if (!self.loadSavedMonsterButton.imageView.isAnimating) {
         NSLog(@"load saved button anim started");
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"getOldMonsterInitialClick" object:self];
         [self.loadSavedMonsterButton.imageView startAnimating];
         [self.loadSavedMonsterButton.imageView setImage:[self.loadSavedMonsterButton.imageView.animationImages lastObject]];
         [self performSelector:@selector(loadSavedAnimationDidFinish) withObject:nil afterDelay:self.loadSavedMonsterButton.imageView.animationDuration];

@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.deleteButton setHidden:true];
+    [self.deleteButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +28,21 @@
 -(NSArray *) getImagePaths {
     NSArray *imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:nil inDirectory:@"Bundled Assets"];
     return imagePaths;
+}
+
+- (void)carousel:(__unused iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    UIImage *image = (UIImage *)(self.images)[(NSUInteger)index];
+    NSLog(@"Tappedimage: %@", image);
+    //NSDictionary * imgDict = [NSDictionary dictionaryWithObject:image
+    // forKey:@"image"];
+    //
+    NSDictionary *imgDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:image,[NSNumber numberWithInt:index],nil]
+                                                        forKeys:[NSArray arrayWithObjects:@"image",@"index",nil]];
+    
+    //
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"loadDrawPaneWithImage" object:self userInfo:imgDict];
+    //TODO Call sound
 }
 
 /*

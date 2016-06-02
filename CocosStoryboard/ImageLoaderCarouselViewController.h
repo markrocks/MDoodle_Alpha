@@ -17,5 +17,8 @@
 - (IBAction)deleteButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 - (IBAction)removeImgAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *counterLabel;
+@property (nonatomic, strong) NSMutableArray *images;
+@property (nonatomic, strong) NSMutableArray *imagesWithDeleteRefs;
 
 @end

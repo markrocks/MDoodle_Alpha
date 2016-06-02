@@ -235,6 +235,7 @@ typedef struct _LineVertex {
     [[[CCDirector sharedDirector] view] addGestureRecognizer:longPressGestureRecognizer];
     [self registerEventListeners];
       penColor = ccc4f(0.8, 0.0, 0.0, 0.8);
+      [self resetBlendMode];
   }
   return self;
 }
