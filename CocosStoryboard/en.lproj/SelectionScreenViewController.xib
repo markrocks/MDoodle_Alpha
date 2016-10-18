@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="A Love of Thunder - Licensed Version.otf">
+        <array key="A Love of Thunder - Licensed Version.otf">
             <string>ALoveofThunder</string>
-            <string>ALoveofThunder</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectionScreenViewController">
@@ -25,78 +25,68 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="1024" placeholderIntrinsicHeight="768" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SGm-Hn-Em6" userLabel="BACKGROUND  1024_768">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="1024" placeholderIntrinsicHeight="768" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="SGm-Hn-Em6" userLabel="BACKGROUND  1024_768"/>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY0-gA-jRk" userLabel="Load saved monster button">
-                    <rect key="frame" x="525" y="81" width="376" height="535"/>
                     <state key="normal" title="Button" image="SavedButtonv2_Cropped1.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="saveMonstereButtonAction:" destination="-1" eventType="touchUpInside" id="oaq-Ow-HQU"/>
                     </connections>
                 </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Load New Monster" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-zx-4y3">
-                    <rect key="frame" x="24" y="22" width="164" height="33"/>
+                    <frame key="frameInset" minX="24" minY="22" width="164" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Monster to Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48S-CI-pwP">
-                    <rect key="frame" x="8" y="68" width="166" height="47"/>
+                    <frame key="frameInset" minX="8" minY="68" width="166" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge7-a6-hS1" userLabel="SettingsButton">
-                    <rect key="frame" x="960" y="0.0" width="100" height="100"/>
+                    <frame key="frameInset" minX="960" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ge7-a6-hS1" secondAttribute="height" multiplier="1:1" id="OQB-C1-bHV"/>
                     </constraints>
                     <state key="normal" image="Setting_icon_march19.png">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="openSettingsAction:" destination="-1" eventType="touchUpInside" id="M1u-Ce-bwX"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-sh-fXG">
-                    <rect key="frame" x="160" y="34" width="164" height="60"/>
+                    <frame key="frameInset" minX="160" minY="34" width="164" height="60"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
                     <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="88"/>
                     <nil key="highlightedColor"/>
-                    <variation key="heightClass=compact" misplaced="YES">
-                        <rect key="frame" x="177" y="4" width="213" height="206"/>
-                    </variation>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ph0-Sf-Tdc" userLabel="Load Monster 242_282 484_564">
-                    <rect key="frame" x="0.0" y="51" width="484" height="564"/>
+                    <frame key="frameInset" minY="51" width="484" height="564"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ph0-Sf-Tdc" secondAttribute="height" multiplier="121:141" id="2Mh-dj-5fk"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                     <state key="normal" image="NewButtonv2_Cropped1.png">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
-                    <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="8" y="30" width="434" height="564"/>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                        <rect key="frame" x="16" y="80" width="579" height="675"/>
-                    </variation>
                     <connections>
                         <action selector="findNewMonsterBtnAction:" destination="-1" eventType="touchUpInside" id="wd0-lJ-Onz"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saved" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="AYG-o9-Le5">
-                    <rect key="frame" x="550" y="34" width="361" height="73"/>
+                    <frame key="frameInset" minX="550" minY="34" width="361" height="73"/>
                     <rect key="contentStretch" x="0.80000000000000004" y="0.80000000000000004" width="0.80000000000000004" height="0.80000000000000004"/>
                     <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="88"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ph0-Sf-Tdc" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="635:768" id="0lm-lc-7lF">
                     <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -163,7 +153,7 @@
             <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <state key="normal" title="Button">
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </state>
         </button>
     </objects>
@@ -171,6 +161,6 @@
         <image name="Choose_background.png" width="1024" height="768"/>
         <image name="NewButtonv2_Cropped1.png" width="361" height="494"/>
         <image name="SavedButtonv2_Cropped1.png" width="415" height="494"/>
-        <image name="Setting_icon_march19.png" width="95" height="100"/>
+        <image name="Setting_icon_march19.png" width="94" height="99"/>
     </resources>
 </document>

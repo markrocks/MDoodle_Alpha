@@ -10,12 +10,22 @@
 
 @interface SettingsViewController : UIViewController
 - (IBAction)enableEmailAction:(id)sender;
-- (IBAction)defaultVolumeAction:(id)sender;
+- (IBAction)enableMusicAction:(id)sender;
+- (IBAction)enableEffectsAction:(id)sender;
 - (IBAction)homeButtonAction:(id)sender;
+
 @property NSUserDefaults *userDefaults;
 @property (strong, nonatomic) IBOutlet UISwitch *emailSwitch;
-@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
+@property (strong, nonatomic) IBOutlet UISwitch *musicSwitch;
+@property (strong, nonatomic) IBOutlet UISwitch *effectsSwitch;
 
+
+
+
+@property (strong, nonatomic) IBOutlet UISlider *volumeSlider;
 @property (strong, nonatomic) IBOutlet UILabel *emailPrefLabel;
 @property (strong, nonatomic) IBOutlet UILabel *volumePrefLabel;
+
+
+//- (IBAction)defaultVolumeAction:(id)sender;
 @end

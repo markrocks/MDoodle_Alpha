@@ -1,66 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="A Love of Thunder - Licensed Version.otf">
+            <string>ALoveofThunder</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
-                <outlet property="emailPrefLabel" destination="znS-T8-kid" id="jnc-Bp-UAs"/>
-                <outlet property="emailSwitch" destination="VX3-i2-9CH" id="odR-cM-1Gd"/>
+                <outlet property="effectsSwitch" destination="1qP-CQ-OCo" id="TIH-ZG-JCa"/>
+                <outlet property="emailSwitch" destination="4xk-Gz-52N" id="brZ-cm-1U7"/>
+                <outlet property="musicSwitch" destination="VX3-i2-9CH" id="DmK-V5-E8P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="volumePrefLabel" destination="Ktq-qR-vNO" id="gF7-Uj-9fZ"/>
-                <outlet property="volumeSlider" destination="1nJ-TV-0Nq" id="oVf-hc-FOf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="undo_icon.png" maximumValueImage="Aqua_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-TV-0Nq">
-                    <rect key="frame" x="122" y="516" width="318" height="31"/>
-                    <color key="minimumTrackTintColor" red="0.90515542000000004" green="0.1762720602" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="maximumTrackTintColor" red="1" green="0.026153076220000002" blue="0.093433777209999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="thumbTintColor" red="0.39319072779999997" green="0.73128199739999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hyx-e5-m2n" userLabel="background"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UU-RE-WyS" userLabel="Home Button">
+                    <frame key="frameInset" minX="12" minY="31" width="94" height="75"/>
+                    <state key="normal" image="home2.png"/>
                     <connections>
-                        <action selector="defaultVolumeAction:" destination="-1" eventType="valueChanged" id="GD5-eA-C7f"/>
-                    </connections>
-                </slider>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktq-qR-vNO">
-                    <rect key="frame" x="124" y="554" width="314" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-i2-9CH">
-                    <rect key="frame" x="124" y="402" width="51" height="31"/>
-                    <connections>
-                        <action selector="enableEmailAction:" destination="-1" eventType="valueChanged" id="hWu-JR-Yci"/>
-                    </connections>
-                </switch>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-UY-X5f" userLabel="Home Button">
-                    <rect key="frame" x="20" y="20" width="72" height="67"/>
-                    <state key="normal" image="Home_icon.png"/>
-                    <connections>
-                        <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="hcq-ir-cE8"/>
+                        <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="bhi-T8-QJj"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znS-T8-kid">
-                    <rect key="frame" x="189" y="407" width="276" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-i2-9CH" userLabel="Music Switch">
+                    <connections>
+                        <action selector="enableMusicAction:" destination="-1" eventType="valueChanged" id="GPB-wV-ROm"/>
+                    </connections>
+                </switch>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-CQ-OCo" userLabel="Effects Switch">
+                    <frame key="frameInset" minX="150" minY="320" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableEffectsAction:" destination="-1" eventType="valueChanged" id="H8R-n3-JeP"/>
+                    </connections>
+                </switch>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xk-Gz-52N" userLabel="Email Switch">
+                    <frame key="frameInset" minX="150" minY="440" width="51" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="enableEmailAction:" destination="-1" eventType="valueChanged" id="hSC-Va-PBY"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XF4-IM-HZC">
+                    <frame key="frameInset" minX="243" minY="195" width="421" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="38"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound Effects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQg-ks-69C">
+                    <frame key="frameInset" minX="243" minY="315" width="421" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="38"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYx-b2-hhh">
+                    <frame key="frameInset" minX="243" minY="435" width="421" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="38"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Hyx-e5-m2n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Hqu-PF-yFF"/>
+                <constraint firstItem="6UU-RE-WyS" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="80:768" id="Lpp-X4-uXG"/>
+                <constraint firstAttribute="bottom" secondItem="Hyx-e5-m2n" secondAttribute="bottom" id="Ykk-IL-fBh"/>
+                <constraint firstItem="VX3-i2-9CH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="150:1024" id="ZqE-nD-Ywi"/>
+                <constraint firstItem="VX3-i2-9CH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="200:768" id="bjP-Ib-3RY"/>
+                <constraint firstAttribute="trailing" secondItem="Hyx-e5-m2n" secondAttribute="trailing" id="gWZ-KE-y5f"/>
+                <constraint firstItem="6UU-RE-WyS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="12:1024" id="nyr-ac-z9v"/>
+                <constraint firstItem="6UU-RE-WyS" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" multiplier="106:1024" id="wvx-lG-RL9"/>
+                <constraint firstItem="6UU-RE-WyS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="5:768" id="y4w-nW-OnF"/>
+                <constraint firstItem="Hyx-e5-m2n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zb3-Qh-ecU"/>
+            </constraints>
             <point key="canvasLocation" x="328" y="380"/>
         </view>
     </objects>
     <resources>
-        <image name="Aqua_icon.png" width="79" height="28"/>
-        <image name="Home_icon.png" width="70" height="66"/>
-        <image name="undo_icon.png" width="67" height="65"/>
+        <image name="Choose_background.png" width="1024" height="768"/>
+        <image name="home2.png" width="91" height="74"/>
     </resources>
 </document>

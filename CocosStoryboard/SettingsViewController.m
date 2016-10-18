@@ -17,9 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.userDefaults= [NSUserDefaults standardUserDefaults];
-    //int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
-    [[self volumeSlider] setValue:((float)[self.userDefaults integerForKey:@"defaultVolume"] / 100)];
     [[self emailSwitch] setOn:([self.userDefaults integerForKey:@"emailInt"] == 1)];
+    [[self musicSwitch] setOn:([self.userDefaults integerForKey:@"musicInt"] == 1)];
+    [[self effectsSwitch] setOn:([self.userDefaults integerForKey:@"effectInt"] == 1)];
+    
+  
     
     _emailPrefLabel.text = [NSString stringWithFormat:NSLocalizedString(@"enableEmailText", nil)];
     _volumePrefLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Default Volume Level", nil)];
@@ -48,15 +50,30 @@
     [self.userDefaults synchronize];
 }
 
-- (IBAction)defaultVolumeAction:(id)sender {
-    int defaultVolume = [[self volumeSlider] value] * 100;
-    [self.userDefaults setInteger:defaultVolume forKey:@"defaultVolume"];
-    NSLog(@"default volume slider activated-- value %d", defaultVolume);
+
+- (IBAction)enableMusicAction:(id)sender {
+    int musicInt =  [self musicSwitch].on ? 1 : 0;
+    NSLog(@"music switch activated %i", musicInt);
+    [self.userDefaults setInteger:musicInt forKey:@"musicInt"];
     [self.userDefaults synchronize];
-    //int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
+}
+
+- (IBAction)enableEffectsAction:(id)sender {
+    int effectInt =  [self effectsSwitch].on ? 1 : 0;
+    NSLog(@"effects switch activated %i", effectInt);
+    [self.userDefaults setInteger:effectInt forKey:@"effectInt"];
+    [self.userDefaults synchronize];
 }
 
 - (IBAction)homeButtonAction:(id)sender {
         [[NSNotificationCenter defaultCenter]postNotificationName:@"loadMenuScreen" object:self];
 }
+
+//- (IBAction)defaultVolumeAction:(id)sender {
+//    int defaultVolume = [[self volumeSlider] value] * 100;
+//    [self.userDefaults setInteger:defaultVolume forKey:@"defaultVolume"];
+//    NSLog(@"default volume slider activated-- value %d", defaultVolume);
+//    [self.userDefaults synchronize];
+//    //int temp = [self.userDefaults integerForKey:@"defaultVolume"] ;
+//}
 @end

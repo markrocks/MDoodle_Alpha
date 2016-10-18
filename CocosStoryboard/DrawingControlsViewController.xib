@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="A Love of Thunder - Licensed Version.otf">
+        <array key="A Love of Thunder - Licensed Version.otf">
             <string>ALoveofThunder</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawingControlsViewController">
@@ -27,142 +28,103 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Side_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-zc-7HN">
-                    <rect key="frame" x="0.0" y="0.0" width="147" height="768"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Khk-zc-7HN" secondAttribute="height" multiplier="147:768" id="brb-4q-UWC"/>
                     </constraints>
-                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="165" height="772"/>
-                    </variation>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9Q-6w-neV" userLabel="UI Controls">
-                    <rect key="frame" x="0.0" y="0.0" width="138" height="768"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-9U-iPa" userLabel="Color Controls-85:289">
-                            <rect key="frame" x="0.0" y="88" width="138" height="680"/>
                             <subviews>
                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="White_behind_colors.png" translatesAutoresizingMaskIntoConstraints="NO" id="PsI-Co-PWo">
-                                    <rect key="frame" x="0.0" y="500" width="125" height="720"/>
+                                    <frame key="frameInset" minY="500" width="125" height="720"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-qW-ucb" userLabel="red-78:28">
-                                    <rect key="frame" x="-23" y="13" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="13" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton1.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="7" width="137" height="49"/>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="0.0" y="7" width="114" height="41"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color1Action:" destination="-1" eventType="touchUpInside" id="Dki-rc-ycg"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-4V-trD" userLabel="magenta-80:28">
-                                    <rect key="frame" x="-23" y="50" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="50" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton2.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="44" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color2Action:" destination="-1" eventType="touchUpInside" id="sKr-2y-X2P"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QI6-4r-tOY" userLabel="purple-80:27">
-                                    <rect key="frame" x="-23" y="87" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="87" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton3.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="83" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color3Action:" destination="-1" eventType="touchUpInside" id="TwT-eJ-3Mn"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkD-ZY-mlj" userLabel="cyan-79:28">
-                                    <rect key="frame" x="-23" y="124" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="124" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton4.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="121" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color4Action:" destination="-1" eventType="touchUpInside" id="1If-GC-Ogh"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fb-W9-ahy" userLabel="green -79:27">
-                                    <rect key="frame" x="-23" y="161" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="161" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton5.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="159" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color5Action:" destination="-1" eventType="touchUpInside" id="TpB-LY-3HB"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW1-ib-AAY" userLabel="lt-green -80:27">
-                                    <rect key="frame" x="-24" y="198" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-24" minY="198" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton6.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="198" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color6Action:" destination="-1" eventType="touchUpInside" id="Ft4-Yb-Cn4"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exG-4i-l4F" userLabel="yellow -79:28">
-                                    <rect key="frame" x="-23" y="235" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="235" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton7.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="236" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color7Action:" destination="-1" eventType="touchUpInside" id="fSI-wA-xxQ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRK-eC-aFC" userLabel="grey -79:28">
-                                    <rect key="frame" x="-23" y="272" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="272" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton10.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="273" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color9Action:" destination="-1" eventType="touchUpInside" id="Cqr-cB-fSN"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-cV-wXS" userLabel="black -78:28">
-                                    <rect key="frame" x="-23" y="309" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="309" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton8.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="311" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color10Action:" destination="-1" eventType="touchUpInside" id="hCa-sX-0ro"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eex-a2-JiL" userLabel="orange -78:26">
-                                    <rect key="frame" x="-23" y="346" width="137" height="49"/>
+                                    <frame key="frameInset" minX="-23" minY="346" width="137" height="49"/>
                                     <state key="normal" backgroundImage="colorButton9.png">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
-                                    <variation key="heightClass=regular" fixedFrame="YES">
-                                        <rect key="frame" x="-8" y="351" width="137" height="49"/>
-                                    </variation>
                                     <connections>
                                         <action selector="color8Action:" destination="-1" eventType="touchUpInside" id="TqA-up-6HU"/>
                                     </connections>
@@ -212,119 +174,66 @@
                                 <constraint firstItem="tkD-ZY-mlj" firstAttribute="bottom" secondItem="DkP-9U-iPa" secondAttribute="bottom" multiplier="173:680" id="yd1-aj-NWV"/>
                                 <constraint firstItem="exG-4i-l4F" firstAttribute="trailing" secondItem="DkP-9U-iPa" secondAttribute="trailing" multiplier="114:139" id="yyP-6V-4AL"/>
                             </constraints>
-                            <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                <rect key="frame" x="0.0" y="85" width="125" height="422"/>
-                            </variation>
                         </view>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68">
-                            <rect key="frame" x="0.0" y="484" width="124" height="72"/>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="1" y="449" width="181" height="99"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-25" y="502" width="181" height="99"/>
-                            </variation>
-                        </imageView>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="y91-0t-3tv" userLabel="Pen_Icon-124:68"/>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMl-Jq-ww7" userLabel="Pen Button">
-                            <rect key="frame" x="0.0" y="484" width="124" height="72"/>
                             <accessibility key="accessibilityConfiguration" label=""/>
                             <state key="normal" title="Button" image="Pen_icon_no_nib.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="539" width="381" height="231"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-25" y="502" width="181" height="99"/>
-                            </variation>
                             <connections>
                                 <action selector="penButtonAction:" destination="-1" eventType="touchUpInside" id="B9j-gA-8fL"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68">
-                            <rect key="frame" x="0.0" y="484" width="124" height="72"/>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="1" y="449" width="181" height="99"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="-25" y="502" width="181" height="99"/>
-                            </variation>
-                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pen_icon_no_nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-dR-VTz" userLabel="Pen_Icon-124:68"/>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAs-yr-nId" userLabel="Eraser-71:34">
-                            <rect key="frame" x="0.0" y="620" width="102" height="38"/>
+                            <frame key="frameInset" minY="620" width="102" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" backgroundImage="Erase_icon.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="533" width="102" height="38"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="608" width="103" height="50"/>
-                            </variation>
                             <connections>
                                 <action selector="eraserButtonAction:" destination="-1" eventType="touchUpInside" id="Lhb-e3-yi7"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-Gr-9hh" userLabel="Save Button">
-                            <rect key="frame" x="15" y="693" width="72" height="67"/>
                             <state key="normal" image="save2.png"/>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="15" y="583" width="72" height="67"/>
-                            </variation>
                             <connections>
                                 <action selector="saveButtonAction:" destination="-1" eventType="touchUpInside" id="iff-Qg-Wb1"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-yx-KWM" userLabel="Undo-67:65">
-                            <rect key="frame" x="0.0" y="618" width="78" height="75"/>
                             <state key="normal" backgroundImage="undo2.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="15" y="665" width="90" height="76"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="669" width="98" height="95"/>
-                            </variation>
                             <connections>
                                 <action selector="undoButtonAction:" destination="-1" eventType="touchUpInside" id="reD-7C-xQH"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Be-hL1" userLabel="Redo-67:65">
-                            <rect key="frame" x="0.0" y="545" width="78" height="75"/>
                             <state key="normal" backgroundImage="REdo_.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="15" y="665" width="90" height="76"/>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="669" width="98" height="95"/>
-                            </variation>
                             <connections>
                                 <action selector="redoButtonAction:" destination="-1" eventType="touchUpInside" id="E2D-2X-qos"/>
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5s-ay-3rU" userLabel="Plus Button">
-                            <rect key="frame" x="74" y="503" width="25" height="22"/>
+                            <frame key="frameInset" minX="74" minY="503" width="25" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="plus.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="74" y="509" width="25" height="22"/>
-                            </variation>
                             <connections>
                                 <action selector="markerPlusButtonAction:" destination="-1" eventType="touchUpInside" id="tok-cS-wLj"/>
                             </connections>
                         </button>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-41-eH4" userLabel="Minus Button">
-                            <rect key="frame" x="75" y="607" width="30" height="20"/>
+                            <frame key="frameInset" minX="75" minY="607" width="30" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button" image="minus.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="75" y="574" width="30" height="20"/>
-                            </variation>
                             <connections>
                                 <action selector="markerMinusButtonAction:" destination="-1" eventType="touchUpInside" id="4Us-l8-MA2"/>
                             </connections>
@@ -362,29 +271,29 @@
                     </constraints>
                 </view>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nib.png" translatesAutoresizingMaskIntoConstraints="NO" id="LwD-TW-9xi">
-                    <rect key="frame" x="78" y="584" width="4" height="8"/>
+                    <frame key="frameInset" minX="78" minY="584" width="4" height="8"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="4" id="RYt-tI-Kjt"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-BT-Oo7" userLabel="Home Button">
-                    <rect key="frame" x="0.0" y="5" width="92" height="75"/>
+                    <frame key="frameInset" minY="5" width="92" height="75"/>
                     <state key="normal" image="home2.png"/>
                     <connections>
                         <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="2iC-Gq-6yf"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Draw Eyes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGC-QX-Vw8" customClass="THLabel">
-                    <rect key="frame" x="0.0" y="63" width="1024" height="60"/>
+                    <frame key="frameInset" minY="63" width="1024" height="60"/>
                     <fontDescription key="fontDescription" name="ALoveofThunder" family="A Love of Thunder" pointSize="51"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="strokeSize">
                             <real key="value" value="6"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
-                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
@@ -420,7 +329,7 @@
     <resources>
         <image name="Erase_icon.png" width="71" height="34"/>
         <image name="Pen_icon_no_nib.png" width="326" height="231"/>
-        <image name="REdo_.png" width="79" height="76"/>
+        <image name="REdo_.png" width="79" height="75"/>
         <image name="Side_banner.png" width="119" height="552"/>
         <image name="White_behind_colors.png" width="85" height="289"/>
         <image name="colorButton1.png" width="231" height="106"/>
@@ -433,11 +342,11 @@
         <image name="colorButton7.png" width="231" height="106"/>
         <image name="colorButton8.png" width="231" height="106"/>
         <image name="colorButton9.png" width="231" height="106"/>
-        <image name="home2.png" width="92" height="75"/>
+        <image name="home2.png" width="91" height="74"/>
         <image name="minus.png" width="71" height="36"/>
         <image name="nib.png" width="24" height="48"/>
         <image name="plus.png" width="51" height="55"/>
-        <image name="save2.png" width="88" height="70"/>
-        <image name="undo2.png" width="80" height="76"/>
+        <image name="save2.png" width="87" height="69"/>
+        <image name="undo2.png" width="79" height="75"/>
     </resources>
 </document>

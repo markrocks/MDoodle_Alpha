@@ -26,6 +26,8 @@
 @property (nonatomic,strong) SceneViewController *drawingPlaneController;
 @property (nonatomic,strong) SceneViewController *erasingPlaneController;
 
+@property NSUserDefaults *userDefaults;
+
 -(void)buttonPressedWithSound;
 
 @end

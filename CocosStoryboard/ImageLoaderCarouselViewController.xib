@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageLoaderCarouselViewController">
@@ -19,41 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-B3-jfU" userLabel="background">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="YoE-B3-jfU" userLabel="background"/>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-27-56e" userLabel="iCarousel Object" customClass="iCarousel">
-                    <rect key="frame" x="12" y="768" width="1000" height="91"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <frame key="frameInset" minX="12" minY="768" width="1000" height="91"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Jcj-XV-yWe"/>
                         <outlet property="delegate" destination="-1" id="YPZ-yw-alP"/>
                     </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dV-Dr-7sS" userLabel="Home Button">
-                    <rect key="frame" x="12" y="5" width="94" height="75"/>
                     <state key="normal" image="home2.png"/>
                     <connections>
                         <action selector="homeButtonAction:" destination="-1" eventType="touchUpInside" id="pCq-AS-43y"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wx-C5-PHr">
-                    <rect key="frame" x="862" y="46" width="171" height="95"/>
+                    <frame key="frameInset" minX="862" minY="46" width="171" height="95"/>
                     <state key="normal" image="Trash_button.png">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="removeImgAction:" destination="-1" eventType="touchUpInside" id="x0Y-Xf-xop"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3C-t6-V4j">
-                    <rect key="frame" x="850" y="659" width="150" height="66"/>
+                    <frame key="frameInset" minX="850" minY="659" width="150" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="31"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="YoE-B3-jfU" secondAttribute="trailing" id="6ms-aH-kTF"/>
                 <constraint firstItem="1Wx-C5-PHr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" multiplier="79:768" id="C8I-1h-Sum"/>
@@ -77,6 +76,6 @@
     <resources>
         <image name="Choose_background.png" width="1024" height="768"/>
         <image name="Trash_button.png" width="118" height="95"/>
-        <image name="home2.png" width="92" height="75"/>
+        <image name="home2.png" width="91" height="74"/>
     </resources>
 </document>

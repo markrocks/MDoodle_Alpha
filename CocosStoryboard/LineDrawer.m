@@ -106,7 +106,7 @@ typedef struct _LineVertex {
     CGSize s = [[CCDirector sharedDirector] viewSize];
       NSLog(@"Darwin pane inti with a size of width %f and height %f",s.width, s.height);
     //TODO -- SEE IF THIS FIX BELOW IS FOR BOTH Landscape and Portrait
-      CGSize s2 = CGSizeMake (384 ,  612);
+                //CGSize s2 = CGSizeMake (384 ,  612);
     self.renderTexture = [[CCRenderTexture alloc] initWithWidth:s.width height:s.height pixelFormat:CCTexturePixelFormat_RGBA8888];
       // ADDED CODE==================>
       //TODO-- INVESTIGATE BLEND MODES
@@ -724,7 +724,7 @@ typedef struct _LineVertex {
 {
     return penSize;// TODO --cleanup
   //! result of trial & error
-  float vel = ccpLength([panGestureRecognizer velocityInView:panGestureRecognizer.view]);
+  float vel = ccpLength([panGestureRecognizer velocityInView:panGestureRecognizer.view]); // why will this never be executed?
   float size = vel / 166.0f;
   size = clampf(size, 1, 40);
 

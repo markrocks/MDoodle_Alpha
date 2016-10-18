@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIViewController *activeController;
 @property (nonatomic) double timeVal ;
 @property (nonatomic) SystemSoundID pewPewSound;
+@property (nonatomic) AVAudioPlayer* player;
 @end
 
 @implementation ViewController
@@ -32,12 +33,20 @@
         //load splash and then load SelectionScreenViewController
     
     //TO DO -- add completion block passing to  loadViewWithViewController
+    self.userDefaults= [NSUserDefaults standardUserDefaults];
+//    [[self emailSwitch] setOn:([self.userDefaults integerForKey:@"emailInt"] == 1)];
+//    [[self musicSwitch] setOn:([self.userDefaults integerForKey:@"musicInt"] == 1)];
+//    [[self effectsSwitch] setOn:([self.userDefaults integerForKey:@"effectInt"] == 1)];
+    
 
     [self loadViewWithViewController:@"SelectionScreenViewController" usingViewClass:[SelectionScreenViewController class]];
     [self registerEventListeners];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     self.view.frame = CGRectMake(screenRect.origin.x, screenRect.origin.y, screenRect.size.width, screenRect.size.height);
-    [self beginPlayingAudioBackground];
+    if ([self.userDefaults integerForKey:@"musicInt"] == 1) {
+        [self beginPlayingAudioBackground];
+    }
+    
 }
 
 
@@ -447,15 +456,14 @@
 //    NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
 //    resourcePath = [resourcePath stringByAppendingString:@"/YOURMUSICNAME.mp3"];
     
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bkgnd.mp3" ofType:nil inDirectory:@"audio"];
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"Tech-no.mp3" ofType:nil inDirectory:@"audio"];
     
     
     NSLog(@"Path to play: %@", soundPath);
     NSError* err;
     
-    //Initialize our player pointing to the path to our resource
-    AVAudioPlayer* player;
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:
+    
+    _player = [[AVAudioPlayer alloc] initWithContentsOfURL:
               [NSURL fileURLWithPath:soundPath] error:&err];
     
     if( err ){
@@ -464,11 +472,11 @@
     }
     else{
         //set our delegate and begin playback
-        player.delegate = self;
-        [player play];
-        player.numberOfLoops = -1;
-        player.currentTime = 0;
-        player.volume = 1.0;
+        _player.delegate = self;
+        [_player play];
+        _player.numberOfLoops = -1;
+        _player.currentTime = 0;
+        _player.volume = 1.0;
     }
     
 }

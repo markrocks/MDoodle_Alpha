@@ -40,7 +40,7 @@
 
 - (void)displayInstructions: (NSNumber *) inte{
     int imgNumber = [inte intValue];
-    NSString *message;
+    //NSString *message;
    
     NSArray *captionArray =[NSArray arrayWithObjects:@"Draw Eyes",
     @"Draw drool",
